@@ -45,7 +45,7 @@ Boas práticas:
 
 * Somente use a conta root para fazer as configurações base na AWS.
 * Um usuário físico = Um usuário **IAM**
-* Pratique o princípio de menor privilégio(least privilege principle) dando aos   usuários   apenas as permissões que eles precisam.
+* Pratique o princípio de menor privilégio(least privilege principle) dando aos usuários apenas as permissões que eles precisam.
 * Adicione Usuários a grupos e Adicione permissões a grupos.
 * Crie políticas de senhas fortes.
 * Use e Endosse o uso de MFA
@@ -63,7 +63,7 @@ AWS
 * Configuração e Análise de vulnerabilidade
 * Validação de compliance.
 Você
-* Administração e monitoramento de Usuários **IAM**, Grupos, Roles e   Policies.
+* Administração e monitoramento de Usuários **IAM**, Grupos, Roles e Policies.
 * Gerenciamento de MFA nas contas.
 * Manter um rotacionamento de chaves constante.
 * Usar as ferramentos **IAM** para aplicar as permissões apropriadas.
@@ -73,15 +73,15 @@ Você
 
 O tipo da instância **EC2** representa as características dela. Dado o formato classegeração.porte sendo o porte representando o tamanho de memória RAM que ela possa possuir ou a capacidade de processamento.Exemplo: t2.nano, m5.2xlarge
 
-Na seguinte página é possível obter o portfólio de instâncias **EC2** da AWS<https://aws.amazon.com/pt/ec2/instance-types/>
+Na seguinte página é possível obter o portfólio de instâncias **EC2** da AWS <https://aws.amazon.com/pt/ec2/instance-types/>
 
 ## EC2 Instance Launch Types
 
 4 Tipos de opções de compra de instâncias **EC2**:
 
-1. On-Demand - Modo mais caro, comprado a qualquer momento, sem compromisso de   permanência.
-2. Reservado - Mais barato que On-Demand, permanência mínima de 1 ano. Pode ser comprado   no   modo 24/7, no modo 24/7 com instância flexível ou em apenas algumas horas por   semana.
-3. Spot Instances - Modo mais barato - Uso de instâncias ociosas para execução de   trabalhos,   risco de perder o trabalho caso a instância seja solicitada por algum cliente(ver   analogia do hotel).
+1. On-Demand - Modo mais caro, comprado a qualquer momento, sem compromisso de permanência.
+2. Reservado - Mais barato que On-Demand, permanência mínima de 1 ano. Pode ser comprado no modo 24/7, no modo 24/7 com instância flexível ou em apenas algumas horas por semana.
+3. Spot Instances - Modo mais barato - Uso de instâncias ociosas para execução de trabalhos, risco de perder o trabalho caso a instância seja solicitada por algum cliente(ver analogia do hotel).
 4. Host Dedicado - Uso de datacenter físico dedicado para alocação de instâncias.
 
 Reserva de instâncias **EC2** podem ter um desconto de até 75% se comparada com a On-Demand.Período de reserva pode ser de 1 ano OU de 3 anos.
@@ -91,8 +91,8 @@ Spot instances são instâncias **EC2** no qual o cliente usa um espaço de proc
 Copiando conteúdo do PDF:
 
 * On demand: coming and staying in resort whenever we like, we pay the full price
-* Reserved: like planning ahead and if we plan to stay for a long time, we may get a   good   discount.
-* Spot instances: the hotel allows people to bid for the empty rooms and the highest   bidder   keeps the rooms. You can get kicked out at any time.
+* Reserved: like planning ahead and if we plan to stay for a long time, we may get a good discount.
+* Spot instances: the hotel allows people to bid for the empty rooms and the highest bidder keeps the rooms. You can get kicked out at any time.
 * Dedicated Hosts: We book an entire building of the resort.
 
 ## EBS Overview
@@ -130,8 +130,8 @@ Comparando a performance de armazenamento do drive da instância EC2 com o EBS:
 
 * Volumes EBS são drives de rede, por isso são mais lentos.
 * Volumes EBS são mais práticos, podem ser montados e desmontados a qualquer momento.
-* Drives de instância, por estarem diretamente conectados com a aplicação, têm uma   latência   bem menor.
-* Drives de instância estão presos à execução desta, se a instância falhar, os dados   contidos nela são perdidos.
+* Drives de instância, por estarem diretamente conectados com a aplicação, têm uma latência bem menor.
+* Drives de instância estão presos à execução desta, se a instância falhar, os dados contidos nela são perdidos.
 O ideal é usar o drive da instância como buffer/cache e após determinado tempo, passar esta informação para o volume EBS de persistência mais longa.
 
 ## EFS Overview
@@ -151,7 +151,7 @@ Das suas responsabilidades:
 * Configurar procedimentos de backups e snapshots
 * Configurar processos de criptografia
 * Todo dado dos drives
-* compreender os riscos envolvidos em manter dados em drives de instâncias EC2 que   podem   ser encerradas.
+* compreender os riscos envolvidos em manter dados em drives de instâncias EC2 que podem ser encerradas.
 
 ## Amazon FSx Overview
 
@@ -181,8 +181,8 @@ Utilidades de um Load Balancer:
 ELB(Elastic Load Balancer) é um tipo de balanceador de carga gerenciável fornecido pela AWS. Pode ser configurado em alguns passos mas custa mais caro que um balanceador criado por você. Você também pode usar um balanceador personalizado que custa menos mas é mais difícil de configurar.Existem 3 tipos de Load Balancers fornecidos pela AWS:
 
 * Load Balancer de Aplicação - Opera na camada de protocolo de aplicação(7)(HTTP/HTTPS)
-* Load Balancer de Transporte/Network - Opera na camada de protocolo de (TCP/UDP) -   Sistemas de alta performance.
-* Load Balancer clássico - depreciado - trabalha tanto na camada 4(transporte) quanto   7(aplicação) - não vai cair no exame.
+* Load Balancer de Transporte/Network - Opera na camada de protocolo de (TCP/UDP) - Sistemas de alta performance.
+* Load Balancer clássico - depreciado - trabalha tanto na camada 4(transporte) quanto 7(aplicação) - não vai cair no exame.
 
 ## Auto Scaling Groups (ASG) Overview
 
@@ -190,7 +190,7 @@ Auto Scaling Groups(Grupos Auto Escaláveis) são, talvez, o principal produto d
 
 * Aumentar a quantidade de instâncias(Scale out) quando a carga de trabalho aumentar.
 * Diminuir a quantidade de instâncias(Scale in) quando a carga de trabalho diminuir.
-* Certificar que haja uma quantidade mínima e máxima de máquinas trabalhando de acordo   com   as questões financeiras, contratuais e operacionais pré definidas.
+* Certificar que haja uma quantidade mínima e máxima de máquinas trabalhando de acordo com as questões financeiras, contratuais e operacionais pré definidas.
 * Registrar novas instâncias no Load Balancer automaticamente.
 * Detectar e substituir instâncias defeituosas automaticamente.
 Desta forma, o processo de auto scaling é um dos principais recursos na otimização da utilização dos recursos(um dos princípios da nuvem).
@@ -199,17 +199,17 @@ Desta forma, o processo de auto scaling é um dos principais recursos na otimiza
 
 Exemplos de estratégias de Escalabilidade:Escalabilidade manual: Alterar o tamanho dos Auto Scaling Groups manualmente.Escalabilidade Dinâmica(Dynamic):Escala Simples:
 
-* Quando o alarme da CloudWatch for disparado por carga alta(ex: CPU > 70%), então   add 2   unidades.
-* Quando o alarme da CloudWatch for disparado por carga baixa(ex: CPU < 30%), então   remove 1 unidade.
+* Quando o alarme da CloudWatch for disparado por carga alta(ex: CPU > 70%), então add 2 unidades.
+* Quando o alarme da CloudWatch for disparado por carga baixa(ex: CPU < 30%), então remove 1 unidade.
 Escala por alvo de uso de recurso(Target):
-* Manter o uso de CPU de todas as instâncias em 40%, então se CPU > 40%, add   instância, se CPU < 40%, remove instância, mantendo uma certa margem de manobra.
+* Manter o uso de CPU de todas as instâncias em 40%, então se CPU > 40%, add instância, se CPU < 40%, remove instância, mantendo uma certa margem de manobra.
 Escala agendada(Schedule):
-* Sabe-se que o horário de pico de acesso no sistema é das 11:00 às 13:00 e das 17:00   às   19:00, então, nesse horário já se programa para adicionar mais instâncias.
+* Sabe-se que o horário de pico de acesso no sistema é das 11:00 às 13:00 e das 17:00 às 19:00, então, nesse horário já se programa para adicionar mais instâncias.
 Cont...
 
 Escalabilidade inteligente:
 
-* Utiliza machine learning para estudar os padrões de volumetria do sistema ao longo   das   horas, dias e semanas para entender qual é a melhor estratégia de reserva de   instâncias   e escalabilidade com o ASG(Auto Scaling Group).
+* Utiliza machine learning para estudar os padrões de volumetria do sistema ao longo das horas, dias e semanas para entender qual é a melhor estratégia de reserva de instâncias e escalabilidade com o ASG(Auto Scaling Group).
 Claro que é possível combinar essas estratégias para otimizar recursos.
 
 ## ELB & ASG Summary
@@ -218,13 +218,13 @@ ASG:
 
 * Implementa elasticidade para a aplicação, trabalha em múltiplas AZs
 * Escala instâncias EC2 baseado na demanda, substitui instâncias problemáticas
-* integrado com ELB  <br>
+* integrado com ELB
 
 Resumo ELB e ASG:ELB = Elastic Load BalancingASG = Auto Scaling GroupHigh Availability = Prática de manter uma aplicação disponível em 2 AZs ou mais para que esteja protegida contra desastres e falhas de comunicação.Scalability = Prática de aumentar a capacidade dos recursos de uma aplicação(aumento vertical scale up/down) ou a quantidade destes recursos(aumento horizontal scale out/in)Elasticity = Automatização do processo de Escalabilidade com o uso de ELBs e ASGsAgility = Ganho obtido com a melhoria dos processos utilização da computação na nuvem.ELB:
 
-* Balanceamento entre múltiplas instâncias EC2, pode ser configurado entre múltiplas   AZs.
+* Balanceamento entre múltiplas instâncias EC2, pode ser configurado entre múltiplas AZs.
 * Oferece suporte para Health Check.
-* 4 Tipos: LB de Aplicação(HTTP - Camada 7), LB de transporte(TCP - Camada 4),LB   de   Gateway(NOVO)(IP - Camada 3), LB clássico (DEPRECIADO - camada 4 e 7).
+* 4 Tipos: LB de Aplicação(HTTP - Camada 7), LB de transporte(TCP - Camada 4),LB de Gateway(NOVO)(IP - Camada 3), LB clássico (DEPRECIADO - camada 4 e 7).
 Cont...
 
 ## S3 Overview
@@ -241,7 +241,7 @@ S3 é o serviço de armazenamento de objetos da AWS, pode ser usado para várias
 * Entrega de Softwares
 * Arquivos estáticos
 
-Os objetos trabalhados no S3 são armazenados em diretórios chamados de buckets, esses buckets são armazenados dentro de uma region, contudo, seu nome é uma chave única global, ou seja, transcende todas as regions **E TODOS OS USUÁRIOS E CLIENTES DA  AMAZON**, de forma que um bucket em São Paulo não pode ter o mesmo nome de um bucket em Ohio. Sobre a nomeação dos buckets, estas seguem uma convenção, que é a seguinte:
+Os objetos trabalhados no S3 são armazenados em diretórios chamados de buckets, esses buckets são armazenados dentro de uma region, contudo, seu nome é uma chave única global, ou seja, transcende todas as regions **E TODOS OS USUÁRIOS E CLIENTES DA AMAZON**, de forma que um bucket em São Paulo não pode ter o mesmo nome de um bucket em Ohio. Sobre a nomeação dos buckets, estas seguem uma convenção, que é a seguinte:
 
 * Sem letra maiúscula
 * Sem Underline
@@ -256,7 +256,7 @@ Sobre a segurança do S3:Segurança baseada no IAM:Políticas do IAM podem ser u
 * Bucket policies - Políticas do bucket controladas pelo console S3
 * Object Access Control List(ACL) - Ajuste fino de acesso
 * Bucket Access Control List(ACL) - Ajuste grosseiro, menos comum
-Um usuário IAM consegue acessar o S3  **SE**: ( Uma política IAM <em>autoriza-o</em> **OU** Uma política de recurso <em>autoriza-o </em>) **E** <em>NÃO </em>existe uma recusa explícita<br>
+Um usuário IAM consegue acessar o S3 **SE**: ( Uma política IAM autoriza-o **OU** Uma política de recurso autoriza-o) **E** NÃO existe uma recusa explícita
 
 Um exemplo de boa prática para acessos em buckets S3 é, ao invés de dar acessos a usuários, utilizar roles(funções) em instâncias EC2 para que elas possam ter acesso a esses buckets.
 
@@ -294,11 +294,11 @@ Classes de armazenamento S3:
 
 * S3 Standard - Uso geral(o que vimos até aqui)
 * S3 Infrequent Access(IA) - para arquivos pouco utilizados
-* S3 One Zone Infrequent Access - para arquivos pouco utilizados que podem ser   recriados ou   que não são críticos, pois existe risco de perda.
-* S3 Intelligent Tiering - Sistema inteligente que determina para qual tipo de classe   seus   buckets devem ir.
+* S3 One Zone Infrequent Access - para arquivos pouco utilizados que podem ser recriados ou que não são críticos, pois existe risco de perda.
+* S3 Intelligent Tiering - Sistema inteligente que determina para qual tipo de classe seus buckets devem ir.
 * S3 Glacier - Para armazenamento de arquivos mortos e backups.
-* S3 Glacier Deep Archive - Para armazenamento de arquivos mortos e backups que você   entende que ficarão muito tempo sem serem lidos(estilo aqueles que acumularão poeira   e   teia de aranha no porão).
-* S3 Reduced Redudancy Storage(RRS) - **Depreciado** - Sistema legado   que   não será solicitado no exame.
+* S3 Glacier Deep Archive - Para armazenamento de arquivos mortos e backups que você entende que ficarão muito tempo sem serem lidos(estilo aqueles que acumularão poeira e teia de aranha no porão).
+* S3 Reduced Redudancy Storage(RRS) - **Depreciado** - Sistema legado que não será solicitado no exame.
 
 Conceitos e Garantias da AWS:
 
@@ -314,11 +314,12 @@ Para S3 Standard:
 * Usado para dados acessados frequentemente.
 * Baixa latência e alta taxa de transferência.
 * Suporta falha de até 2 instalações(facilities) simultaneamente.
+
 Usado para: Big Data Analytics, mobile, gaming, distribuição de conteúdos, etc...
 
 S3 Standard - Infrequent Access (IA)
 
-* Para arquivos pouco acessados mas que precisam de uma latência rápida, quando   acessados.
+* Para arquivos pouco acessados mas que precisam de uma latência rápida, quando acessados.
 * Disponibilidade de 99,9%
 * Custo menor, se comparado com S3 Standard, porém, há um custo maior por acesso.
 * Suporta falha de até 2 instalações(facilities) simultaneamente.
@@ -328,7 +329,8 @@ S3 Intelligent-Tiering
 
 * Disponibilidade de 99,9%
 * Mesma baixa latência e alta performance de taxa de transferência do S3 standard.
-* Otimizado para custar menos pois automaticamente move objetos entre as outras 2   classes   S3(acesso frequênte/infrequênte) baseado em padrões de acesso.
+* Otimizado para custar menos pois automaticamente move objetos entre as outras 2 classes S3(acesso frequênte/infrequênte) baseado em padrões de acesso.
+
 Usado para: Resiliência de eventos que impactem diretamente a AZ. Sistemas que exijam comprovantes, como compras que são muito acessados nas primeiras semanas após serem gerados e cada vez menos ao longo do tempo.
 
 S3 One Zone - Infrequent Access (IA)
@@ -357,20 +359,26 @@ S3 Glacier e Glacier Deep Archive
 S3 Object Lock
 
 * Adota modelo WORM (Write Once Read Many)
-* Bloqueia um objeto de ser alterado ou excluido. Uma vez criado, ficará com o mesmo   conteúdo para sempre.
+* Bloqueia um objeto de ser alterado ou excluido. Uma vez criado, ficará com o mesmo conteúdo para sempre.
+
 S3 Glacier Vault Lock
+
 * Adota o modelo WORM (Write Once Read Many)
 * Bloqueia a política para futuras edições, uma vez definido, não pode ser alterado.
 * Ideal para Compliance, auditoria e garantia de Integridade de dados.
 
 ## Shared Responsibility Model for S3
 
-Responsabilidade compartilhada do S3:AWS:
+Responsabilidade compartilhada do S3:
+
+AWS:
 
 * Infra (os dados se manterão em pelo menos uma AZ)
 * configuração e análise de vulnerabilidade
 * validação de compliance
-Você
+
+Você:
+
 * Versionamento do S3
 * Setup das políticas dos buckets
 * Setup das replicações dos buckets
@@ -382,7 +390,7 @@ Você
 
 AWS **Snow Family** é um serviço offline fornecido pela AWS em que você envia os dados da sua empresa para eles através de drives físicos, é indicado quando a quantidade de dados que você precisa enviar é muito alta e isso torna inviável utilizar a banda de internet. Ao contratar o serviço, a AWS enviará para você um drive no qual você passará os dados a serem transferidos para esses dispositivos, você então envia esses drives de volta para a AWS que passa esses dados para os servidores das AZs.
 
-O primeiro tipo de serviço **Snow Family** é o **Snowball  Edge**. Neste caso a AWS envia um drive de alguns kgs com alguns TBs ou PBs de capacidade no qual você passa os dados do teu servidor.Existem 2 sabores de **Snowball Edge** disponíveis
+O primeiro tipo de serviço **Snow Family** é o **Snowball Edge**. Neste caso a AWS envia um drive de alguns kgs com alguns TBs ou PBs de capacidade no qual você passa os dados do teu servidor.Existem 2 sabores de **Snowball Edge** disponíveis
 
 * **Snowball Edge** Storage Optimized
 * 80TB de capacidade de HDD por bloco
@@ -401,9 +409,9 @@ Sobre as características de cada dispositivo:**Snowcone**:
 
 * 2 CPUs, 4GB RAM, conexão com/sem fio, acesso via USB-C
 **Snowball Edge** - Compute Optimized
-* 52 vCPUs, 208 GiB RAM, GPU opcional para processamento de vídeo ou machine   learning,   42 TB de armazenamento
+* 52 vCPUs, 208 GiB RAM, GPU opcional para processamento de vídeo ou machine learning, 42 TB de armazenamento
 **Snowball Edge** - Storage Optimized
-* 40 vCPUs, 80  GiB RAM, Clusterização de objeto disponível.
+* 40 vCPUs, 80 GiB RAM, Clusterização de objeto disponível.
 Todos podem rodar instâncias **EC2** ou Funções **AWS Lambda**s (Usando **AWS IoT Greenglass**)Opção de deploy a longo prazo: desconto para aluguel a longo prazo de 1 OU 3 anos.
 
 **AWS OpsHub** é um software que você pode baixar e que funciona de forma offline em que você conecta nos dispositivos da **Snow Family**. Com este software você pode transferir arquivos, criar e eliminar instâncias EC2 nos devices, monitorar os devices e sincronizar os devices com a cloud.
@@ -421,20 +429,20 @@ Se você não sabe onde armazenar cada dado, o **AWS Storage Gateway** consegue 
 
 Resumo S3:
 
-* Buckets vs Objetos: Buckets possuem um nome único para todos os usuários mas são   anexados   em uma única region.
-* S3 Security: O acesso a um bucket pode ser controlado via IAM ou via políticas do   bucket(para acessos externos).
+* Buckets vs Objetos: Buckets possuem um nome único para todos os usuários mas são anexados em uma única region.
+* S3 Security: O acesso a um bucket pode ser controlado via IAM ou via políticas do bucket(para acessos externos).
 * S3 websites: Os buckets podem ser usados para hospedar websites estáticos.
-* Versionamento S3: É possível habilitar um versionamento de arquivo no S3 no qual é   possível fazer rollback, inclusive, de exclusões.
-* Logs de acesso S3: É possível fazer um bucket S3 escrever logs de acesso em outro   bucket   para você saber quantas vezes cada arquivo do bucket foi acessado.
-* Replicação S3: É possível replicar um bucket para a mesma region ou para outra, mas   apenas alteração após a criação da replicação serão copiadas, deve habilitar   versionamento.
-* Classes S3: Standard, Standard IA, Standard IA-OZ, Intelligent, Glacier, Glacier Deep   Archive.
-* S3 Lifecycle: regras para evoluir um arquivo de uma classe S3 para outra   automaticamente   após um tempo.
+* Versionamento S3: É possível habilitar um versionamento de arquivo no S3 no qual é possível fazer rollback, inclusive, de exclusões.
+* Logs de acesso S3: É possível fazer um bucket S3 escrever logs de acesso em outro bucket para você saber quantas vezes cada arquivo do bucket foi acessado.
+* Replicação S3: É possível replicar um bucket para a mesma region ou para outra, mas apenas alteração após a criação da replicação serão copiadas, deve habilitar versionamento.
+* Classes S3: Standard, Standard IA, Standard IA-OZ, Intelligent, Glacier, Glacier Deep Archive.
+* S3 Lifecycle: regras para evoluir um arquivo de uma classe S3 para outra automaticamente após um tempo.
 cont...
 
-* S3 glacier Vault Lock / S3 Object Lock: Utilizam WORM(Write Once Read Many) sistema   de   backup \somente leitura\.
-* Snow family: Serviço de devices físicos que podem ser utilizados para transferir e   armazenar grandes quantidades de dados da empresa para a AWS de maneira offline,   também   permitem fazer edge computing.
+* S3 glacier Vault Lock / S3 Object Lock: Utilizam WORM(Write Once Read Many) sistema de backup \somente leitura\.
+* Snow family: Serviço de devices físicos que podem ser utilizados para transferir e armazenar grandes quantidades de dados da empresa para a AWS de maneira offline, também permitem fazer edge computing.
 * OpsHub: Aplicação Desktop utilizada para gerenciar os dispositivos Snow Family.
-* Storage Gateway: Solução Híbrida que permite criar uma conexão entre armazenamento   on-premisse com armazenamento na AWS(especialmente EBS, S3 e Glacier).
+* Storage Gateway: Solução Híbrida que permite criar uma conexão entre armazenamento on-premisse com armazenamento na AWS(especialmente EBS, S3 e Glacier).
 
 ## Databases Introduction
 
@@ -443,7 +451,7 @@ AWS oferece suporte para base de dados relacionais e não-relacionais, nas quais
 Base de dados NoSQL podem oferecer uma performance melhor na AWS pelos seguintes motivos:
 
 * Flexibilidade: São fáceis de se desenvolver a partir de um modelo de dados.
-* Escalabilidade: São desenhados para escalar horizontalmente(scale-out) com facilidade   usando clusters distribuidos.
+* Escalabilidade: São desenhados para escalar horizontalmente(scale-out) com facilidade usando clusters distribuidos.
 * Alta performance: otimizado para um modelo de dados específico.
 * Altamento funcional: tipagem otimizada para o modelo de dados.
 Exemplo: Key-value, documentos, gráficos, in-memory, search databases.
@@ -470,7 +478,7 @@ Contudo, várias tecnologias de bases de dados podem ser rodadas em instâncias 
 **RDS** oferece os seguintes serviços:
 
 * SO com patching automatizado.
-* Backup e restauração para um ponto de restauração específico(um ponto na linha do   tempo).
+* Backup e restauração para um ponto de restauração específico(um ponto na linha do tempo).
 * Dashboards de monitoramento.
 * Replicas de leitura para melhorar a performance de leitura.
 * Alta disponibilidade utilizando mais de uma AZ.
@@ -483,7 +491,7 @@ Amazon Aurora:
 
 * Aurora é uma tecnologia proprietária da AWS (não é opensource)
 * Dá suporte para PostgreSQL e MySQL.
-* É otimizada para Cloud oferecendo um aumento de performance de 5x em cima do   MySQL no RDS e de 3x em cima do PostGres.
+* É otimizada para Cloud oferecendo um aumento de performance de 5x em cima do MySQL no RDS e de 3x em cima do PostGres.
 * Aurora automaticamente incrementa seu tamanho de 10GB para até 64TB.
 * Aurora custa mais que RDS(20%), mas é mais eficiente).
 * Não possui versão disponível para free tier(gratuidade).
@@ -497,13 +505,13 @@ Read Replicas:
 * Os dados são escritos apenas na base de dados principal.
 * Cada base de dados **RDS** pode ter até 5 réplicas
 Multi-AZ FailOver:
-* Bases de dados espelhos da base **RDS** instalada em outra AZ usada   quando a   AZ da base principal cai.
+* Bases de dados espelhos da base **RDS** instalada em outra AZ usada quando a AZ da base principal cai.
 * Fica em stand-by enquanto o sistema opera normalmente.
 * Cada base **RDS** pode ter 1 base FailOver em outra AZ.
 
 **RDS** Deployment Multi-Region:Implementa o conceito de Réplica com base de dados **RDS** em regions diferentes. Desta forma você tem uma unidade **RDS** em uma region usada para escrita e leitura e outras réplicas em outras regions usadas apenas para leitura, os pontos a observar são:
 
-* Isso pode ser usado para recuperação de desastre, uma vez que cada réplica é um   backup.
+* Isso pode ser usado para recuperação de desastre, uma vez que cada réplica é um backup.
 * Melhora de performance com uma redução significativa da latência.
 * A replicação entre distâncias grandes gera um custo.
 
@@ -516,8 +524,8 @@ AWS **ElastiCache** é um sistema base de dados relacional in-memory, é utiliza
 **DynamoDB** é um banco de dados NoSQL para AWS, seguem os conceitos:
 
 * Totalmente gerenciável com alta disponibilidade replicável entre 3 AZs.
-* Escala para atender a carga de trabalho alta com conceito de base de dados   \serverless\   distribuida.
-* Milhões de requisições por segundo, trilhões de linhas, centenas de TBs de espaço de   armazenamento.
+* Escala para atender a carga de trabalho alta com conceito de base de dados \serverless\ distribuida.
+* Milhões de requisições por segundo, trilhões de linhas, centenas de TBs de espaço de armazenamento.
 * Alta performance e consistência.
 * Latência < 10ms.
 * Integrado com **IAM** para autorização e administração.
@@ -545,8 +553,8 @@ AWS **ElastiCache** é um sistema base de dados relacional in-memory, é utiliza
 * Também dá suporte para Apache Spark, HBase, Presto, Flink, etc...
 * **EMR** cuida de todo provisionamento e configuração.
 * Auto-scaling e integração com instâncias Spot.
+
 Casos de uso: Data Processing, Machine Learning, web indexing, big data, etc...
-* <br>
 
 ## Athena Overview
 
@@ -555,6 +563,7 @@ Casos de uso: Data Processing, Machine Learning, web indexing, big data, etc...
 * Você não paga pelo banco de dados, mas sim por cada consulta que faz.
 * Output vem do **S3**.
 * Segurança através do **IAM**.
+
 Caso de uso: Queries feitas no **S3**.
 
 ## QuickSight Overview
@@ -573,8 +582,8 @@ Caso de uso: Queries feitas no **S3**.
 
 **Amazon QLDB(Quantum Ledger Database)** é um banco de dados especializado em registros de transações financeiras. Seguem as informações:
 
-* Imutável, todos os dados registrados não podem ser editados ou removidos, apenas   adicionados.
-* os dados são criptografados e têm um hash gerado que pode ser usado para validar a   criptografia.
+* Imutável, todos os dados registrados não podem ser editados ou removidos, apenas adicionados.
+* os dados são criptografados e têm um hash gerado que pode ser usado para validar a criptografia.
 * Tende a ser 2-3x mais rápido que frameworks para ledgers-blockchains
 * Pode ser manipulado usando SQL.
 A diferença principal entre o **QLDB** e o Blockchain está na distribuição, o blockchain trabalha com o conceito de dados descentralizados, no **QLDB** esses dados ficam registrados em um local apenas, isso pode ser útil por questões de regulação.
@@ -587,7 +596,7 @@ A diferença principal entre o **QLDB** e o Blockchain está na distribuição, 
 
 **DMS(Database Migration Service)** É o serviço que faz a migração de banco de dados, seguem as informações:
 
-* Pode migrar bancos de dados do mesmo tipo(ex: De Oracle para Oracle), ou de tipos   diferentes(ex: de Oracle para **Aurora**).
+* Pode migrar bancos de dados do mesmo tipo(ex: De Oracle para Oracle), ou de tipos diferentes(ex: de Oracle para **Aurora**).
 * O banco de dados de origem fica disponível durante toda a migração.
 
 ## Glue Overview
@@ -641,7 +650,7 @@ Benefícios da utilização da **Lambda**:
 * Precificação fácil: Você paga por requisição E por tempo de computação.
 * O modo Free Tier permite 1 milhão de requisições E 400 mil GBs detempode computação.
 * Integração com todos os serviços da AWS.
-* Event-Driven, ou seja, é reativa, as funções são executadas apenas caso chamadas por   algum evento.
+* Event-Driven, ou seja, é reativa, as funções são executadas apenas caso chamadas por algum evento.
 * Integrada com várias linguagens de programação.
 * Podem ser facilmente monitoradas com AWS **CloudWatch**.
 * Fácil de se obter mais recursos por função (até 10GB de RAM).
@@ -662,7 +671,7 @@ Devido ao preço baixo, é bem comum se utilizar bastante AWS **Lambda**.
 
 **AWS API Gateway** é o serviço que permite mediar e encapsular a comunicação entre APIs cadastradas na AWS(seja em **Lambdas** ou em instâncias **EC2**) e o cliente. Seguem as informações:
 
-* Os API Gateways permitem facilmente criar, publicar, gerenciar, monitorar e assegurar   APIs.
+* Os API Gateways permitem facilmente criar, publicar, gerenciar, monitorar e assegurar APIs.
 * O serviço é totalmente Serverless.
 * Da suporte para APIs RESTful e APIs com WebSocket
 * Da suporte para serviços de autenticação, API Throttling, API key, monitoring, etc...
@@ -674,7 +683,7 @@ Devido ao preço baixo, é bem comum se utilizar bastante AWS **Lambda**.
 * Todos os processos de batch são totalmente gerenciáveis e escaláveis.
 * Você pode rodar tranquilamente centenas de milhares de jobs na AWS.
 * A ideia do batch é ter um início e fim pré determinados.
-* O batch irá de forma dinâmica criar instâncias **EC2** ou   Instâncias   **Spot**.
+* O batch irá de forma dinâmica criar instâncias **EC2** ou Instâncias **Spot**.
 * **AWS Batch** irá prover a quantidade correta de CPU e memória.
 * você envia e agenda o job e a **AWS Batch** faz o restante.
 * Os jobs são definidos como Imagens Docker e rodam dentro do **ECS**.
@@ -701,9 +710,9 @@ Devido ao preço baixo, é bem comum se utilizar bastante AWS **Lambda**.
 * É mais barato.
 * Uma alternativa mais simples do que usar **EC2**, **RDS**, **ELB**, **EBS**, **Route 53**, etc...
 * Melhor para pessoas sem experiência com Cloud.
-* Você pode configurar notificações e monitorar seus recursos do   **Lightsail**.
+* Você pode configurar notificações e monitorar seus recursos do **Lightsail**.
 * Alta disponibilidade mas sem auto-escalabilidade, possui certa limitação com a AWS.
-Caso de uso: Aplicações web simples(alguns templates para LAMP, Nginx, MEAN, Node.js),  Websites (WordPress, Magento, Plesk, Joomla), Ambiente de Dev/Teste.
+Caso de uso: Aplicações web simples(alguns templates para LAMP, Nginx, MEAN, Node.js), Websites (WordPress, Magento, Plesk, Joomla), Ambiente de Dev/Teste.
 
 ## Other Compute - Summary
 
@@ -714,16 +723,16 @@ Resumo Other Compute Parte 1:
 * **Fargate**: Roda containers Docker de forma serverless, sem usar instâncias **EC2**.
 * **ECR**: Repositório privado de imagens Docker.
 * **Batch**: Roda jobs batch na AWS através de instâncias **EC2**.
-* **Lightsail**: Serviço simples para rodar aplicações de baixo custo na   AWS.
+* **Lightsail**: Serviço simples para rodar aplicações de baixo custo na AWS.
 
 Resumo Other Compute Parte 2:
 
-* **Lambda**: Serviço Serverless no formato FaaS(Function as a Service),   escalável e reativo que executa funções programáveis.
-* Preço do **Lambda**: Pode ser cobrado por tempo de execução x memória   RAM   OU pela quantidade de invocações.
-* Linguagens de programação e **Lambda**: Lambda da suporte para várias   linguagens, porém, não permite criação de imagens Docker.
+* **Lambda**: Serviço Serverless no formato FaaS(Function as a Service), escalável e reativo que executa funções programáveis.
+* Preço do **Lambda**: Pode ser cobrado por tempo de execução x memória RAM OU pela quantidade de invocações.
+* Linguagens de programação e **Lambda**: Lambda da suporte para várias linguagens, porém, não permite criação de imagens Docker.
 * Limite de tempo de execução de funções **Lambda**: 15 minutos.
-* Casos de Uso para **Lambda**: Alterações Simples em objetos **S3**,  rodar rotinas simples no formato cron job.
-* **API Gateway**: Serviço usado para encapsular APIs, pode ser usado para   encapsular funções lambda expostas via HTTP também.
+* Casos de Uso para **Lambda**: Alterações Simples em objetos **S3**, rodar rotinas simples no formato cron job.
+* **API Gateway**: Serviço usado para encapsular APIs, pode ser usado para encapsular funções lambda expostas via HTTP também.
 
 ## CloudFormation Overview
 
@@ -733,7 +742,7 @@ Benefícios de usar AWS **CloudFormation** como Infrastructure as code em relaç
 
 * Cada recurso vem taggeado com um identificador que permite que você veja quanto que ele está custando para você.
 * Você consegue estimar os custos dos recursos usando os templates do **CloudFormation**.
-* Você pode criar estratégias de economia, ex: criar um ambiente em um momento do dia e   apagar este ambiente em outro.
+* Você pode criar estratégias de economia, ex: criar um ambiente em um momento do dia e apagar este ambiente em outro.
 
 Benefícios de usar AWS **CloudFormation** como Infrastructure as code em relação à produtividade:
 
@@ -753,7 +762,7 @@ AWS **CDK**(**Cloud Development Kit**) é uma forma de substituir a linguagem pa
 Serviços gerenciados pelo **Beanstalk**:
 
 * Instâncias **EC2**, incluindo SO.
-* Estratégia de deploy é configurável, mas é executava pelo Elastic   **Beanstalk**.
+* Estratégia de deploy é configurável, mas é executava pelo Elastic **Beanstalk**.
 * Provicionamento de capacity.
 * Load Balancing e auto-scaling.
 * monitoramento da aplicação.
@@ -762,7 +771,7 @@ Você ficaria responsável apenas pelo código da aplicação.
 Existem 3 modelos de arquitetura para **Beanstalk**:
 
 * Single Instance deployment: uma instância apenas, bom para desenvolvimento.
-* Load Balancing + **ASG**: bom para produção ou pré-produção em   aplicações   web.
+* Load Balancing + **ASG**: bom para produção ou pré-produção em aplicações web.
 * **ASG** apenas: bom para aplicações indoor em produção
 
 ## CodeDeploy Overview
@@ -818,10 +827,10 @@ Tal como o **SSM** e como sua alternativa, o AWS **OpsWorks** se assemelha ao Pu
 
 Resumo Deployment:
 
-* **CloudFormation**(AWS apenas): Serviço de Infra as Code que   permite   executar código para a criação de recursos na AWS, funciona com quase todos os   recursos   da AWS e se repete através de regions e contas.
-* **Beanstalk**(AWS apenas): Serviço PaaS limitado a certas linguagens ou   Docker que permite deployar código em arquiteturas conhecidas, ex:   **ELB**+**EC2**+**RDS**.
-* **CodeDeploy**(híbrido): sistema de deploy e upgrade de aplicações em   servidores.
-* **System Manager**(híbrido): Sistema de patch, configuração e execução   de   comando dentro das instâncias e servidores.
+* **CloudFormation**(AWS apenas): Serviço de Infra as Code que permite executar código para a criação de recursos na AWS, funciona com quase todos os recursos da AWS e se repete através de regions e contas.
+* **Beanstalk**(AWS apenas): Serviço PaaS limitado a certas linguagens ou Docker que permite deployar código em arquiteturas conhecidas, ex: **ELB**+**EC2**+**RDS**.
+* **CodeDeploy**(híbrido): sistema de deploy e upgrade de aplicações em servidores.
+* **System Manager**(híbrido): Sistema de patch, configuração e execução de comando dentro das instâncias e servidores.
 * **OpsWorks** (híbrido): Chef e Puppet gerenciado na AWS.
 
 Resumo Serviços desenvolvedor:
@@ -831,24 +840,24 @@ Resumo Serviços desenvolvedor:
 * **CodeDeploy**: Sistema de Deploy da AWS.
 * **CodePipeline**: Sistema de orquestração e esteira da AWS.
 * **CodeArtifact**: Sistema de repositório de artefatos da AWS.
-* **CodeStar**: Visão unificada de todo processo de codificação e   CI/CD da AWS.
+* **CodeStar**: Visão unificada de todo processo de codificação e CI/CD da AWS.
 * **Cloud9**: IDE online da AWS que permite collab.
-* AWS **CDK**: Unifica **CloudFormation** com linguagem de   programação e permite que você automatize a criação de uma infra enquanto já   programa as   aplicações.
+* AWS **CDK**: Unifica **CloudFormation** com linguagem de programação e permite que você automatize a criação de uma infra enquanto já programa as aplicações.
 
 ## Why Global Applications?
 
 Dizer que uma aplicação está disponível globalmente é dizer que ela está alocada em mais de uma region. Dentre as vantagens de se disponibilizar uma aplicação globalmente, podemos citar:
 
-* Diminuição da latência: Permitir que clientes do mundo todo possam acessar a   aplicação   com uma baixa latência.
-* Recuperação de desastre: Uma proteção maior a desastre, uma vez que os dados estarão   disponíveis em mais de uma region,
-* Proteção contra ataques: A infraestrutura estará distribuída globalmente,   dificultando   ataques.
+* Diminuição da latência: Permitir que clientes do mundo todo possam acessar a aplicação com uma baixa latência.
+* Recuperação de desastre: Uma proteção maior a desastre, uma vez que os dados estarão disponíveis em mais de uma region,
+* Proteção contra ataques: A infraestrutura estará distribuída globalmente, dificultando ataques.
 
 Serviços que auxiliam no processo de globalização de aplicações:
 
-* **Route 53**: Sistema DNS que direciona o cliente para o servidor   AWS mais próximo para reduzir ao máximo a latência.
-* **CloudFront**: Serviço CDN da AWS que replica parte da   aplicação   para as Edge locations da AWS diminuindo a latência e trabalha com caches de   estáticos.
-* **S3 Transfer Acceleration**: Acelera uploads e downloads globais na   Amazon   **S3**.
-* AWS **Global Accelerator**: Melhora a disponibilidade e performance   usando a rede da AWS.
+* **Route 53**: Sistema DNS que direciona o cliente para o servidor AWS mais próximo para reduzir ao máximo a latência.
+* **CloudFront**: Serviço CDN da AWS que replica parte da aplicação para as Edge locations da AWS diminuindo a latência e trabalha com caches de estáticos.
+* **S3 Transfer Acceleration**: Acelera uploads e downloads globais na Amazon **S3**.
+* AWS **Global Accelerator**: Melhora a disponibilidade e performance usando a rede da AWS.
 
 ## Route 53 Overview
 
@@ -857,7 +866,7 @@ Amazon **Route 53** é o serviço de DNS gerenciável da AWS.Nele você consegue
 * Domínio para IPv4: www.google.com => 12.34.56.78
 * Domínio para IPv6: www.google.com => 2001:4860:4860::8888
 * Domínio para domínio: search.google.com => google.com
-* Domínio para recurso AWS: example.com => Alias(ex: **ELB**,   **CloudFront**, **S3**, **RDS**, etc...)
+* Domínio para recurso AWS: example.com => Alias(ex: **ELB**, **CloudFront**, **S3**, **RDS**, etc...)
 
 A sequência de funcionamento do **Route 53** é:
 
@@ -867,7 +876,7 @@ A sequência de funcionamento do **Route 53** é:
 
 Existem 4 tipos de roteamento no **Route 53** para se entender:
 
-#### 1. Simple Routing Policy
+### 1. Simple Routing Policy
 
 1. Cliente Chama **Route 53** pedindo IP de um domínio
 2. **Route 53** devolve IP
@@ -889,7 +898,7 @@ O **Route 53** o health check em uma instância determinada como primária e cas
 
 ## CloudFront Overview
 
-**CloudFront** é o serviço de CDN da AWS.Trabalha primariamente com buckets **S3** distribuindo arquivos e cacheando eles nos edges, definindo políticas avançadas de segurança com **OAI (Origin  Access Identity)**. **CloudFront** também pode ser utilizado como porta de entrada para uploads de arquivos no **S3**.**CloudFront** também pode trabalhar como mediador de outros back-ends como:
+**CloudFront** é o serviço de CDN da AWS.Trabalha primariamente com buckets **S3** distribuindo arquivos e cacheando eles nos edges, definindo políticas avançadas de segurança com **OAI (Origin Access Identity)**. **CloudFront** também pode ser utilizado como porta de entrada para uploads de arquivos no **S3**.**CloudFront** também pode trabalhar como mediador de outros back-ends como:
 
 * Load Balancers.
 * Instâncias **EC2**.
@@ -900,12 +909,12 @@ O **Route 53** o health check em uma instância determinada como primária e cas
 
 * Distribui os arquivos globalmente através da edge network.
 * Os arquivos são cacheados por um tempo limitado(ex: 1 dia)
-* Bom para arquivos estáticos que precisam estar disponíveis em todos os lugares do   mundo.
+* Bom para arquivos estáticos que precisam estar disponíveis em todos os lugares do mundo.
 **S3** Cross Region Replication:
 * Precisa ser configurado para cada region que você quer que esteja disponível.
 * Os arquivos são atualizados quase em tempo real.
 * As replicas são de apenas leitura.
-* É bom para arquivos dinâmicos que precisam estar disponíveis com baixa latência em   algumas regions.
+* É bom para arquivos dinâmicos que precisam estar disponíveis com baixa latência em algumas regions.
 
 ## S3 Transfer Acceleration
 
@@ -913,7 +922,7 @@ O **Route 53** o health check em uma instância determinada como primária e cas
 
 ## AWS Global Accelerator
 
-**AWS Global Accelerator** é uma técnica da AWS usada para melhorar a conexão do cliente com os servidores da AWS, o objetivo é conectar o cliente com a edge location mais próxima possível, desta forma o cliente se conecta com a edge location e esta  se conecta com o servidor final com uma conexão mais robusta para obter as informações necessárias.
+**AWS Global Accelerator** é uma técnica da AWS usada para melhorar a conexão do cliente com os servidores da AWS, o objetivo é conectar o cliente com a edge location mais próxima possível, desta forma o cliente se conecta com a edge location e esta se conecta com o servidor final com uma conexão mais robusta para obter as informações necessárias.
 
 **Global Accelerator** vs **CloudFront**
 **CloudFront**:
@@ -922,8 +931,8 @@ O **Route 53** o health check em uma instância determinada como primária e cas
 * A maioria dos arquivos são obtidos ainda nas edge locations.
 **Global Accelerator**:
 * Sem cache.
-* Melhora a performance de conexão deixando parte do percurso de conexão com a própria   AWS.
-* Bom para casos de uso com HTTP que usam IPs estáticos ou que usam failovers   determinísticos de regions.
+* Melhora a performance de conexão deixando parte do percurso de conexão com a própria AWS.
+* Bom para casos de uso com HTTP que usam IPs estáticos ou que usam failovers determinísticos de regions.
 
 ## AWS Outposts
 
@@ -946,12 +955,12 @@ Alguns serviços que funcionam com **Outposts**: **EC2**, **EBS**, **S3**, **EKS
 
 Resumo Aplicações globalizadas na AWS:
 
-* **Route 53**: Serviço DNS da AWS, possui estratégias para latência e   recuperação de desastre.
-* **CloudFront**: Serviço de CDN da AWS, faz cache de arquivos nas edge   locations diminuindo a latência.
-* **S3 Transfer Acceleration**: Acelera upload e download na Amazon   **S3** usando edge locations.
-* **Global Accelerator**: Melhora a conexão global usando a edge location   mais   próxima do cliente como proxy.
-* **Outposts**: Raques físicos da AWS anexados aos datacenters on-premisse   da   empresa para  disponibilizar os serviços da AWS.
-* **WaveLength**: Disponibiliza infra para subir serviços AWS nas edges de   redes 5G para redes de latência super baixas.
+* **Route 53**: Serviço DNS da AWS, possui estratégias para latência e recuperação de desastre.
+* **CloudFront**: Serviço de CDN da AWS, faz cache de arquivos nas edge locations diminuindo a latência.
+* **S3 Transfer Acceleration**: Acelera upload e download na Amazon **S3** usando edge locations.
+* **Global Accelerator**: Melhora a conexão global usando a edge location mais próxima do cliente como proxy.
+* **Outposts**: Raques físicos da AWS anexados aos datacenters on-premisse da empresa para disponibilizar os serviços da AWS.
+* **WaveLength**: Disponibiliza infra para subir serviços AWS nas edges de redes 5G para redes de latência super baixas.
 
 ## Cloud Integrations Overview
 
@@ -959,14 +968,14 @@ O maior problema em tentar estabelecer uma comunicação entre 2 aplicações na
 
 * **SQS**: Modelo de Fila.
 * **SNS**: Modelo de Listening/Publishing.
-* **Kinesis**: Modelo de data streaming em tempo real. (Fora do escopo do   exame)
+* **Kinesis**: Modelo de data streaming em tempo real. (Fora do escopo do exame)
 Desta forma as aplicações e serviços podem escalar de forma independente.
 
 ## SQS Overview
 
 **Amazon Standard Queue (SQS)** é o serviço de fila mais antigo da AWS(10 anos de idade).É um serviço totalmente gerenciável, serverless, usado para desacoplar aplicações, seguem as características:
 
-* Pode escalar de 1 para 10000s de mensagens por segundo. O **SQS** estabelece o tempo de vida máximo da mensagem de 4   dias, mas você pode estender este tempo para até 14 dias.
+* Pode escalar de 1 para 10000s de mensagens por segundo. O **SQS** estabelece o tempo de vida máximo da mensagem de 4 dias, mas você pode estender este tempo para até 14 dias.
 * Não há um limite de quantas mensagens você pode inserir na fila.
 * As mensagens são excluídas da fila quando são lidas pelos consumidores.
 * O serviço possui uma latência muito baixa, inferior a 10ms entre publicar e receber.
@@ -987,8 +996,8 @@ Amazon **Kinesis** é um serviço de streaming de bigdata em tempo real. Feito p
 
 * **Kinesis** Data Streams: sistema de streaming em baixa latência para trazer dados de centenas de milhares de fontes.
 * **Kinesis** Data Firehose: carrega streams em buckets S3, Redshift, ElasticSearch, etc...
-* **Kinesis** Data Analytics: Realisa analytics em tempo real nos streams   usando SQL.
-* **Kinesis** Video Streams: Monitora video streams em tempo real para   análise.
+* **Kinesis** Data Analytics: Realisa analytics em tempo real nos streams usando SQL.
+* **Kinesis** Video Streams: Monitora video streams em tempo real para análise.
 
 ## Amazon MQ Overview
 
@@ -998,16 +1007,16 @@ Amazon **Kinesis** é um serviço de streaming de bigdata em tempo real. Feito p
 
 Resumo Integração:
 
-* **SQS**: Serviço de Fila com múltiplos produtores, t de vida das   mensagem < 14 dias, múltiplos consumidores compartilham a leitura, quando a mensagem é lida, ela é deletada, usado para desacoplar as aplicações.
+* **SQS**: Serviço de Fila com múltiplos produtores, t de vida das mensagem < 14 dias, múltiplos consumidores compartilham a leitura, quando a mensagem é lida, ela é deletada, usado para desacoplar as aplicações.
 * **SNS**: Serviço de notificação, usado para Emails, Lambda, **SQS**, HTTP, Mobile, etc... Multíplos Observadores, a mensagem vai em formato de broadcast e é volátil, uma vez enviada, é destruída.
 * **Kinesis**: Serviço de streaming em tempo real, persistência e análise.
-* **Amazon MQ**: Apache ActiveMQ gerenciável da AWS, usado para adaptar   sistemas de fila on-premisse para a cloud (ex: MQTT, AMQP, etc...)
+* **Amazon MQ**: Apache ActiveMQ gerenciável da AWS, usado para adaptar sistemas de fila on-premisse para a cloud (ex: MQTT, AMQP, etc...)
 
 ## CloudWatch Metrics & CloudWatch Alarms Overview
 
 AWS **CloudWatch** é o serviço de métricas da Amazon, usado para fazer a análise gráfica da utilização dos serviços da AWS afim de se obter informações de forma simplificada para a tomada de decisão com relação a utilização dos serviços na nuvem, pode se gerar gráficos com dados relacionados a:
 
-* **EC2**: Utilização da CPU, Checagem de status, Network. Alimentação   padrão   a cada 5 min, pode se diminuir o intervalo para 1 minuto pagando mais.
+* **EC2**: Utilização da CPU, Checagem de status, Network. Alimentação padrão a cada 5 min, pode se diminuir o intervalo para 1 minuto pagando mais.
 * **EBS**: Taxa de Leitura/Escrita dos volumes.
 * **S3**: BucketSizeBytes, NumbersOfObjects, AllRequests.
 * **Billing**: Custo total estimado(apenas na region us-east-1)
@@ -1016,9 +1025,9 @@ AWS **CloudWatch** é o serviço de métricas da Amazon, usado para fazer a aná
 
 **AWS CloudWatch Alarms** é um sistema de alarmes associada a métrica.Os alarmes possuem as seguintes ações:
 
-* Auto Scaling: Incrementar ou decrementar quantidade de instâncias   **EC2**.
+* Auto Scaling: Incrementar ou decrementar quantidade de instâncias **EC2**.
 * Recuperar, reiniciar, finalizar ou parar instâncias **EC2**.
-* Notificações **SNS**: Enviar notificações para um tópico   **SNS**.
+* Notificações **SNS**: Enviar notificações para um tópico **SNS**.
 É possível definir os triggers com base em várias condicionantes como: Sampling, %, max, min, etc... Você também pode controlar qual período em que o alarme irá monitorar.Exemplo de alarme:Alarme **Billing** na métrica **Billing** da **CloudWatch** que monitora os custos.Status possíveis:
 * OK - para status satisfatório
 * INSUFICIENT_DATA - para dados não conclusivos
@@ -1032,7 +1041,7 @@ Amazon **CloudWatch** Logs são logs coletados de:
 * **ECS**: Coleção de logs dos containers.
 * **Lambda**: Coleção de logs das funções.
 * **CloudTrail**: Logs baseados nos filtros.
-* **CloudWatch** Log Agent: Log de máquinas **EC2** em   servidores   on-premisses.
+* **CloudWatch** Log Agent: Log de máquinas **EC2** em servidores on-premisses.
 * **Route53**: Logs de queries DNS.
 Esses logs são coletados e permites monitoramento em tempo real, a retenção dos logs pode ser ajustada em tempo real na **CloudWatch**.
 
@@ -1081,7 +1090,7 @@ Dá suporte para Java e Python, pode ser integrado com Github, Bitbucket e AWS *
 
 ## Personal Health Dashboard
 
-**AWS Personal Health Dashboard (PHD)** é um serviço da AWS que te alerta sobre eventos anormais nos serviços da AWS que possam te impactar. Diferente do **Service Health Dashboard**, o **Personal Health Dashboard** fornece informações personalizadas baseado nos serviços que você utiliza, também fornece informações relevantes e provativas de tempos em tempos para te ajudar a organizar os eventos em progresso.<br>Pode ser acessado pela URL: <https://phd.aws.amazon.com>
+**AWS Personal Health Dashboard (PHD)** é um serviço da AWS que te alerta sobre eventos anormais nos serviços da AWS que possam te impactar. Diferente do **Service Health Dashboard**, o **Personal Health Dashboard** fornece informações personalizadas baseado nos serviços que você utiliza, também fornece informações relevantes e provativas de tempos em tempos para te ajudar a organizar os eventos em progresso.Pode ser acessado pela URL: <https://phd.aws.amazon.com>
 
 ## Cloud Monitoring Summary
 
@@ -1093,22 +1102,22 @@ Resumo Monitoramento pt 1:
 * Logs: coleta logs de **EC2**, Servers, **Lambda**.
 * **Events**: Reação a event na AWS ou dispara a evento baseado emagendamento.
 * **EventBridge**: Mesmo que Events
-* **CloudTrail**: Audita chamadas de APIs de recursos da AWS feitas   na   sua conta.
-* **CloudTrail Insight**: Serviço de análise automatizada de eventos da   CloudTrail,
+* **CloudTrail**: Audita chamadas de APIs de recursos da AWS feitas na sua conta.
+* **CloudTrail Insight**: Serviço de análise automatizada de eventos da CloudTrail,
 
 Resumo Monitoramento pt 2:
 
-* **X-Ray**: Serviço de debugging em produção para aplicações   distribuídas.
-* **Service Health Dashboard**: Status de todos os serviços da   AWS em todas as regions.
-* **Personal Health Dashboard(PHD)**: Mostra eventos da AWS que   possam impactar sua infra.
-* Amazon **CodeGuru**: Serviço de CodeReview automatizado e recomendações   de   performance da aplicação.
+* **X-Ray**: Serviço de debugging em produção para aplicações distribuídas.
+* **Service Health Dashboard**: Status de todos os serviços da AWS em todas as regions.
+* **Personal Health Dashboard(PHD)**: Mostra eventos da AWS que possam impactar sua infra.
+* Amazon **CodeGuru**: Serviço de CodeReview automatizado e recomendações de performance da aplicação.
 
 ## VPC Overview
 
 Conteúdo relacionado a **VPC** e networking pedido no exame de Practitioner:
 
 * **VCP**, Subnets, Internet Gateways e NAT Gateways.
-* **Security Groups**, Network ACL(NACL), **VPC** Flow   Logs.
+* **Security Groups**, Network ACL(NACL), **VPC** Flow Logs.
 * **VPC** Peering, **VPC** Endpoints.
 * Site to Site VPN e Direct Connect
 * Transit Gateway.
@@ -1117,19 +1126,21 @@ Conteúdo relacionado a **VPC** e networking pedido no exame de Practitioner:
 
 **Virtual Private Cloud (VPC)** é uma rede privada que permite que você realize a comunicação entre seus componentes de forma privada como uma rede local(similar a uma VPN), cada **VPC** está limitada a uma region.Subnet é uma partição de uma **VPC**, permitindo que você isole alguns de seus componentes dos outros, cada subnet está limitada a uma AZ.Uma subnet pública é uma subnet acessível da internet.Uma subnet privada é uma subnet não acessível da internet.Para definir os perfis de comunicação de cada subnet, você pode utilizar um serviço chamado Route Tables.
 
-**Internet Gateway** é um componente que se conecta com a **VPC** para mediar a comunicação entre ela e a internet, é utilizada tanto para download quanto para upload de dados.**NAT Gateway**(AWS-managed) e **Instâncias  NAT**(self-managed) são componentes que permitem que subnets privadas acessem a internet sem se exporem, usada apenas para download de dados. Utilizam tradução NAT.
+**Internet Gateway** é um componente que se conecta com a **VPC** para mediar a comunicação entre ela e a internet, é utilizada tanto para download quanto para upload de dados.**NAT Gateway**(AWS-managed) e **Instâncias NAT**(self-managed) são componentes que permitem que subnets privadas acessem a internet sem se exporem, usada apenas para download de dados. Utilizam tradução NAT.
 
 ## Security Groups & Network Access Control List (NACL)
 
-**Network Access Control List (NACL)** é um firewall que utiliza um conjunto de regras para definir que tipo de tráfego é PERMITIDO e que tipo de tráfego é PROIBIDO. São anexadas à subnets, as regras trabalham apenas com IPs.**Security groups**, como podem ser utilizados juntamente com **NACL**, porém, **Security Groups** estão anexados a Instâncias **EC2**/ **Elastic Network Interface (ENI)**, as regras de **Security  Groups** trabalham apenas com gráficos PERMITIDOS, regras de **Security  Groups** podem incluir IPs ou outros **Security Groups**.
+**Network Access Control List (NACL)** é um firewall que utiliza um conjunto de regras para definir que tipo de tráfego é PERMITIDO e que tipo de tráfego é PROIBIDO. São anexadas à subnets, as regras trabalham apenas com IPs.**Security groups**, como podem ser utilizados juntamente com **NACL**, porém, **Security Groups** estão anexados a Instâncias **EC2**/ **Elastic Network Interface (ENI)**, as regras de **Security Groups** trabalham apenas com gráficos PERMITIDOS, regras de **Security Groups** podem incluir IPs ou outros **Security Groups**.
 
 Mais diferenças entre **NACL** e **Security Groups**, as comparações estão de forma respectiva. **Security Groups**:
 
 1. Funciona a nível de instância.
 2. Suporta apenas regras de PERMISSÃO.
-3. É stateful, o tráfego de retorno é automaticamente permitido, a não ser que haja uma   regra negando.
+3. É stateful, o tráfego de retorno é automaticamente permitido, a não ser que haja uma regra negando.
 4. Só é associado à instância se na criação da instância o **Security Group** for ligado a ela.
+
 **NACL**:
+
 1. Funciona a nível de subnet.
 2. Suporta regras de PERMISSÃO e NEGAÇÃO.
 3. É stateless, a autorização do tráfego de retorno deve ser explicitada pelas regras.
@@ -1149,29 +1160,29 @@ Mais diferenças entre **NACL** e **Security Groups**, as comparações estão d
 
 **Site to Site VPN** é o serviço de VPN da AWS que permite conexão de datacenter on-premisse com a AWS pela internet via VPN.**Direct Connect (DX)** é um serviço que permite conexão do datacenter on-premisse com a AWS por meio de uma conexão física, direta e privada, é muito mais seguro, caro e leva no mínimo 1 mês para ser feito.
 
-Para utilizar **site-to-site VPN** o cliente deve um **Customer  Gateway  (CGW)** no servidor on-premisse, a VPN fará a conexão na internet e a porta de entrada na AWS será um **Virtual Private Gateway(VGW)**
+Para utilizar **site-to-site VPN** o cliente deve um **Customer Gateway (CGW)** no servidor on-premisse, a VPN fará a conexão na internet e a porta de entrada na AWS será um **Virtual Private Gateway(VGW)**
 
 ## Transit Gateway Overview
 
-**Transit Gateway** é um mediador universal que é utilizado para conectar todas as formas de conexão da AWS: **VPC**, VPN, **Direct Connect  Gateway**, on-premisse, etc... funcionando em um formato de estrela(hub-and-spoke).
+**Transit Gateway** é um mediador universal que é utilizado para conectar todas as formas de conexão da AWS: **VPC**, VPN, **Direct Connect Gateway**, on-premisse, etc... funcionando em um formato de estrela(hub-and-spoke).
 
 ## VPC & Networking Summary
 
 Resumo Networking pt 1:
 
-* **VPC**: Virtual Private Network, Rede privada na AWS, Limitada a   Region
+* **VPC**: Virtual Private Network, Rede privada na AWS, Limitada a Region
 * Subnet: Partição dentro da **VPC** - Limitada à AZ.
-* **Internet Gateway**: A nível de **VPC**, provê acesso à   internet. Download e Upload.
-* **NAT Gateway/Instance**: Dá acesso à internet para subnets privadas.   Apenas   download.
+* **Internet Gateway**: A nível de **VPC**, provê acesso à internet. Download e Upload.
+* **NAT Gateway/Instance**: Dá acesso à internet para subnets privadas. Apenas download.
 * **NACL**: Stateless, Regras de subnet para entrada e saída de dados.
 * **Security Groups**: Stateful, regras de instâncias **EC2** ou **ENI**.
 
-Resumo Networking pt2:<br>
+Resumo Networking pt2:
 
-* **VPC Peering**: Conexão entre DUAS(apenas) **VPCs** SE não   houver overlapping.
+* **VPC Peering**: Conexão entre DUAS(apenas) **VPCs** SE não houver overlapping.
 * **VPC Endpoints**: Permite acesso privado à serviços AWS dentro da VPC.
 * **VPC Flow Logs**: Logs de tráfego de rede.
-* **Site to Site VPN**: VPN via internet para acesso de   DC on-premisse na   AWS.
+* **Site to Site VPN**: VPN via internet para acesso de DC on-premisse na AWS.
 * **Direct Connect**: Acesso direto entre DC on-premisse e AWS.
 * **Transit Gateway**: Hub Estrela que conecta milhares de **VPCs** e redes on-premisses juntas.
 
@@ -1180,9 +1191,9 @@ Resumo Networking pt2:<br>
 Modelo de responsabilidade compartilhada da AWS quanto à segurança:AWS:
 
 * Proteção física da infra.
-* Serviços gerenciados como: **S3**, **DynamoDB**,   **RDS**, etc...
+* Serviços gerenciados como: **S3**, **DynamoDB**, **RDS**, etc...
 Cliente:
-* Serviços não gerenciados como instâncias **EC2**(atualização SO,   patches,   updates), firewalls, configuração de redes, **IAM**.
+* Serviços não gerenciados como instâncias **EC2**(atualização SO, patches, updates), firewalls, configuração de redes, **IAM**.
 * Criptografia de dados.
 Compartilhada:
 * Gerenciamento de patches, gerenciamento de configurações, treinamento.
@@ -1197,7 +1208,7 @@ Cliente:
 * Verificar portas, IP, regras inbound de Security Groups nos BDs.
 * Gerenciamento de usuários e permissões in-database.
 * criação de BD com/sem acesso público.
-* assegurar que os grupos de parâmetros ou BDs estão configurados para permitir apenas   conexões SSL/TLS.
+* assegurar que os grupos de parâmetros ou BDs estão configurados para permitir apenas conexões SSL/TLS.
 * Configurações de criptografia de BD.
 
 Exemplo de modelo de responsabilidade com **S3**:AWS:
@@ -1216,20 +1227,20 @@ Cliente:
 
 Proteções contra dDoS na AWS:
 
-* **AWS Shield Standard**: proteção contra ataques dDoS para a   aplicação   e website para todos os clientes sem custos adicionais.
+* **AWS Shield Standard**: proteção contra ataques dDoS para a aplicação e website para todos os clientes sem custos adicionais.
 * **AWS Shield Advanced**: Proteção dDoS premium 24/7
 * **AWS WAF**: Filtra requisições específicas baseado em certas regras.
-* **Cloudfront e Route53**: Protege a rede usando a Global Edge Network,   pode   se combinar com AWS Shield.
+* **Cloudfront e Route53**: Protege a rede usando a Global Edge Network, pode se combinar com AWS Shield.
 Mesmo com essas proteções, você deve estar preparado para usar o Auto scaling para manter a aplicação no ar.Para mais informações veja: <https://aws.amazon.com/answers/networking/aws-ddos-attack-mitigation>
 
 Mais detalhes do **AWS Shield**:**AWS Shield Standard**:
 
 * Serviço gratuito disponível para todos os clientes.
-* Provê proteção contra ataques como floods SYN/UDP, reflexão de ataques e outros   ataques   nas camadas 3 e 4.
+* Provê proteção contra ataques como floods SYN/UDP, reflexão de ataques e outros ataques nas camadas 3 e 4.
 **AWS Shield Advanced**:
 * Serviço de mitigação de dDoS opcional.
 * Custa $3000 por mês por organização.
-* Protege contra atques mais sofisticados na Amazon **EC2**,   **ELB**, **CloudFront**, **Global Accelerator** e   **Route 53**.
+* Protege contra atques mais sofisticados na Amazon **EC2**, **ELB**, **CloudFront**, **Global Accelerator** e **Route 53**.
 * Acesso 24/7 ao **AWS dDoS response team (DRP)**.
 * Proteção contra eventuais custos superiores de uso de recursos devido a ataques dDoS.
 
@@ -1238,7 +1249,7 @@ Mais detalhes do **AWS Shield**:**AWS Shield Standard**:
 * Define regras para IPs, headers HTTP, body HTTP, strings de URI.
 * Proteção contra ataques comuns, ex: SQL Injection, Cross-site scripting.
 * Size Constraints, geo-match.
-* rate-based rules, definição de um ataque baseado na frequência de envios de   requisições(ex: > 10/segundo)
+* rate-based rules, definição de um ataque baseado na frequência de envios de requisições(ex: > 10/segundo)
 
 ## Penetration Testing
 
@@ -1254,8 +1265,6 @@ Você, como cliente, pode realizar testes de penetração em serviços da AWS, d
 * **Elastic Beanstalk**
 A lista pode aumentar com o tempo, mas isso não será exigido no exame.
 
-## Penetration Testing
-
 Tipos de ataques proibidos à infra da AWS:
 
 * DNS zone walking na **Route 53**.
@@ -1269,13 +1278,13 @@ Para qualquer outro evento simulado, entre em contato com aws-security-simulated
 
 Na AWS a criptografia de dados ocorre em 2 momento, no momento em que o dado está armazenado(at rest) e no momento que está em trânsito(in motion).Em armazenamento é chamado quando o dado está arquivado em um dispositivo, ex: em um HD, em uma instância **RDS**, em um bucket **S3 Glacier Deep Archive**, etc...Em trânsito é quando o dado está se movendo de um lugar para outro, ex: dado sendo transferido de on-premisse para AWS, ou de **EC2** para **DynamoDB**, etc...Ambos os dados precisam ser criptografados e essa criptografia é feita usando técnicas que utilizam encryption keys.
 
-Um serviço da AWS usado para criptografia é o **Key Management Service  (KMS)**, neste serviço a AWS gera e gerencia chaves de criptografia sem necessidade da sua interferência.O **KMS** atua nos serviços da seguinte forma:
+Um serviço da AWS usado para criptografia é o **Key Management Service (KMS)**, neste serviço a AWS gera e gerencia chaves de criptografia sem necessidade da sua interferência.O **KMS** atua nos serviços da seguinte forma:
 
 * **EBS**: Criptografia de volumes.
 * **S3**: Criptografia Server-side dos objetos dentro dos buckets.
 * **Redshift**: Criptografia dos dados dentro do BD.
 * **RDS**: Criptografia dos dados dentro do BD.
-* **EFS**: Criptografia dos arquivos e dados dentro do sistema de   arquivos.
+* **EFS**: Criptografia dos arquivos e dados dentro do sistema de arquivos.
 Os seguintes serviços vêm com o **KMS** habilitado por padrão:
 * **CloudTrail Logs**
 * **S3 Glacier**
@@ -1286,14 +1295,14 @@ Outro serviço de criptografia que a AWS oferece é o **CloudHSM**. Neste servi�
 Categorizando os Customer Master Keys (CMK):Customer Managed CMK:
 
 * Criado, gerenciado e usado pelo cliente, podem ser habilitado e desabilitado.
-* Possibilidade de política de rotatividade, ex: novas chaves geradas a cada ano,   chaves   antigas preservadas.
+* Possibilidade de política de rotatividade, ex: novas chaves geradas a cada ano, chaves antigas preservadas.
 * Possibilidade de importar chaves de fora da AWS.
 AWS Managed CMK:
 * Criadas, gerenciadas e usadas pela AWS em benefício do cliente.
 * Usadas nos serviços, ex: aws/s3, aws/ebs, aws/redshift
 AWS owned CMK:
 * Coleção de CMKs que a AWS usa e gerencia em mais de uma conta de clientes.
-* A AWS usa essas CMKs para proteger recursos na sua conta, mas não permitem que   você   se quer veja a chave.
+* A AWS usa essas CMKs para proteger recursos na sua conta, mas não permitem que você se quer veja a chave.
 **CloudHSM** Key:
 * Chaves geradas pelo seu próprio device de hardware **CloudHSM**.
 * Operações criptográficas performadas dentro do cluster do **CloudHSM**.
@@ -1314,13 +1323,13 @@ AWS owned CMK:
 
 **AWS Artifact** é um portal que te permite ter acesso à documentação de compliance da AWS bem como acordos, possui 2 serviços:
 
-* **Artifact Reports**: Te permite baixar documentos relacionados a   compliance   e segurança emitidos por auditores externos como: Certificações ISO, Payment Card   Industry (PCI) e System and Organization Control (SOC).
-* **Artifact Agreements**: Te permite revisar, aceitar e acompanhar o   status   de acordos como Business Associate Addendum (BAA) ou Health Insurance Portability   and   Accountability Act (HIPAA) para uma conta individual na sua organização.
+* **Artifact Reports**: Te permite baixar documentos relacionados a compliance e segurança emitidos por auditores externos como: Certificações ISO, Payment Card Industry (PCI) e System and Organization Control (SOC).
+* **Artifact Agreements**: Te permite revisar, aceitar e acompanhar o status de acordos como Business Associate Addendum (BAA) ou Health Insurance Portability and Accountability Act (HIPAA) para uma conta individual na sua organização.
 Esses documentos podem ser usados em eventuais auditorias internas e externas e compliances.
 
 ## GuardDuty Overview
 
-**Amazon GuardDuty** é um serviço inteligente de descoberta de eventuais ameaças a sua conta. Utiliza Machine Learning, detecção de anomalias e dados de terceiros. Você pode habilita-lo e obter um período de teste de 30 dias, sem necessidade de instalação de Software.O **GuardDuty** irá usar como input o **CloudTrail Logs** para procurar chamadas estranhas apra APIs e deploys não autorizados, **VPC Flow  Logs** para detectar tráfego anormais ou IPs estranhos, **DNS Logs** para identificar instâncias **EC2** comprometidas que estejam enviando dados não autorizados  com queries DNS.Você pode configurar o **CloudWatch Event Rules** para notificar em caso de algum evento relevante seja encontrado.O **CloudWatch Event Rules** pode acionar um **Lambda** ou **SNS**.
+**Amazon GuardDuty** é um serviço inteligente de descoberta de eventuais ameaças a sua conta. Utiliza Machine Learning, detecção de anomalias e dados de terceiros. Você pode habilita-lo e obter um período de teste de 30 dias, sem necessidade de instalação de Software.O **GuardDuty** irá usar como input o **CloudTrail Logs** para procurar chamadas estranhas apra APIs e deploys não autorizados, **VPC Flow Logs** para detectar tráfego anormais ou IPs estranhos, **DNS Logs** para identificar instâncias **EC2** comprometidas que estejam enviando dados não autorizados com queries DNS.Você pode configurar o **CloudWatch Event Rules** para notificar em caso de algum evento relevante seja encontrado.O **CloudWatch Event Rules** pode acionar um **Lambda** ou **SNS**.
 
 ## Inspector Overview
 
@@ -1354,32 +1363,32 @@ Para funcionar é necessário que se habilite o serviço **AWS Config**.
 
 ## Amazon Detective Overview
 
-**Amazon Detective** é um serviço usado para achar a causa raiz de uma eventual falha de segurança na sua conta, utiliza os relatórios do **GuardDuty**, **Macie** e **Security Hub** + Dados do **VPC Flow  Logs**, **CloudTrail**, **GuardDuty** + Machine Learning e Gráficos para identificar a causa raiz de uma eventual fralde, então produz uma visão unificada de tudo.
+**Amazon Detective** é um serviço usado para achar a causa raiz de uma eventual falha de segurança na sua conta, utiliza os relatórios do **GuardDuty**, **Macie** e **Security Hub** + Dados do **VPC Flow Logs**, **CloudTrail**, **GuardDuty** + Machine Learning e Gráficos para identificar a causa raiz de uma eventual fralde, então produz uma visão unificada de tudo.
 
 ## AWS Abuse
 
 **AWS Abuse** é o canal de comunicação da AWS para denúncia de uso indevido dos serviços da AWS. É proibido utilizar os serviços da AWS para:
 
 * Spam - enviar e-mails, posts, SMSs de forma automatizada e com fins indesejados
-* Port Scanning - Enviar pacotes para suas portas para descobrir enventuais   inseguranças.
-* Dos ou DDoS - Ataque massivo de dados local ou distribuído a fim de derrubar um   serviço.
+* Port Scanning - Enviar pacotes para suas portas para descobrir enventuais inseguranças.
+* Dos ou DDoS - Ataque massivo de dados local ou distribuído a fim de derrubar um serviço.
 * Intrusion attemps - Tentativa de invasão aos seus recursos.
-* Hosting objectionable or copyrighted content - armazenar conteúdo ilegal ou sob   copyright   sem consentimento.
-* Distribuição de Malwares - Utilizar recursos da AWS para distribuir Malwares e   danificar computadores ou outros devices.
-Para denunciar esse tipo de prática, preencha este formulário:<https://support.aws.amazon.com/#/contacts/report-abuseOu> envie um email para: abuse@amazonaws.com
+* Hosting objectionable or copyrighted content - armazenar conteúdo ilegal ou sob copyright sem consentimento.
+* Distribuição de Malwares - Utilizar recursos da AWS para distribuir Malwares e danificar computadores ou outros devices.
+Para denunciar esse tipo de prática, preencha este formulário: <https://support.aws.amazon.com/#/contacts/report-abuseOu> envie um email para: abuse@amazonaws.com
 
 ## Root User Privileges
 
 A conta root, por ter acesso total, não deve ser utilizada para atividades diárias, ainda que sejam administrativas, e devido a sua importância, sua senha e meios de proteção devem ser protegidos ao máximo, contudo, algumas ações só podem ser realizadas pela conta root, são elas:
 
-* Mudança das configurações da conta(ex: nome da conta, email central, senha do root,   root   user acess keys)
+* Mudança das configurações da conta(ex: nome da conta, email central, senha do root, root user acess keys)
 * Ver certas taxas.
 * Encerrar a conta AWS.
 * Restaurar as permissões **IAM**.
 * Mudar ou cancelar o plano de suporte AWS.
-* Se registrar como um vendedor de instâncias reservadas no marketplace - quando você   reserva instâncias mas se arrepende antes do fim do tempo e resolve vender o tempo   restante no market place.
+* Se registrar como um vendedor de instâncias reservadas no marketplace - quando você reserva instâncias mas se arrepende antes do fim do tempo e resolve vender o tempo restante no market place.
 * Configurar Buckets **S3** para habilitar MFA.
-* Editar ou Excluir uma política de bucket **S3** que inclua uma   invalidVPC ID   ou VPC endpoint ID.
+* Editar ou Excluir uma política de bucket **S3** que inclua uma invalidVPC ID ou VPC endpoint ID.
 * logar como GovCloud.
 
 ## Security & Compliance Summary
@@ -1387,24 +1396,24 @@ A conta root, por ter acesso total, não deve ser utilizada para atividades diá
 Resumo Security e Compliance pt 1:
 
 * Responsabilidade compartilhada: Veja as anotações específicas.
-* **Shield**: Serviço de proteção automática para DDoS com plano Standard   +   Plano advanced com suporte 24/7
+* **Shield**: Serviço de proteção automática para DDoS com plano Standard + Plano advanced com suporte 24/7
 * **WAF**: Firewall para filtrar requisições baseado em regras.
 * **KMS**: Chaves de criptografia gerenciadas pela AWS.
-* **CloudHSM**: Hardware dedicado para criptografia, cliente gerencia   chaves   de criptografia.
-* **AWS Certificate Manager**: Gerenciamento de Certificados SSL/TLS,   faz   deploy, provisiona e renova automaticamente.
-* **Artifact**: Portal com acesso a relatórios de compliance como PCI,   ISO,   etc...
-* **GuardDuty**: Procura por comportamento malicioso na   **VPC**,   **DNS** e **CloudTrail Logs**.
-* **Inspector**: Agente instalado na instância **EC2** que   procura por vulnerabilidade no SO.
+* **CloudHSM**: Hardware dedicado para criptografia, cliente gerencia chaves de criptografia.
+* **AWS Certificate Manager**: Gerenciamento de Certificados SSL/TLS, faz deploy, provisiona e renova automaticamente.
+* **Artifact**: Portal com acesso a relatórios de compliance como PCI, ISO, etc...
+* **GuardDuty**: Procura por comportamento malicioso na **VPC**, **DNS** e **CloudTrail Logs**.
+* **Inspector**: Agente instalado na instância **EC2** que procura por vulnerabilidade no SO.
 
 Resumo Security e Compliance pt 2:
 
-* **Config**: Rastreia mudanças de configuração para detectar quebra de   regras   de compliance.
-* **Macie**: Busca por dados sensíveis(PII) nos Buckets   **S3**.
-* **CloudTrail**: Rastreia chamadas de APIs de serviços da AWS feitas   por   usuários da conta.
-* **AWS Security Hub**: Hub que centraliza a visão de vários serviços   de   segurança de várias contas.
-* **Detective**: Busca a causa raiz de problemas de segurança e atividades   suspeitas.
-* **AWS Abuse**: Serviço de denúncia de atividades suspeitas ou   ilegais   com serviços da AWS.
-* Privilégios  do Usuário Root:
+* **Config**: Rastreia mudanças de configuração para detectar quebra de regras de compliance.
+* **Macie**: Busca por dados sensíveis(PII) nos Buckets **S3**.
+* **CloudTrail**: Rastreia chamadas de APIs de serviços da AWS feitas por usuários da conta.
+* **AWS Security Hub**: Hub que centraliza a visão de vários serviços de segurança de várias contas.
+* **Detective**: Busca a causa raiz de problemas de segurança e atividades suspeitas.
+* **AWS Abuse**: Serviço de denúncia de atividades suspeitas ou ilegais com serviços da AWS.
+* Privilégios do Usuário Root:
 * Mudar configurações da conta.
 * Fechar conta.
 * Mudar o cancelar o plano de suporte da AWS.
@@ -1454,7 +1463,7 @@ Para conhecer melhor o serviço, acesse: <https://aws.amazon.com/rekognition/>
 * Analisar o texto usando tokenização e parte do discurso.
 * Organizar o texto por tópicos.
 Casos de usos:
-* Analisar interações por emails com cliente para entender experiência positiva ou   negativa.
+* Analisar interações por emails com cliente para entender experiência positiva ou negativa.
 * Criar e agrupar artigos por tópico e compreender assuntos.
 
 ## SageMaker Overview
@@ -1477,14 +1486,14 @@ Casos de usos:
 
 Resumo Machine Learning:
 
-* **Rekognition**: Sistema de reconhecimento facial e reconhecimento de   celebridades.
+* **Rekognition**: Sistema de reconhecimento facial e reconhecimento de celebridades.
 * **Transcribe**: Transcrição de áudio em texto.
 * **Polly**: Transformação de texto para áudio.
 * **Translate**: Tradução.
 * **Lex**: Constrói conversações com chatbots.
 * **Connect**: Contact center na núvem.
 * **Comprehend**: Processamento de linguagem natural.
-* **SageMaker**: ML para criação de modelos para cientistas de dados e   devs.
+* **SageMaker**: ML para criação de modelos para cientistas de dados e devs.
 * **Forecast**: Usa ML para predições.
 * **Kendra**: Sistema de busca que usa ML.
 * **Personalize**: Sistema de recomendações personalizadas em tempo real.
@@ -1493,12 +1502,12 @@ Resumo Machine Learning:
 
 **Organizations** são estruturas globais da AWS em que você reúne várias contas root em uma organização. Uma das contas root fica sendo a conta master e as outras contas ficam como contas child. Os benefícios de se fazer uma organização são:
 
-* **Billing** consolidado entre todas as contas com um único método de   pagamento.
-* Benefícios de preço agregados ao longo do uso, ex: desconto no uso de volumes de   **EC2** e **S3**.
+* **Billing** consolidado entre todas as contas com um único método de pagamento.
+* Benefícios de preço agregados ao longo do uso, ex: desconto no uso de volumes de **EC2** e **S3**.
 * Pooling de instâncias **EC2** reservadas compartilhado para economizar.
-Existem APIs disponíveis para automatizar a criação de contas.Existe um sistema de restrição de privilégio de contas chamado **Service Control  Policies  (SCP)**
+Existem APIs disponíveis para automatizar a criação de contas.Existe um sistema de restrição de privilégio de contas chamado **Service Control Policies (SCP)**
 
-É possível também dividir as contas em grupos chamados **Organization  Units(OU)**, de forma que fique da seguinte forma:Uma master account contém de 0 a n **OUs**.Uma master account contém de 0 a n contas.Uma **OU** contém de 1 a n contas.Uma **OU** contém de 0 a n **OUs**.Uma conta não contém nada além dela mesma.Um exemplo de estrutura organizacional é:
+É possível também dividir as contas em grupos chamados **Organization Units(OU)**, de forma que fique da seguinte forma:Uma master account contém de 0 a n **OUs**.Uma master account contém de 0 a n contas.Uma **OU** contém de 1 a n contas.Uma **OU** contém de 0 a n **OUs**.Uma conta não contém nada além dela mesma.Um exemplo de estrutura organizacional é:
 
 * Master(master)
 * Produção(**OU**)
@@ -1530,15 +1539,15 @@ Existem APIs disponíveis para automatizar a criação de contas.Existe um siste
 
 A AWS possui 4 modelos de preços:
 
-* Pay as you go: Você paga pelo que você usa, forma prática, responsiva e escalável de   usar, porém, mais cara.
-* Save when you reserve: risco mitigados, orçamento previsível, você reserva a   utilização   de recursos e assim obtém descontos, você pode os seguintes recursos:   **EC2**, **DynamoDB**, **ElastiCache**,   **RDS**, **Redshift**.
+* Pay as you go: Você paga pelo que você usa, forma prática, responsiva e escalável de usar, porém, mais cara.
+* Save when you reserve: risco mitigados, orçamento previsível, você reserva a utilização de recursos e assim obtém descontos, você pode os seguintes recursos: **EC2**, **DynamoDB**, **ElastiCache**, **RDS**, **Redshift**.
 * Pay less by using more: Quanto mais você usa um recurso, menos você paga por ele.
-* Pay less as AWS grows: A medida em que a infra da AWS cresce, você vai   pagando   menos pelos recursos.
+* Pay less as AWS grows: A medida em que a infra da AWS cresce, você vai pagando menos pelos recursos.
 
-Sobre gratuidade na AWS:Os seguintes serviços da AWS são gratuitos: **IAM**, **VPC** e **Billing** consolidado.Os seguintes serviços da AWS são gratuitos mas interagem de forma automatizada com serviços pagos: **Elastic Beanstalk**, **CloudFormation** e **Auto  Scaling Groups**.Free Tier: Grupo de serviços que podem ser usados por um tempo/quantidade de forma gratuita, para entender em detalhes, acesse: <https://aws.amazon.com/free/> são exemplos de elegíveis a free tier:
+Sobre gratuidade na AWS:Os seguintes serviços da AWS são gratuitos: **IAM**, **VPC** e **Billing** consolidado.Os seguintes serviços da AWS são gratuitos mas interagem de forma automatizada com serviços pagos: **Elastic Beanstalk**, **CloudFormation** e **Auto Scaling Groups**.Free Tier: Grupo de serviços que podem ser usados por um tempo/quantidade de forma gratuita, para entender em detalhes, acesse: <https://aws.amazon.com/free/> são exemplos de elegíveis a free tier:
 
 * Instância **EC2** t2.micro por 1 ano
-* **S3**, **EBS**, **ELB** baseado em quantidade   de   dados transferidos.
+* **S3**, **EBS**, **ELB** baseado em quantidade de dados transferidos.
 
 Precificação do **EC2** pt 1:Você só é cobrado pelo que você usa e esse custo é multiplicado pela quantidade de instâncias.Cada tipo de instância tem um preço que é baseado em:
 
@@ -1589,7 +1598,7 @@ Precificação **RDS**:Você paga por hora de utilização e pela quantidade de 
 
 * On-demand
 * Reserved Instances de 1 OU 3 anos com pagamento adiantado OBRIGATÓRIO.
-Armazenamento de backup: Não existe necessidade de pagamento por armazenamento de backup de 100% do seu BD por uma region se seu BD não estiver cheio.Você paga a mais por armazenamento adicionais(GB por mês).<br>
+Armazenamento de backup: Não existe necessidade de pagamento por armazenamento de backup de 100% do seu BD por uma region se seu BD não estiver cheio.Você paga a mais por armazenamento adicionais(GB por mês).
 
 Precificação **CloudFront**:No **CloudFront** você paga por volume de dados transferidos para fora do sistema e ganha desconto pelo volume, a contagem é feita pela quantidade de requisições HTTP/HTTPS.A precificação varia de acordo com a área geográfica das edges locations.
 
@@ -1642,7 +1651,7 @@ Ferramentas de custos de billing:
 * Cost Explorer
 * Monitoramento e planejamento de custos
 * Billing Alarms
-* Budgets    <br>
+* Budgets
 
 ## Estimating Costs in the Cloud - TCO Calculator & Pricing Calculator
 
@@ -1662,16 +1671,14 @@ Na visão do **Billing Dashboard** é possível ver os gastos no mês atual, voc
 
 **Billings Alarms** disponíveis na **CloudWatch**, como já visto, são sistemas de métricas de billing que podem ser exportados para a **CloudWatch** e geram gráficos de custo.Só estão disponíveis na region us-east-1 mas contemplam os custos de todas as regions.
 
-## Monitoring Costs in the Cloud - Billing Alarms & AWS Budgets
-
 **AWS Budget** é um sistema de orçamento que te permite criar alarme para caso algum serviço(ou todos) que você esteja utilizando excedam o seu orçamento.Existem 3 tipos de orçamentos: Uso, Custo e reserva.Para Reserved Instances você pode fazer budget para track utilization. Suporta reservas para **EC2**, **ElastiCache**, **RDS** e **Redshift**.Suporta até 5 notificações SNS por budget.Pode filtrar por: Serviço, conta ligada, tag, opção de compra, tipo de instância, region, AZ, API, etc...Mesma opções do Cost Explorers.Os 2 primeiros Budgets são gratuitos, após isso você paga $0,02 por dia por budget.
 
 ## AWS Trusted Advisor
 
-**Trusted  Advisor** é um serviço que analisa a sua conta da AWS e faz recomendações relacionadas a: Otimização de custo, Performance, Segurança, Tolerância à Falha, Limites de Serviços.Existem 2 níveis de checagens:
+**Trusted Advisor** é um serviço que analisa a sua conta da AWS e faz recomendações relacionadas a: Otimização de custo, Performance, Segurança, Tolerância à Falha, Limites de Serviços.Existem 2 níveis de checagens:
 
-* Disponível para todos os clientes - Checagem padrão com recomendações em que você   pode   receber emails semanalmente e notificações do console.
-* Disponível apenas para clientes dos Planos de Suporte Business & Enterprise -   Full   **Trusted Advisor** - Habilita alarmes na **CloudWatch** quando chega nos limites, acesso programático utilizando APIs de suporte da   AWS.
+* Disponível para todos os clientes - Checagem padrão com recomendações em que você pode receber emails semanalmente e notificações do console.
+* Disponível apenas para clientes dos Planos de Suporte Business & Enterprise - Full **Trusted Advisor** - Habilita alarmes na **CloudWatch** quando chega nos limites, acesso programático utilizando APIs de suporte da AWS.
 
 Exemplos de verificações do **Trusted Advisor**:
 
@@ -1698,7 +1705,7 @@ A AWS possui 4 Planos de suporte:
 * **AWS Business Support Plan** - Pago
 * **AWS Enterprise Support Plan** - Pago
 
-Recursos do plano de suporte **AWS Basic Support Plan**:**Customer Service and Communities**: Acesso 24/7 aos serviços do cliente, documentações, whitepappers e fóruns de suporte.**AWS Trusted Advisor**: Acesso às 7 verificações do **Trusted  Advisor** padrões e guias para que você provisione seus recursos seguindo as melhores práticas e melhorar a sua performance e segurança.**AWS Personal Health Dashboard**: Uma visão personalizada da saúde dos serviços da AWS e alertas de quando seus recursos serão impactados.
+Recursos do plano de suporte **AWS Basic Support Plan**:**Customer Service and Communities**: Acesso 24/7 aos serviços do cliente, documentações, whitepappers e fóruns de suporte.**AWS Trusted Advisor**: Acesso às 7 verificações do **Trusted Advisor** padrões e guias para que você provisione seus recursos seguindo as melhores práticas e melhorar a sua performance e segurança.**AWS Personal Health Dashboard**: Uma visão personalizada da saúde dos serviços da AWS e alertas de quando seus recursos serão impactados.
 
 Recursos do plano de suporte **AWS Developer Support Plan**:Todos os recursos do **Basic Support Plan** +Acesso direto ao suporte da AWS com possibilidade de abertura de ticket com a equipe de suporte.Contato direto com a equipe de suporte da AWS.Tempo de resposta Em caso de incidentes:
 
@@ -1724,18 +1731,18 @@ Recursos do plano de suporte **AWS Enterprise Support Plan** : Todos os recursos
 
 Resumo Boas práticas para conta pt 1:
 
-* **Organizations**: Estrutura que junta várias contas root em uma   organização   com uma conta master.
-* **SCP**: Serviço de controle de permissões usado em   **Organizations** que restringe acesso das roots filhas.
-* **AWS Control Tower**: Sistema que automatiza a criação de uma   **Organization** criando múltiplas contas.
+* **Organizations**: Estrutura que junta várias contas root em uma organização com uma conta master.
+* **SCP**: Serviço de controle de permissões usado em **Organizations** que restringe acesso das roots filhas.
+* **AWS Control Tower**: Sistema que automatiza a criação de uma **Organization** criando múltiplas contas.
 * **OU**: Grupo de contas dentro da **Organization**.
-* Use Tag and Cost Allocation Tags: Sistema de tags para facilitar o controle de custo   no   **billing**.
+* Use Tag and Cost Allocation Tags: Sistema de tags para facilitar o controle de custo no **billing**.
 
 Resumo Boas práticas para conta pt 2:
 
-* **IAM Guideline**: Usar MFA, princípio do least-privilege, política   e   rotação de senha.
-* **Config**: Para gravar todas as alterações de configurações e   compliance ao   longo do tiempo.
-* **CloudFormation**: Para deployar stacks ao longo de contas e regions de   forma automatizada.
-* **Trusted Advisor**: Obter insights, e Suport Plans baseados na sua   necessidade. Para isso envie logs para o **S3** e   **CloudWatch**.
+* **IAM Guideline**: Usar MFA, princípio do least-privilege, política e rotação de senha.
+* **Config**: Para gravar todas as alterações de configurações e compliance ao longo do tiempo.
+* **CloudFormation**: Para deployar stacks ao longo de contas e regions de forma automatizada.
+* **Trusted Advisor**: Obter insights, e Suport Plans baseados na sua necessidade. Para isso envie logs para o **S3** e **CloudWatch**.
 * **CloudTrail**: API que grava logs de alterações feitas na conta.
 Se a sua conta for comprometida de alguma forma: Mude a senha root, delete e rotacione todas as senhas e chaves, chame o suporte da AWS.
 
@@ -1744,26 +1751,26 @@ Se a sua conta for comprometida de alguma forma: Mude a senha root, delete e rot
 Resumo Billing e ferramentas de custo pt 1:
 
 * Otimizador de computação: Recomenda configurações de recursos para reduzir custos.
-* **TCO Calculator**: Calculadora DEPRECIADA para prever a economia   de se   migrar de on-premisse para AWS.
-* **Simples Monthly Calculator/Pricing Calculator**: Custos dos serviços   na   AWS.(Simple Monthly DEPRECIADO)
-* **Billing Dashboard**: Dashboard que mostra resumo de custos e resumo do   free tier.
-* **Cost Allocation Tags**: Taggeamento de recursos afim de criar   relatórios de custos detalhados.
+* **TCO Calculator**: Calculadora DEPRECIADA para prever a economia de se migrar de on-premisse para AWS.
+* **Simples Monthly Calculator/Pricing Calculator**: Custos dos serviços na AWS.(Simple Monthly DEPRECIADO)
+* **Billing Dashboard**: Dashboard que mostra resumo de custos e resumo do free tier.
+* **Cost Allocation Tags**: Taggeamento de recursos afim de criar relatórios de custos detalhados.
 
 Resumo Billing e ferramentas de custo pt 2:
 
 * **Cost and Usage Reports**: Relatório super detalhado de custos.
-* **Cost Explorer**: Vê histórico de gastos com detalhe e faz previsão de   12   meses.
-* **Billing Alarms**: Disponível apenas na us-east-1 gera gráfico de custo   por   serviço, analisa globalmente.
-* **Budget**: Sistema de orçamento avançado que gera alerta baseado em   limite   de gastos.
-* **Savings Plans**: Forma fácil de economizar baseado em uso de longo   prazo   dos recursos da AWS.
+* **Cost Explorer**: Vê histórico de gastos com detalhe e faz previsão de 12 meses.
+* **Billing Alarms**: Disponível apenas na us-east-1 gera gráfico de custo por serviço, analisa globalmente.
+* **Budget**: Sistema de orçamento avançado que gera alerta baseado em limite de gastos.
+* **Savings Plans**: Forma fácil de economizar baseado em uso de longo prazo dos recursos da AWS.
 
 ## Security Token Service (STS) Overview
 
 **AWS Security Token Service (STS)** é o serviço de STS da AWS. Este serviço faz a autenticação e geração de token de short-term para o usuário.Casos de uso:
 
-* Federação de identidade: Gerenciar as identidades dos usuários e prover tokens para   que   esses usuários possam acessar os recursos da AWS.
+* Federação de identidade: Gerenciar as identidades dos usuários e prover tokens para que esses usuários possam acessar os recursos da AWS.
 * Acesso para contas com **IAM** Roles.
-* IAM Roles para **EC2**: Gerando credenciais temporárias para   instâncias   EC2 para acessarem recursos AWS.
+* IAM Roles para **EC2**: Gerando credenciais temporárias para instâncias EC2 para acessarem recursos AWS.
 Este recurso de STS funciona de forma transparente ao usuário e funciona como mais uma camada de segurança.
 
 ## Cognito Overview
@@ -1789,11 +1796,11 @@ Este recurso de STS funciona de forma transparente ao usuário e funciona como m
 
 Resumo Advanced Identity:
 
-* **IAM**: Identity and Access Management, gerencia acessos e permissões   de   usuários da conta AWS.
+* **IAM**: Identity and Access Management, gerencia acessos e permissões de usuários da conta AWS.
 * **Organizations**: Gerencia várias contas AWS.
-* **Security Token Service (STS)**: Autentica e gera tokens   temporários   para acessos limitados a recursos da AWS.
+* **Security Token Service (STS)**: Autentica e gera tokens temporários para acessos limitados a recursos da AWS.
 * **Cognito**: Cria um BD de usuários para aplicações web e mobile.
-* **Directory Services**: Integração de AD com Microsoft Active Directory   na   AWS.
+* **Directory Services**: Integração de AD com Microsoft Active Directory na AWS.
 * **Single Sign-On (SSO)**: Uma forma de um usuário **IAM** se logar uma vez para várias contas AWS em uma **Organization**.
 
 ## WorkSpaces Overview
@@ -1837,15 +1844,15 @@ Well Architected Framework General Guiding PrinciplesPrincípios que são pontos
 * Automatizar para fazer a experimentação arquitetural mais fácil.
 * Permitir uma arquitetura que possa evoluir, que não seja engessada.
 * Guiar seu modelo de arquitetura baseado em DADOS.
-* Melhorar através de testes(game days) - Fazer testes/simulações na sua infra afim de   descobrir falhas e pontos de ruptura e corrigi-los.
+* Melhorar através de testes(game days) - Fazer testes/simulações na sua infra afim de descobrir falhas e pontos de ruptura e corrigi-los.
 
 Boas práticas de design na AWS:
 
 * Escalabilidade - Usar escalabilidade vertical e horizontal.
 * Recursos descartáveis: servidores devem ser descartáveis e facilmente configuráveis.
 * Automação: Usar serviços servers, IaaS e Auto Scaling(elasticidade).
-* Desacoplamento: Fugir de aplicações monolíticas pois são difíceis de manter e tendem   a   ser mais instáveis. Quebrar em aplicações menores faz com que erros se propagem   menos.
-* Pensar em SERVIÇOS, não em SERVIDORES: Não use apenas **EC2**,   teoricamente   quase tudo poderia ser resolvido em instâncias **EC2**, mas existem   outros   serviços que podem resolver a maior parte dos problemas de forma mais fácil, segura   e   barata, pense em usar: **RDS**, **S3**,   **EKS**, **ECS**, **Lambda**, **DynamoDb**,   **ElastiCache**, etc...
+* Desacoplamento: Fugir de aplicações monolíticas pois são difíceis de manter e tendem a ser mais instáveis. Quebrar em aplicações menores faz com que erros se propagem menos.
+* Pensar em SERVIÇOS, não em SERVIDORES: Não use apenas **EC2**, teoricamente quase tudo poderia ser resolvido em instâncias **EC2**, mas existem outros serviços que podem resolver a maior parte dos problemas de forma mais fácil, segura e barata, pense em usar: **RDS**, **S3**, **EKS**, **ECS**, **Lambda**, **DynamoDb**, **ElastiCache**, etc...
 
 5 pilares do Well Achitected Framework:
 
@@ -1862,36 +1869,36 @@ Pilares do Well Achitected Framework:1 - Excelência OperacionalA habilidade de 
 
 * Peformar operações com código: Infrastructure as Code (IaC) - **CloudFormation**, Terraform são exemplo.
 * Documentar: Automatizar a criação de documentos de cada construção.
-* Fazer mudanças frequentes, pequenas e reversíveis: Em caso de falha, você poderá   voltar   ao estado anterior.
-* Refinar procedimentos frequentemente: Fazer processo de PDCA em seus processo   frequentemente e adequar equipe a isso.
+* Fazer mudanças frequentes, pequenas e reversíveis: Em caso de falha, você poderá voltar ao estado anterior.
+* Refinar procedimentos frequentemente: Fazer processo de PDCA em seus processo frequentemente e adequar equipe a isso.
 * Antecipar falhas.
 * Aprender com as falhas.
 
 Pilares do Well Achitected F:1 - Excelência OperacionalOnde cada serviço se encaixa neste pilar? não cai no exam
 
 * Preparação
-  * **AWS CloudFormation** - Criação de ambiente
-  * **AWS Config** - Validação de ambiente
+* **AWS CloudFormation** - Criação de ambiente
+* **AWS Config** - Validação de ambiente
 * Operação
-  * **AWS CloudFormation** - Manutenção de ambiente
-  * **AWS Config** - Validação de ambiente
-  * **AWS CloudTrail** - Monitoramento de ambiente
-  * **Amazon CloudWatch** - Monitoramento de ambiente e dados
-  * **AWS X-Ray** - Debug de ambiente e dados
+* **AWS CloudFormation** - Manutenção de ambiente
+* **AWS Config** - Validação de ambiente
+* **AWS CloudTrail** - Monitoramento de ambiente
+* **Amazon CloudWatch** - Monitoramento de ambiente e dados
+* **AWS X-Ray** - Debug de ambiente e dados
 * Evolve
-  * **AWS CloudFormation** - Evolução de ambiente
-  * **AWS CodeBuild** - Criação de artefatos
-  * **AWS CodeCommit** - Versionamento de código
-  * **AWS CodeDeploy** - Evolução de instâncias
-  * **AWS CodePipeline** - Controle de esteira
+* **AWS CloudFormation** - Evolução de ambiente
+* **AWS CodeBuild** - Criação de artefatos
+* **AWS CodeCommit** - Versionamento de código
+* **AWS CodeDeploy** - Evolução de instâncias
+* **AWS CodePipeline** - Controle de esteira
 
 ## 2nd pillar: Security
 
 Pilares do Well Achitected Framework:2- Segurança pt 1A habilidade de proteger informações, sistemas e assets enquanto entrega valor ao negócios, faz isso através de estratégias de mitigação e gerenciamento de riscos.Princípios de design:
 
-* Implementar um sistema de identidade forte: Centralizar o gerenciamento de   privilégios e   reduzir(ou mesmo eliminar) a existência de credenciais de longo prazo, seguindo   princípio de least priviliege.
-* Habilitar rastreabilidade: Integrar logs e métricas com sistemas que respondem   automaticamente e realizam ações.
-* Aplicar segurança em todas as camadas: Aplicar princípios de seguranças na rede, VPC,   subnet, Load Balancer, instâncias, SOs e aplicações.
+* Implementar um sistema de identidade forte: Centralizar o gerenciamento de privilégios e reduzir(ou mesmo eliminar) a existência de credenciais de longo prazo, seguindo princípio de least priviliege.
+* Habilitar rastreabilidade: Integrar logs e métricas com sistemas que respondem automaticamente e realizam ações.
+* Aplicar segurança em todas as camadas: Aplicar princípios de seguranças na rede, VPC, subnet, Load Balancer, instâncias, SOs e aplicações.
 
 Pilares do Well Achitected Framework:2- Segurança pt 2
 
@@ -1935,10 +1942,10 @@ Pilares do Well Achitected Framework:2- Segurança pt 2Onde cada serviço se enc
 
 Pilares do Well Achitected Framework:3- ConfiabilidadeHabilidade de um sistema se recuperar de uma interrupção na infra ou serviços, adquirir recursos computacionais para se adequar a demanda e as suas variações e mitigar problemas como falhas de configurações ou issues transientes na rede.Princípios de design:
 
-* Testes para simular recuperações: Use simulações de diferentes falhas para recriar   cenários de falhas que aconteceram antes.
-* Se recupera automaticamente de uma falha: Antecipe e remedie falhas antes que elas   ocorram.
-* Escale horizontalmente e aumente a disponibilidade do ambiente: Aumente a quantida de   recursos que seu sistema possui para que, caso haja uma falha, esta impacte pontos   menores.
-* Pare de tentar adivinhar sua capacidade: tenha um nível ótimo de uso da infra, sem   sobrecarrega-la nem subutiliza-la. Use AutoScaling.
+* Testes para simular recuperações: Use simulações de diferentes falhas para recriar cenários de falhas que aconteceram antes.
+* Se recupera automaticamente de uma falha: Antecipe e remedie falhas antes que elas ocorram.
+* Escale horizontalmente e aumente a disponibilidade do ambiente: Aumente a quantida de recursos que seu sistema possui para que, caso haja uma falha, esta impacte pontos menores.
+* Pare de tentar adivinhar sua capacidade: tenha um nível ótimo de uso da infra, sem sobrecarrega-la nem subutiliza-la. Use AutoScaling.
 * Gerencie mudanças com automações: Use automações para fazer mudanças na infra.
 
 Pilares do Well Achitected Fra:3- ConfiabilidadeOnde cada serviço se encaixa neste pilar? não cai no exam
@@ -1964,10 +1971,10 @@ Pilares do Well Achitected Fra:3- ConfiabilidadeOnde cada serviço se encaixa ne
 
 Pilares do Well Achitected Framework:4- Eficiência de PerformanceA habilidade de usar recursos computacionais de forma eficiente para atingir os requisitos de sistema, e manter essa eficiência a medida em que mudanças ocorram e a tecnologia evolua.Princípios de design:
 
-* Democratizar tecnologias complicadas: Permitir que todas as pessoas possam ter   conhecimento de tecnologias complexas como AWS.
+* Democratizar tecnologias complicadas: Permitir que todas as pessoas possam ter conhecimento de tecnologias complexas como AWS.
 * Estar disponível globalmente em minutos: Deploys fáceis em várias regions.
 * Usar arquiteturas serverless: Evitar o trabalho de ter que gerenciar servidores.
-* Experimentar coisas mais frequentemente: Testar e comparar coisas de forma mais   fácil.
+* Experimentar coisas mais frequentemente: Testar e comparar coisas de forma mais fácil.
 * Simpatia mecânica: Estar familiarizado com todos os serviços da AWS.
 
 Pilares do Well Achitected Framework:4- Eficiência de PerformanceOnde cada serviço se encaixa neste pilar? não cai no exam
@@ -2048,7 +2055,7 @@ Links úteis da AWS, todos gratuitos:
 * Containers
 Se você comprar algo no **Marketplace**, o lançamento da compra vai para o seu **billing**.Você também pode vender suas soluções no **Marketplace** para outras organizações.
 
-**AWS Professional Services organization** é um time de experts pelo mundo que atuam junto com seu time e com alguém da **AWS Partner Network  (APN)** para auxiliar a resolver problemas.**APN Technology Partners** são empresas que provêm hardware, conexão e softwares para a AWS e têm confiança desta.**APN Consulting Partners** são serviços de profissionais que auxiliam na construção da AWS e prestam consultoria para serviços.**APN Training Partners** são serviços de profissionais que te ajudam a aprender AWS.**AWS Competency Program**: **AWS Competencies** são "certificações" dadas a parceiros APNs que demonstraram conhecimento técnicos e auxiliaram clientes em resolver problemas em certas áreas.**AWS Navigate Program** é um programa que ajuda parceiros a se tornarem melhores parceiros.
+**AWS Professional Services organization** é um time de experts pelo mundo que atuam junto com seu time e com alguém da **AWS Partner Network (APN)** para auxiliar a resolver problemas.**APN Technology Partners** são empresas que provêm hardware, conexão e softwares para a AWS e têm confiança desta.**APN Consulting Partners** são serviços de profissionais que auxiliam na construção da AWS e prestam consultoria para serviços.**APN Training Partners** são serviços de profissionais que te ajudam a aprender AWS.**AWS Competency Program**: **AWS Competencies** são "certificações" dadas a parceiros APNs que demonstraram conhecimento técnicos e auxiliaram clientes em resolver problemas em certas áreas.**AWS Navigate Program** é um programa que ajuda parceiros a se tornarem melhores parceiros.
 
 Dos treinamentos OFICIAIS da AWS:**AWS Training**
 
@@ -2061,4 +2068,4 @@ Fora isso existem treinamentos não oficiais como os da Udemy(Stephane <3)
 
 ## State of Learning Checkpoint - AWS Certified Cloud Practitioner
 
-Para informações sobre o exame acesse:<https://aws.amazon.com/pt/certification/certified-cloud-practitioner/Leia:https://d1.awsstatic.com/pt_BR/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdfResponda> as perguntas de exemplo:<https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Sample-Questions.pdf>
+Para informações sobre o exame acesse: <https://aws.amazon.com/pt/certification/certified-cloud-practitioner/Leia:https://d1.awsstatic.com/pt_BR/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdfResponda> as perguntas de exemplo: <https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Sample-Questions.pdf>
