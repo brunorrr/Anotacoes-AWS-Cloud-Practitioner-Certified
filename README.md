@@ -1,6 +1,11 @@
-# Anotações úteis para a prova de certificação AWS Cloud Practitioner
+# AWS Cloud Practitioner
 
-Baseado no curso [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
+Este repositório é uma compilação das anotações que eu fiz enquanto fazia um curso da Udemy para a prova de certificação **CLF-C01 Cloud Practitioner**.
+Nele estão contempladas informações relacionadas a serviços, políticas e processos da AWS que provavelmente cairão na prova de certificação.
+
+O curso que eu fiz para criar estas anotações foi o [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/) criado pelo **Stephane Maarek**.
+
+Para facilitar o cruzamento de dados e informações ao longo da leitura, cada nome de produto funcionará como um verbete que será um link para algum artigo(oficial ou não) que dará mais detalhes sobre aquele produto/serviço/política.
 
 8. What is Cloud Computing?
 Você Troca CAPEX(Capital Expense) por OPEX(Operational Expense) significa que você não se preocupa mais com o hardware, apenas com as questões operacionais da sua aplicação.
@@ -929,15 +934,15 @@ Conteúdo relacionado a **VPC** e networking pedido no exame de Practitioner:
 **Network Access Control List (NACL)** é um firewall que utiliza um conjunto de regras para definir que tipo de tráfego é PERMITIDO e que tipo de tráfego é PROIBIDO. São anexadas à subnets, as regras trabalham apenas com IPs.**Security groups**, como podem ser utilizados juntamente com **NACL**, porém, **Security Groups** estão anexados a Instâncias **EC2**/ **Elastic Network Interface (ENI)**, as regras de **Security  Groups** trabalham apenas com gráficos PERMITIDOS, regras de **Security  Groups** podem incluir IPs ou outros **Security Groups**.
 
 Mais diferenças entre **NACL** e **Security Groups**, as comparações estão de forma respectiva. **Security Groups**:
-1. Funciona a nível de instância.
-2. Suporta apenas regras de PERMISSÃO.
-3. É stateful, o tráfego de retorno é automaticamente permitido, a não ser que haja uma   regra negando.
-4. Só é associado à instância se na criação da instância o **Security Group** for ligado a ela.
+    1. Funciona a nível de instância.
+    2. Suporta apenas regras de PERMISSÃO.
+    3. É stateful, o tráfego de retorno é automaticamente permitido, a não ser que haja uma   regra negando.
+    4. Só é associado à instância se na criação da instância o **Security Group** for ligado a ela.
 **NACL**:
-1. Funciona a nível de subnet.
-2. Suporta regras de PERMISSÃO e NEGAÇÃO.
-3. É stateless, a autorização do tráfego de retorno deve ser explicitada pelas regras.
-4. É automaticamente aplicado a todas as instâncias da subnet.
+    1. Funciona a nível de subnet.
+    2. Suporta regras de PERMISSÃO e NEGAÇÃO.
+    3. É stateless, a autorização do tráfego de retorno deve ser explicitada pelas regras.
+    4. É automaticamente aplicado a todas as instâncias da subnet.
 
 173. VPC Flow Logs & VPC Peering
 **VPC Flow Logs** é um serviço que cria logs relacionados a **VPC**, Subnets e **ENIs**. Ajudam a monitorar problemas e realizar troubleshooting relacionados à conexões: subnet-internet, subnet-subnet, internet-subnet.Captura informações da interface de outros serviços da AWS também como: **ELBs**, **ElastiCache**, **RDS**, **Aurora**, etc...Os dados do **VPC Flow Logs** podem ser enviados para o **S3** e **CloudWatch Logs**.
