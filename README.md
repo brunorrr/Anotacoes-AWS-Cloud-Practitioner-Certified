@@ -2,18 +2,34 @@
 
 Este repositório é uma compilação das anotações que eu fiz enquanto fazia um curso da Udemy para a prova de certificação **CLF-C01 Cloud Practitioner**.
 Nele estão contempladas informações relacionadas a serviços, políticas e processos da AWS que provavelmente cairão na prova de certificação.
+O objetivo deste repositório não é funcionar como um curso ou tutorial sobre AWS, mas apenas como guia adicional para quem estiver buscando obter uma certificação CLF-C01, utilize-o para buscar uma definição mais simples e rápida de termos que você já tenha aprendido e que esteja com dificuldades para lembrar.
 
 O curso que eu fiz para criar estas anotações foi o [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/) criado pelo **Stephane Maarek**.
 
 Para facilitar o cruzamento de dados e informações ao longo da leitura, cada nome de produto funcionará como um verbete que será um link para algum artigo(oficial ou não) que dará mais detalhes sobre aquele produto/serviço/política.
 
-## What is Cloud Computing?
+## 6 Vantagens do uso de Cloud Computing
 
-Você Troca CAPEX(Capital Expense) por OPEX(Operational Expense) significa que você não se preocupa mais com o hardware, apenas com as questões operacionais da sua aplicação.
+1. Você Troca CAPEX(Capital Expense) por OPEX(Operational Expense) - Significa que você não se preocupa mais com o hardware, apenas com as questões operacionais da sua aplicação.
+2. Benefícios de enormes economias de escala. - Significa que teu gasto está totalmente adaptado ao teu consumo, não existe ociosidade, nem sobrecarregamento.
+3. Pare de adivinhar sua capacidade. - Significa que com a cloud você pode utilizar de ferramentas e métricas para saber com mais exatidão qual será seu gasto com infra.
+4. Aumente a tua velocidade e agilidade. - Significa que com a cloud você terá vários impedimentos a menos para ter um desenvolvimento mais ágil, com entregas mais curtas rápidas e contínuas.
+5. Pare de gastar dinheiro rodando e mantendo data centers. - Agora quem mantém os datacenters é a AWS, você cuida apenas do contexto do teu negócio.
+6. Torne-se global em minutos. - A infra e as ferramentas da AWS permitem que em alguns minutos você publique uma aplicação completa disponível para clientes no mundo todo.
+
+## Tipos de Serviços Cloud
+
+* Infrastructure as a Service (IaaS) - Serviços que fornecem conexão de rede, SOs, armazenamento, alta flexibilidade de utilização. Costumam ser genéricos, podem ser utilizados para vários fins. Ex: **EC2**.
+* Platform as a Service (PaaS) - Serviços que fornecem uma plataforma para deployment, restauração, manutenção de dados, mas não te dão acesso ao SO diretamente, Ex: **Elastic BeanStalk**, **S3**.
+* Software as a Service (SaaS) - Serviços que atuam como uma aplicação na nuvem gerenciada pela AWS que você chama da sua aplicação para algum fim, Ex: **Rekognition**, **Polly**, **Translate**.
+* Code as a Service (Caas) ou Function as a Service (FaaS) - Serviços orientados a evento que executam uma função simples na núvem em um ambiente serverless, Ex: **Lambda**.
 
 ## AWS Cloud Overview
 
-Uma Region é uma área no mundo na qual a Amazon disponibiliza um pacote de serviços da AWS.Cada Region é composta de 2 a 6(geralmente 3) AZs(Availability Zones) ou Zonas de Disponibilidade, as AZs ficam separadas entre si de forma que haja uma redundância e seus serviços não sejam afetados em caso de desastres que afetem parcialmente a region.Cada AZ é composta de N datacenters, sendo N >= 1 e N um número conhecido apenas pela Amazon, nestes datacenters são armazenados e processados os serviços contratados pelos clientes.
+Sobre **Regions**, **Availability Zones** e **Data Centers**.
+Uma Region é uma área no mundo na qual a Amazon disponibiliza um pacote de serviços da AWS.
+Cada Region é composta de 2 a 6(geralmente 3) AZs(Availability Zones) ou Zonas de Disponibilidade, as AZs ficam separadas entre si de forma que haja uma redundância e seus serviços não sejam afetados em caso de desastres que afetem parcialmente a region.
+Cada AZ é composta de N datacenters, sendo N >= 1 e N um número conhecido apenas pela Amazon, nestes datacenters são armazenados e processados os serviços contratados pelos clientes.
 
 ## IAM Introduction: Users, Groups, Policies
 
@@ -62,7 +78,9 @@ AWS
 * Infra
 * Configuração e Análise de vulnerabilidade
 * Validação de compliance.
+
 Você
+
 * Administração e monitoramento de Usuários **IAM**, Grupos, Roles e Policies.
 * Gerenciamento de MFA nas contas.
 * Manter um rotacionamento de chaves constante.
@@ -72,7 +90,6 @@ Você
 ## EC2 Instance Types Basics
 
 O tipo da instância **EC2** representa as características dela. Dado o formato classegeração.porte sendo o porte representando o tamanho de memória RAM que ela possa possuir ou a capacidade de processamento.Exemplo: t2.nano, m5.2xlarge
-
 Na seguinte página é possível obter o portfólio de instâncias **EC2** da AWS <https://aws.amazon.com/pt/ec2/instance-types/>
 
 ## EC2 Instance Launch Types
@@ -147,7 +164,9 @@ Das responsabilidades da AWS:
 * Infra
 * Replicação de dados de EBS e EFS
 * Privacidade física
+
 Das suas responsabilidades:
+
 * Configurar procedimentos de backups e snapshots
 * Configurar processos de criptografia
 * Todo dado dos drives
@@ -163,9 +182,13 @@ Escalabilidade vertical significa escalar uma aplicação aumentando a capacidad
 
 Escalabilidade horizontal significa escalar uma aplicação aumentando a quantidade de instâncias/sistemas da aplicação(scale out/scale in). Escala horizontal é aplicada em sistemas distribuídos e é mais utilizada em aplicações web e aplicações modernas, é mais fácil de ser operada devido às facilidades que a AWS EC2 oferece para isso uma vez que para escalar uma aplicação horizontalmente basta criar mais instâncias para ela, para desescalar-la, basta eliminar estas instâncias. A escala pode ser automática ou manual. Para que as instâncias funcionem de maneira coordenada é necessário que haja um LoadBalancer que distribua as tarefas entre elas de maneira igualitária.
 
-Alta disponibilidade(High Availability) é a prática de manter uma aplicação disponível em 2 ou mais AZs, de forma que esta aplicação esteja protegida contra desastres ou cortes de comunicação.Esse processo se assemelha a implantação Blue-Green praticada pelo banco com AZa, AZb e AZc.
+Alta disponibilidade(High Availability) é a prática de manter uma aplicação disponível em 2 ou mais AZs, de forma que esta aplicação esteja protegida contra desastres ou cortes de comunicação.
 
-Escalabilidade vs Elasticidade vs Agilidade - IMPORTANTE PARA O EXAMEEscalabilidade: Capacidade de acomodar uma carga maior obtendo um hardware mais robusto(scale up) ou obtendo mais nós(nodes)(scale out).Elasticidade: Uma vez que você atingiu o status escalável, a elasticidade é a capacidade de escalar de maneira automatizada com sistemas de auto-scaling, load-balancers inteligentes, etc...Agilidade: Agility é um distrator(distractor), não têm nada a ver com o conteúdo do curso, poderá aparecer no exame para confundir, agilidade é a capacidade de obter determinado objeto/recurso no menor tempo possível após a solicitação.
+Escalabilidade vs Elasticidade vs Agilidade - IMPORTANTE PARA O EXAME
+
+* Escalabilidade: Capacidade de acomodar uma carga maior obtendo um hardware mais robusto(scale up) ou obtendo mais nós(nodes)(scale out).
+* Elasticidade: Uma vez que você atingiu o status escalável, a elasticidade é a capacidade de escalar de maneira automatizada com sistemas de auto-scaling, load-balancers inteligentes, etc...
+* Agilidade: Agility é um distrator(distractor), não têm nada a ver com o conteúdo do curso, poderá aparecer no exame para confundir, agilidade é a capacidade de obter determinado objeto/recurso no menor tempo possível após a solicitação.
 
 ## Elastic Load Balancing (ELB) Overview
 
