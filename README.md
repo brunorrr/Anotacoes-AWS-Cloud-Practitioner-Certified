@@ -228,7 +228,6 @@ Escala por alvo de uso de recurso(Target):
 * Manter o uso de CPU de todas as instâncias em 40%, então se CPU > 40%, add instância, se CPU < 40%, remove instância, mantendo uma certa margem de manobra.
 Escala agendada(Schedule):
 * Sabe-se que o horário de pico de acesso no sistema é das 11:00 às 13:00 e das 17:00 às 19:00, então, nesse horário já se programa para adicionar mais instâncias.
-Cont...
 
 Escalabilidade inteligente:
 
@@ -248,7 +247,6 @@ Resumo ELB e ASG:ELB = Elastic Load BalancingASG = Auto Scaling GroupHigh Availa
 * Balanceamento entre múltiplas instâncias EC2, pode ser configurado entre múltiplas AZs.
 * Oferece suporte para Health Check.
 * 4 Tipos: LB de Aplicação(HTTP - Camada 7), LB de transporte(TCP - Camada 4),LB de Gateway(NOVO)(IP - Camada 3), LB clássico (DEPRECIADO - camada 4 e 7).
-Cont...
 
 ## S3 Overview
 
@@ -460,7 +458,6 @@ Resumo S3:
 * Replicação S3: É possível replicar um bucket para a mesma region ou para outra, mas apenas alteração após a criação da replicação serão copiadas, deve habilitar versionamento.
 * Classes S3: Standard, Standard IA, Standard IA-OZ, Intelligent, Glacier, Glacier Deep Archive.
 * S3 Lifecycle: regras para evoluir um arquivo de uma classe S3 para outra automaticamente após um tempo.
-cont...
 
 * S3 glacier Vault Lock / S3 Object Lock: Utilizam WORM(Write Once Read Many) sistema de backup \somente leitura\.
 * Snow family: Serviço de devices físicos que podem ser utilizados para transferir e armazenar grandes quantidades de dados da empresa para a AWS de maneira offline, também permitem fazer edge computing.
@@ -1884,9 +1881,10 @@ Boas práticas de design na AWS:
 3. Confiabilidade
 4. Eficiência de performance
 5. Otimização de custo
+
 Esses pilares não são concorrentes e nem precisam ser balanceados, mas sim, trabalham em sinergia.
 
-## 1st pillar: Operational Excellence
+### 1º pilar: Operational Excellence
 
 Pilares do Well Achitected Framework:1 - Excelência OperacionalA habilidade de rodar e monitorar sistemas para entregar valor de negócio e fazer melhoria continua em processos e procedimentos envolvidos.Princípios de Design:
 
@@ -1915,7 +1913,7 @@ Pilares do Well Achitected F:1 - Excelência OperacionalOnde cada serviço se en
 * **AWS CodeDeploy** - Evolução de instâncias
 * **AWS CodePipeline** - Controle de esteira
 
-## 2nd pillar: Security
+### 2º pilar: Security
 
 Pilares do Well Achitected Framework:2- Segurança pt 1A habilidade de proteger informações, sistemas e assets enquanto entrega valor ao negócios, faz isso através de estratégias de mitigação e gerenciamento de riscos.Princípios de design:
 
@@ -1961,7 +1959,7 @@ Pilares do Well Achitected Framework:2- Segurança pt 2Onde cada serviço se enc
 * **CloudFormation** - reformando ambiente
 * **CloudWatch Events** - analisando causa rai
 
-## 3rd pillar: Reliability
+### 3º pilar: Reliability
 
 Pilares do Well Achitected Framework:3- ConfiabilidadeHabilidade de um sistema se recuperar de uma interrupção na infra ou serviços, adquirir recursos computacionais para se adequar a demanda e as suas variações e mitigar problemas como falhas de configurações ou issues transientes na rede.Princípios de design:
 
@@ -1990,7 +1988,7 @@ Pilares do Well Achitected Fra:3- ConfiabilidadeOnde cada serviço se encaixa ne
 * Amazon S3 Glacier - arquivamento de objetos
 * Amazon Route 53 - Redirecionamento de DNS em caso de falha em algumendpoint
 
-## 4th pillar: Performance Efficiency
+### 4º pilar: Performance Efficiency
 
 Pilares do Well Achitected Framework:4- Eficiência de PerformanceA habilidade de usar recursos computacionais de forma eficiente para atingir os requisitos de sistema, e manter essa eficiência a medida em que mudanças ocorram e a tecnologia evolua.Princípios de design:
 
@@ -2019,7 +2017,7 @@ Pilares do Well Achitected Framework:4- Eficiência de PerformanceOnde cada serv
 * **Snowball**: Transferir dados para o dispositivo, processa-loseleva-los para a cloud após um tempo.
 * **CloudFront**: Cache de dados nas edges
 
-## 5th pillar: Cost Optimization
+### 5º pilar: Cost Optimization
 
 Pilares do Well Achitected Framework:5- Otimização de CustoPrincípios de design
 
@@ -2091,4 +2089,5 @@ Fora isso existem treinamentos não oficiais como os da Udemy(Stephane <3)
 
 ## State of Learning Checkpoint - AWS Certified Cloud Practitioner
 
-Para informações sobre o exame acesse: <https://aws.amazon.com/pt/certification/certified-cloud-practitioner/Leia:https://d1.awsstatic.com/pt_BR/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdfResponda> as perguntas de exemplo: <https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Sample-Questions.pdf>
+Para informações sobre o exame acesse: <https://aws.amazon.com/pt/certification/certified-cloud-practitioner/Leia:https://d1.awsstatic.com/pt_BR/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf>
+Responda as perguntas de exemplo: <https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Sample-Questions.pdf>
