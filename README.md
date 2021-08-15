@@ -112,15 +112,15 @@ Copiando conteúdo do PDF:
 * Spot instances: the hotel allows people to bid for the empty rooms and the highest bidder keeps the rooms. You can get kicked out at any time.
 * Dedicated Hosts: We book an entire building of the resort.
 
-## EBS Overview
+## [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) Overview
 
-A **EBS** é um volume de disco que você consegue conectar à sua instância [EC2](https://aws.amazon.com/pt/ec2/) A **EBS** se conecta à instância [EC2](https://aws.amazon.com/pt/ec2/) via rede, portanto possui latência.Pode ser conectada e desconectada facilmente como um pendriveSó pode estar conectada a uma AZ.Você paga pelo tamanho ALOCADOvocê pode aumentar o tamanho alocado com o tempo.
+A [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) é um volume de disco que você consegue conectar à sua instância [EC2](https://aws.amazon.com/pt/ec2/) A [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) se conecta à instância [EC2](https://aws.amazon.com/pt/ec2/) via rede, portanto possui latência.Pode ser conectada e desconectada facilmente como um pendriveSó pode estar conectada a uma AZ.Você paga pelo tamanho ALOCADOvocê pode aumentar o tamanho alocado com o tempo.
 
-Você pode criar uma **EBS** e deixa-la desalocada de uma instância [EC2](https://aws.amazon.com/pt/ec2/).Se você quiser colocar o conteúdo de um volume **EBS** de uma AZ para outra, você pode criar uma snapshot dele e copia-la para a outra AZVocê pode marcar um volume **EBS** para ser excluído quando a instância [EC2](https://aws.amazon.com/pt/ec2/) vinculada a ele for eliminada.
+Você pode criar uma [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) e deixa-la desalocada de uma instância [EC2](https://aws.amazon.com/pt/ec2/).Se você quiser colocar o conteúdo de um volume [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) de uma AZ para outra, você pode criar uma snapshot dele e copia-la para a outra AZVocê pode marcar um volume [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) para ser excluído quando a instância [EC2](https://aws.amazon.com/pt/ec2/) vinculada a ele for eliminada.
 
-## EBS Snapshots Overview
+## [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) Snapshots Overview
 
-Snapshots podem ser utilizadas também para copiar volumes **EBS** para outras Regions
+Snapshots podem ser utilizadas também para copiar volumes [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) para outras Regions
 
 ## AMI Overview
 
@@ -135,7 +135,7 @@ O processo de criar uma **AMI** consiste em:
 1. Criar uma instância [EC2](https://aws.amazon.com/pt/ec2/)
 2. Customizar a instância
 3. Parar a instância
-4. Construir a **AMI**, o que também irá criar uma Snapshot do volume **EBS**
+4. Construir a **AMI**, o que também irá criar uma Snapshot do volume [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html)
 
 ## EC2 Image Builder Overview
 
@@ -143,17 +143,17 @@ EC2 Image Builder é um processo de criação de instâncias EC2 que cria AMIs d
 
 ## EC2 Instance Store
 
-Comparando a performance de armazenamento do drive da instância EC2 com o EBS:
+Comparando a performance de armazenamento do drive da instância EC2 com o [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html):
 
-* Volumes EBS são drives de rede, por isso são mais lentos.
-* Volumes EBS são mais práticos, podem ser montados e desmontados a qualquer momento.
+* Volumes [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) são drives de rede, por isso são mais lentos.
+* Volumes [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) são mais práticos, podem ser montados e desmontados a qualquer momento.
 * Drives de instância, por estarem diretamente conectados com a aplicação, têm uma latência bem menor.
 * Drives de instância estão presos à execução desta, se a instância falhar, os dados contidos nela são perdidos.
-O ideal é usar o drive da instância como buffer/cache e após determinado tempo, passar esta informação para o volume EBS de persistência mais longa.
+O ideal é usar o drive da instância como buffer/cache e após determinado tempo, passar esta informação para o volume [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) de persistência mais longa.
 
 ## EFS Overview
 
-EFS é um tipo de armazenamento de arquivo no qual instâncias diferentes podem acessar o mesmo volume de arquivos, mesmo que estas instâncias estejam em AZs diferentes. Diferente do EBS em que para levar dados de uma AZ para outra, é necessário criar uma snapshot do volume, no EFS, as instâncias de AZs dinstintas acessam os mesmos arquivos.Em termos de custo o EFS é bem mais caro que outras modalidades de armazenamento de arquivo, contudo, neste caso, você paga apenas pela quantidade de dados que usou, não pela que contratou.
+EFS é um tipo de armazenamento de arquivo no qual instâncias diferentes podem acessar o mesmo volume de arquivos, mesmo que estas instâncias estejam em AZs diferentes. Diferente do [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) em que para levar dados de uma AZ para outra, é necessário criar uma snapshot do volume, no EFS, as instâncias de AZs dinstintas acessam os mesmos arquivos.Em termos de custo o EFS é bem mais caro que outras modalidades de armazenamento de arquivo, contudo, neste caso, você paga apenas pela quantidade de dados que usou, não pela que contratou.
 
 EFS-IA(Infrequent Access): se ativado, move arquivos pouco utilizados de um lugar para o outro afim de economizar espaço, isso pode criar uma economia de até 92% se comparado ao EFS padrão.Esse processo é totalmente transparente para as aplicações.
 
@@ -162,7 +162,7 @@ EFS-IA(Infrequent Access): se ativado, move arquivos pouco utilizados de um luga
 Das responsabilidades da AWS:
 
 * Infra
-* Replicação de dados de EBS e EFS
+* Replicação de dados de [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) e EFS
 * Privacidade física
 
 Das suas responsabilidades:
@@ -248,7 +248,7 @@ Resumo ELB e ASG:ELB = Elastic Load BalancingASG = Auto Scaling GroupHigh Availa
 * Oferece suporte para Health Check.
 * 4 Tipos: LB de Aplicação(HTTP - Camada 7), LB de transporte(TCP - Camada 4),LB de Gateway(NOVO)(IP - Camada 3), LB clássico (DEPRECIADO - camada 4 e 7).
 
-## S3 Overview
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Overview
 
 S3 é o serviço de armazenamento de objetos da AWS, pode ser usado para várias coisas, dentre elas:
 
@@ -262,7 +262,7 @@ S3 é o serviço de armazenamento de objetos da AWS, pode ser usado para várias
 * Entrega de Softwares
 * Arquivos estáticos
 
-Os objetos trabalhados no S3 são armazenados em diretórios chamados de buckets, esses buckets são armazenados dentro de uma region, contudo, seu nome é uma chave única global, ou seja, transcende todas as regions **E TODOS OS USUÁRIOS E CLIENTES DA AMAZON**, de forma que um bucket em São Paulo não pode ter o mesmo nome de um bucket em Ohio. Sobre a nomeação dos buckets, estas seguem uma convenção, que é a seguinte:
+Os objetos trabalhados no [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) são armazenados em diretórios chamados de buckets, esses buckets são armazenados dentro de uma region, contudo, seu nome é uma chave única global, ou seja, transcende todas as regions **E TODOS OS USUÁRIOS E CLIENTES DA AMAZON**, de forma que um bucket em São Paulo não pode ter o mesmo nome de um bucket em Ohio. Sobre a nomeação dos buckets, estas seguem uma convenção, que é a seguinte:
 
 * Sem letra maiúscula
 * Sem Underline
@@ -270,66 +270,66 @@ Os objetos trabalhados no S3 são armazenados em diretórios chamados de buckets
 * Não ser um IP
 * Deve iniciar com letra minúscula ou número
 
-## S3 Security: Bucket Policy
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Security: Bucket Policy
 
-Sobre a segurança do S3:Segurança baseada no IAM:Políticas do IAM podem ser usadas para determinar quais serviços do S3 podem ser acessados por quais usuários.Segurança baseada em recursos:
+Sobre a segurança do [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html):Segurança baseada no IAM:Políticas do IAM podem ser usadas para determinar quais serviços do [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) podem ser acessados por quais usuários.Segurança baseada em recursos:
 
-* Bucket policies - Políticas do bucket controladas pelo console S3
+* Bucket policies - Políticas do bucket controladas pelo console [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)
 * Object Access Control List(ACL) - Ajuste fino de acesso
 * Bucket Access Control List(ACL) - Ajuste grosseiro, menos comum
-Um usuário IAM consegue acessar o S3 **SE**: ( Uma política IAM autoriza-o **OU** Uma política de recurso autoriza-o) **E** NÃO existe uma recusa explícita
+Um usuário IAM consegue acessar o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) **SE**: ( Uma política IAM autoriza-o **OU** Uma política de recurso autoriza-o) **E** NÃO existe uma recusa explícita
 
-Um exemplo de boa prática para acessos em buckets S3 é, ao invés de dar acessos a usuários, utilizar roles(funções) em instâncias EC2 para que elas possam ter acesso a esses buckets.
+Um exemplo de boa prática para acessos em buckets [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) é, ao invés de dar acessos a usuários, utilizar roles(funções) em instâncias EC2 para que elas possam ter acesso a esses buckets.
 
-## S3 Website Hands On
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Website Hands On
 
 S3 pode ser bem útil para fazer websites.
 
-## S3 Versioning Overview
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Versioning Overview
 
-Versionamento de arquivos no S3 é possível e muito recomendado. Isso é feito a nível de objeto, criando um hash para cada versão do objeto.É recomendado versionar os buckets pois desta forma você protege o conteúdo já existe de exclusões desnecessárias. Isso também torna mais fácil um eventual roll back.Caso um arquivo não esteja versionado, ele ficará sob a versão ull\. Dar rollback ou suspender uma versão não apaga ela, uma vez que uma versão é criada, ela ficará lá para sempre.
+Versionamento de arquivos no [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) é possível e muito recomendado. Isso é feito a nível de objeto, criando um hash para cada versão do objeto.É recomendado versionar os buckets pois desta forma você protege o conteúdo já existe de exclusões desnecessárias. Isso também torna mais fácil um eventual roll back.Caso um arquivo não esteja versionado, ele ficará sob a versão ull\. Dar rollback ou suspender uma versão não apaga ela, uma vez que uma versão é criada, ela ficará lá para sempre.
 
-## S3 Server Access Logging
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Server Access Logging
 
-Todos os acessos feitos no S3 são salvos em logs, nesses logs constam solicitações feitas por quaisquer contas, autorizadas ou não, esses dados podem ser analisados por ferramentas de analytics. Esse tipo de informação é útil para auditoria e para achar a causa raiz de algum problema, encontrar padrões suspeitos, etc..
+Todos os acessos feitos no [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) são salvos em logs, nesses logs constam solicitações feitas por quaisquer contas, autorizadas ou não, esses dados podem ser analisados por ferramentas de analytics. Esse tipo de informação é útil para auditoria e para achar a causa raiz de algum problema, encontrar padrões suspeitos, etc..
 
-## S3 Replication Overview
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Replication Overview
 
-S3 Replication é o ato de Replicar um bucket S3, seguem algumas características:
+S3 Replication é o ato de Replicar um bucket [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), seguem algumas características:
 
 * O bucket deve estar versionado, na origem e no destino.
 * Cross Region Replication (CRR) replica entre 2 regions diferentes
 * Same Region Replication (SRR) replica entre 2 AZs na mesma region
 * Os buckets podem estar em contas roots diferentes
 * A cópia é assíncrona
-* Devem ser dadas as permissões IAM devidas para o S3
+* Devem ser dadas as permissões IAM devidas para o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)
 Casos de uso para CRR: Compliance, redução da latência de acesso, replicação entre contas root.Casos de uso para SRR: Agregação de log, Replicação entre ambiente de produção e testes.
 
-## S3 Replication Hands On
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Replication Hands On
 
-Sobre a replicação do S3 Objetos criados antes da réplica **NÃO SÃO REPLICADOS**
+Sobre a replicação do [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Objetos criados antes da réplica **NÃO SÃO REPLICADOS**
 
-## S3 Storage Classes Overview
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Storage Classes Overview
 
-Classes de armazenamento S3:
+Classes de armazenamento [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html):
 
-* S3 Standard - Uso geral(o que vimos até aqui)
-* S3 Infrequent Access(IA) - para arquivos pouco utilizados
-* S3 One Zone Infrequent Access - para arquivos pouco utilizados que podem ser recriados ou que não são críticos, pois existe risco de perda.
-* S3 Intelligent Tiering - Sistema inteligente que determina para qual tipo de classe seus buckets devem ir.
-* S3 Glacier - Para armazenamento de arquivos mortos e backups.
-* S3 Glacier Deep Archive - Para armazenamento de arquivos mortos e backups que você entende que ficarão muito tempo sem serem lidos(estilo aqueles que acumularão poeira e teia de aranha no porão).
-* S3 Reduced Redudancy Storage(RRS) - **Depreciado** - Sistema legado que não será solicitado no exame.
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Standard - Uso geral(o que vimos até aqui)
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Infrequent Access(IA) - para arquivos pouco utilizados
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) One Zone Infrequent Access - para arquivos pouco utilizados que podem ser recriados ou que não são críticos, pois existe risco de perda.
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Intelligent Tiering - Sistema inteligente que determina para qual tipo de classe seus buckets devem ir.
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Glacier - Para armazenamento de arquivos mortos e backups.
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Glacier Deep Archive - Para armazenamento de arquivos mortos e backups que você entende que ficarão muito tempo sem serem lidos(estilo aqueles que acumularão poeira e teia de aranha no porão).
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Reduced Redudancy Storage(RRS) - **Depreciado** - Sistema legado que não será solicitado no exame.
 
 Conceitos e Garantias da AWS:
 
 * Durabilidade:
-* A AWS garante que o S3 manterá 99,999999999% (11 9s) dos objetosentreas AZs. Isso significa que em média existe o risco de você perder um objetoacada 10000 anos. Esta regra é válida para todas as classes.
+* A AWS garante que o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) manterá 99,999999999% (11 9s) dos objetosentreas AZs. Isso significa que em média existe o risco de você perder um objetoacada 10000 anos. Esta regra é válida para todas as classes.
 * Disponibilidade
-* A medida de o quão disponível o S3 é.
-* A AWS garante que o S3 estará disponível em 99,99% do tempo, o quesignifica que ela assume uma indisponibilidade de até 53 minutos por ano.Essagarantia varia de acordo com a classe S3.
+* A medida de o quão disponível o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) é.
+* A AWS garante que o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) estará disponível em 99,99% do tempo, o quesignifica que ela assume uma indisponibilidade de até 53 minutos por ano.Essagarantia varia de acordo com a classe [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html).
 
-Para S3 Standard:
+Para [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Standard:
 
 * Disponibilidade de 99,99%
 * Usado para dados acessados frequentemente.
@@ -342,15 +342,15 @@ S3 Standard - Infrequent Access (IA)
 
 * Para arquivos pouco acessados mas que precisam de uma latência rápida, quando acessados.
 * Disponibilidade de 99,9%
-* Custo menor, se comparado com S3 Standard, porém, há um custo maior por acesso.
+* Custo menor, se comparado com [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Standard, porém, há um custo maior por acesso.
 * Suporta falha de até 2 instalações(facilities) simultaneamente.
 Usado para: Data store para recuperação de desastres, backups, etc...
 
 S3 Intelligent-Tiering
 
 * Disponibilidade de 99,9%
-* Mesma baixa latência e alta performance de taxa de transferência do S3 standard.
-* Otimizado para custar menos pois automaticamente move objetos entre as outras 2 classes S3(acesso frequênte/infrequênte) baseado em padrões de acesso.
+* Mesma baixa latência e alta performance de taxa de transferência do [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) standard.
+* Otimizado para custar menos pois automaticamente move objetos entre as outras 2 classes [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)(acesso frequênte/infrequênte) baseado em padrões de acesso.
 
 Usado para: Resiliência de eventos que impactem diretamente a AZ. Sistemas que exijam comprovantes, como compras que são muito acessados nas primeiras semanas após serem gerados e cada vez menos ao longo do tempo.
 
@@ -359,7 +359,7 @@ S3 One Zone - Infrequent Access (IA)
 * Igual ao IA, contudo, desta vez, armazenado em uma única AZ.
 * 99,5% de disponibilidade.
 * Baixa latência e alta performance de taxa de transferência.
-* Baixo custo se comparado com S3-IA (cerca de 20%)
+* Baixo custo se comparado com [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)-IA (cerca de 20%)
 Usado para: Armazenamento de backups secundários de dados on-premisse, dados que podem ser recriados, thumbs, etc...
 
 S3 Glacier e Glacier Deep Archive
@@ -375,7 +375,7 @@ S3 Glacier e Glacier Deep Archive
 * Consulta Standard - 12 horas
 * Consulta Bulk - 48 horas
 
-## S3 Glacier Vault Lock & S3 Object Lock
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Glacier Vault Lock & [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Object Lock
 
 S3 Object Lock
 
@@ -388,9 +388,9 @@ S3 Glacier Vault Lock
 * Bloqueia a política para futuras edições, uma vez definido, não pode ser alterado.
 * Ideal para Compliance, auditoria e garantia de Integridade de dados.
 
-## Shared Responsibility Model for S3
+## Shared Responsibility Model for [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)
 
-Responsabilidade compartilhada do S3:
+Responsabilidade compartilhada do [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html):
 
 AWS:
 
@@ -400,11 +400,11 @@ AWS:
 
 Você:
 
-* Versionamento do S3
+* Versionamento do [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)
 * Setup das políticas dos buckets
 * Setup das replicações dos buckets
 * Logging e monitoramento
-* Escolha das classes de S3
+* Escolha das classes de [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)
 * Criptografia de dados armazenados e em tráfego.
 
 ## AWS Snow Family Overview
@@ -442,27 +442,27 @@ Todos podem rodar instâncias [EC2](https://aws.amazon.com/pt/ec2/) ou Funções
 Na AWS, pelo que foi estudado até aqui, vimos 3 responsáveis agindo de 3 formas para armazenar dados.
 
 * [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) - Volumes
-* **EBS** - Arquivos
+* [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) - Arquivos
 * **Glacier** - Fitas
 Se você não sabe onde armazenar cada dado, o **AWS Storage Gateway** consegue trabalhar como um mediador entre servidores on-premisse e esses 3 produtos, desta forma, o **Storage Gateway** é útil para trabalhar com recuperação de desastre, backup e restauração e armazenamento em camadas.
 
-## S3 Summary
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Summary
 
-Resumo S3:
+Resumo [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html):
 
 * Buckets vs Objetos: Buckets possuem um nome único para todos os usuários mas são anexados em uma única region.
-* S3 Security: O acesso a um bucket pode ser controlado via IAM ou via políticas do bucket(para acessos externos).
-* S3 websites: Os buckets podem ser usados para hospedar websites estáticos.
-* Versionamento S3: É possível habilitar um versionamento de arquivo no S3 no qual é possível fazer rollback, inclusive, de exclusões.
-* Logs de acesso S3: É possível fazer um bucket S3 escrever logs de acesso em outro bucket para você saber quantas vezes cada arquivo do bucket foi acessado.
-* Replicação S3: É possível replicar um bucket para a mesma region ou para outra, mas apenas alteração após a criação da replicação serão copiadas, deve habilitar versionamento.
-* Classes S3: Standard, Standard IA, Standard IA-OZ, Intelligent, Glacier, Glacier Deep Archive.
-* S3 Lifecycle: regras para evoluir um arquivo de uma classe S3 para outra automaticamente após um tempo.
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Security: O acesso a um bucket pode ser controlado via IAM ou via políticas do bucket(para acessos externos).
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) websites: Os buckets podem ser usados para hospedar websites estáticos.
+* Versionamento [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html): É possível habilitar um versionamento de arquivo no [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) no qual é possível fazer rollback, inclusive, de exclusões.
+* Logs de acesso [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html): É possível fazer um bucket [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) escrever logs de acesso em outro bucket para você saber quantas vezes cada arquivo do bucket foi acessado.
+* Replicação [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html): É possível replicar um bucket para a mesma region ou para outra, mas apenas alteração após a criação da replicação serão copiadas, deve habilitar versionamento.
+* Classes [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html): Standard, Standard IA, Standard IA-OZ, Intelligent, Glacier, Glacier Deep Archive.
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Lifecycle: regras para evoluir um arquivo de uma classe [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) para outra automaticamente após um tempo.
 
-* S3 glacier Vault Lock / S3 Object Lock: Utilizam WORM(Write Once Read Many) sistema de backup \somente leitura\.
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) glacier Vault Lock / [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Object Lock: Utilizam WORM(Write Once Read Many) sistema de backup \somente leitura\.
 * Snow family: Serviço de devices físicos que podem ser utilizados para transferir e armazenar grandes quantidades de dados da empresa para a AWS de maneira offline, também permitem fazer edge computing.
 * OpsHub: Aplicação Desktop utilizada para gerenciar os dispositivos Snow Family.
-* Storage Gateway: Solução Híbrida que permite criar uma conexão entre armazenamento on-premisse com armazenamento na AWS(especialmente EBS, S3 e Glacier).
+* Storage Gateway: Solução Híbrida que permite criar uma conexão entre armazenamento on-premisse com armazenamento na AWS(especialmente [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html), [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) e Glacier).
 
 ## Databases Introduction
 
@@ -504,7 +504,7 @@ Contudo, várias tecnologias de bases de dados podem ser rodadas em instâncias 
 * Alta disponibilidade utilizando mais de uma AZ.
 * janelas de manutenção para upgrades.
 * Capacidade de escalabilidade(horizontal e vertical).
-* Armazenamento feito por volumes **EBS** (GP2 ou IO I)
+* Armazenamento feito por volumes [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) (GP2 ou IO I)
 Não é possível acessar as instâncias via SSH.
 
 Amazon Aurora:
@@ -634,7 +634,7 @@ Resumo:
 * Key/Value Database: **DynamoDB**(Serverless) e **DAX**(Versão in-memory para **DynamoDB**)
 * Warehouse - OLAP: **Redshift**(SQL)
 * Clusters Hadoop: **EMR**
-* Athena: Queries para Amazon S3(Servers e SQL)
+* Athena: Queries para Amazon [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)(Servers e SQL)
 * QuickSight: Dashboards dos dados(serverless).
 * DocumentDB: \Aurora para MongoDB\ Banco de dados NOSQL.
 * Amazon QLDB: Banco de dados Imutável Ledger da Amazon.
@@ -719,7 +719,7 @@ Devido ao preço baixo, é bem comum se utilizar bastante AWS [Lambda](https://d
 **Batch**:
 * Sem tempo limite.
 * Sem limite de execução uma vez que é empacotado em uma imagem docker.
-* É montado em um volume **EBS**.
+* É montado em um volume [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html).
 * É executado em uma instância [EC2](https://aws.amazon.com/pt/ec2/).
 
 ## Lightsail Overview
@@ -728,7 +728,7 @@ Devido ao preço baixo, é bem comum se utilizar bastante AWS [Lambda](https://d
 
 * Servidores virtuais, armazenamento, banco de dados e rede.
 * É mais barato.
-* Uma alternativa mais simples do que usar [EC2](https://aws.amazon.com/pt/ec2/), **RDS**, **ELB**, **EBS**, **Route 53**, etc...
+* Uma alternativa mais simples do que usar [EC2](https://aws.amazon.com/pt/ec2/), **RDS**, **ELB**, [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html), **Route 53**, etc...
 * Melhor para pessoas sem experiência com Cloud.
 * Você pode configurar notificações e monitorar seus recursos do **Lightsail**.
 * Alta disponibilidade mas sem auto-escalabilidade, possui certa limitação com a AWS.
@@ -936,7 +936,7 @@ O **Route 53** o health check em uma instância determinada como primária e cas
 * As replicas são de apenas leitura.
 * É bom para arquivos dinâmicos que precisam estar disponíveis com baixa latência em algumas regions.
 
-## S3 Transfer Acceleration
+## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Transfer Acceleration
 
 **S3 Transfer Acceleration** é uma técnica para diminuir o tempo de transferência de um pacote de uma region/AZ para outra. Exemplo: o arquivo está na region 1 e precisa ir para a region 2, ele é levado para a edge location da region 1 que fica mais próxima da region 2 e de lá é levado para a region 2.
 
@@ -965,7 +965,7 @@ Alguns benefícios do **AWS Outposts**:
 * Data residency.
 * Migração fácil de dados dos servidores on-premisse para a cloud.
 * Serviço totalmente gerenciável.
-Alguns serviços que funcionam com **Outposts**: [EC2](https://aws.amazon.com/pt/ec2/), **EBS**, [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), **EKS**, **ECS**, **RDS**, **EMR**.
+Alguns serviços que funcionam com **Outposts**: [EC2](https://aws.amazon.com/pt/ec2/), [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html), [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), **EKS**, **ECS**, **RDS**, **EMR**.
 
 ## AWS WaveLength
 
@@ -1015,7 +1015,7 @@ Desta forma as aplicações e serviços podem escalar de forma independente.
 Amazon **Kinesis** é um serviço de streaming de bigdata em tempo real. Feito para coletar, processar e analisar streaming de dados em qualquer escala em tempo real. ISSO É TUDO QUE É PEDIDO NO EXAME PARA PRACTITIONER.Mais informações:
 
 * **Kinesis** Data Streams: sistema de streaming em baixa latência para trazer dados de centenas de milhares de fontes.
-* **Kinesis** Data Firehose: carrega streams em buckets S3, Redshift, ElasticSearch, etc...
+* **Kinesis** Data Firehose: carrega streams em buckets [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), Redshift, ElasticSearch, etc...
 * **Kinesis** Data Analytics: Realisa analytics em tempo real nos streams usando SQL.
 * **Kinesis** Video Streams: Monitora video streams em tempo real para análise.
 
@@ -1037,7 +1037,7 @@ Resumo Integração:
 AWS **CloudWatch** é o serviço de métricas da Amazon, usado para fazer a análise gráfica da utilização dos serviços da AWS afim de se obter informações de forma simplificada para a tomada de decisão com relação a utilização dos serviços na nuvem, pode se gerar gráficos com dados relacionados a:
 
 * [EC2](https://aws.amazon.com/pt/ec2/): Utilização da CPU, Checagem de status, Network. Alimentação padrão a cada 5 min, pode se diminuir o intervalo para 1 minuto pagando mais.
-* **EBS**: Taxa de Leitura/Escrita dos volumes.
+* [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html): Taxa de Leitura/Escrita dos volumes.
 * [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html): BucketSizeBytes, NumbersOfObjects, AllRequests.
 * **Billing**: Custo total estimado(apenas na region us-east-1)
 * Service Limits: O quanto você tem utilizado a API de um serviço.
@@ -1300,7 +1300,7 @@ Na AWS a criptografia de dados ocorre em 2 momento, no momento em que o dado est
 
 Um serviço da AWS usado para criptografia é o **Key Management Service (KMS)**, neste serviço a AWS gera e gerencia chaves de criptografia sem necessidade da sua interferência.O **KMS** atua nos serviços da seguinte forma:
 
-* **EBS**: Criptografia de volumes.
+* [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html): Criptografia de volumes.
 * [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html): Criptografia Server-side dos objetos dentro dos buckets.
 * **Redshift**: Criptografia dos dados dentro do BD.
 * **RDS**: Criptografia dos dados dentro do BD.
@@ -1567,7 +1567,7 @@ A AWS possui 4 modelos de preços:
 Sobre gratuidade na AWS:Os seguintes serviços da AWS são gratuitos: [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html), **VPC** e **Billing** consolidado.Os seguintes serviços da AWS são gratuitos mas interagem de forma automatizada com serviços pagos: **Elastic Beanstalk**, **CloudFormation** e **Auto Scaling Groups**.Free Tier: Grupo de serviços que podem ser usados por um tempo/quantidade de forma gratuita, para entender em detalhes, acesse: <https://aws.amazon.com/free/> são exemplos de elegíveis a free tier:
 
 * Instância [EC2](https://aws.amazon.com/pt/ec2/) t2.micro por 1 ano
-* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), **EBS**, **ELB** baseado em quantidade de dados transferidos.
+* [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html), **ELB** baseado em quantidade de dados transferidos.
 
 Precificação do [EC2](https://aws.amazon.com/pt/ec2/) pt 1:Você só é cobrado pelo que você usa e esse custo é multiplicado pela quantidade de instâncias.Cada tipo de instância tem um preço que é baseado em:
 
@@ -1607,7 +1607,7 @@ Precificação de [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.
 
 Precificação [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html):[S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) possui as seguintes classes: [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Standard, [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Infrequent Access, [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) One-Zone IA, [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Intelligent Tiering, [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Glacier e [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Glacier Deep Archive nessa ordem de preço do maior para o menor em termos de volume de arquivos armazenados.O preço pode ser definido baseado no volume dos objetos (quantidade e tamanho).Também quanto mais requisições você obtiver, mais você paga.Você NÃO paga para colocar dados dentro do [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), mas paga para ler esses dados sendo que na lista acima, os primeiros você paga menos para fazer essa leitura.O serviço [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Transfer Acceleration também haverá uma taxa a ser paga.Toda vez que você usar o Lifecycle para levar dados de uma classe [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) para outra, você também terá que pagar uma taxa.**EFS** também têm características similares, você paga por uso, possui infrequent access e regras de lifecycle.
 
-Precificação **EBS**:Você paga pelo tipo de volume(devido à performance) e pela quantidade de GBs ALOCADA(não usada) por mês.Cobrança por IOPS(IO per second):
+Precificação [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html):Você paga pelo tipo de volume(devido à performance) e pela quantidade de GBs ALOCADA(não usada) por mês.Cobrança por IOPS(IO per second):
 
 * Gerenal purpose SSD: incluso
 * Provisioned IOPS SSD: Quantidade IOPS alocada.
@@ -1654,7 +1654,7 @@ Você pode configurar todas as questões de custo no AWS Cost Explorer console.M
 
 ## Compute Optimizer Overview
 
-**AWS Compute Optimizer** é um serviço que usa ML para reduzir custos e melhorar a performance, faz isso analisando a utilização de instâncias [EC2](https://aws.amazon.com/pt/ec2/), volumes **EBS** e funções [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html), configurações e métricas da **CloudWatch** e então exporta relatórios para o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) que mostram o que você pode fazer para reduzir seus custos na AWS.Tem uma efetividade de reduzir custos de até 25%.
+**AWS Compute Optimizer** é um serviço que usa ML para reduzir custos e melhorar a performance, faz isso analisando a utilização de instâncias [EC2](https://aws.amazon.com/pt/ec2/), volumes [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) e funções [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html), configurações e métricas da **CloudWatch** e então exporta relatórios para o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) que mostram o que você pode fazer para reduzir seus custos na AWS.Tem uma efetividade de reduzir custos de até 25%.
 
 ## Billing & Costing Tools Overview
 
@@ -1707,12 +1707,12 @@ Exemplos de verificações do **Trusted Advisor**:
 * Otimização de Reserved instances e savings plans.
 * Performance
 * Otimização de instâncias [EC2](https://aws.amazon.com/pt/ec2/) muito utilizadas,**CloudFront**.
-* Otimização de taxa de transferência de [EC2](https://aws.amazon.com/pt/ec2/) para**EBS**, recomendações de registro de Alias.
+* Otimização de taxa de transferência de [EC2](https://aws.amazon.com/pt/ec2/) para[EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html), recomendações de registro de Alias.
 * Segurança
 * Verificação de utilização de MFA na conta root, rotação de chaves[IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html), Access Keys expostas.
 * Verificação de buckets [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) expostos ao público,**SecurityGroups** com portas sem restrição.
 * Tolerância à falha
-* Idade de snapshots **EBS**, Balanceamento de AZs.
+* Idade de snapshots [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html), Balanceamento de AZs.
 * **ASG** Multi-AZ, **RDS** Multi-AZ, configurações**ELB**, etc...
 * Limites de Serviços
 
@@ -1849,7 +1849,7 @@ Resumo Advanced Identity:
 
 ## AWS Backup Overview
 
-**AWS Backup** é o serviço de backup da AWS, nele você configura um período em que será feito um backup dos seus dados e ele automaticamente copia o conteúdo dos seus serviços(RDS, EBS, DynamoDB, EC2, EFS, FSx, Aurora) para dentro de um bucket no S3.
+**AWS Backup** é o serviço de backup da AWS, nele você configura um período em que será feito um backup dos seus dados e ele automaticamente copia o conteúdo dos seus serviços(RDS, [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html), DynamoDB, EC2, EFS, FSx, Aurora) para dentro de um bucket no [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html).
 
 ## CloudEndure Overview
 
@@ -1952,7 +1952,7 @@ Pilares do Well Achitected Framework:2- Segurança pt 2Onde cada serviço se enc
 * **KMS** - Gerenciamento de chaves
 * [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) - Armazenamento de objetos
 * **ELB** - Balanceamento
-* **EBS** - Armazenamento de arquivos em bloco
+* [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) - Armazenamento de arquivos em bloco
 * **RDS** - BD
 * Resposta a incidentes
 * [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) - Rotacionando credenciais
@@ -1984,8 +1984,8 @@ Pilares do Well Achitected Fra:3- ConfiabilidadeOnde cada serviço se encaixa ne
 * Gerenciamento de falhas
 * Backups - faz backups dos ambientes
 * AWS CloudFormation - manutenção do ambiente
-* Amazon S3 - armazenamento de objetos de backup
-* Amazon S3 Glacier - arquivamento de objetos
+* Amazon [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) - armazenamento de objetos de backup
+* Amazon [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Glacier - arquivamento de objetos
 * Amazon Route 53 - Redirecionamento de DNS em caso de falha em algumendpoint
 
 ### 4º pilar: Performance Efficiency
@@ -2003,7 +2003,7 @@ Pilares do Well Achitected Framework:4- Eficiência de PerformanceOnde cada serv
 * Seleção
 * **Auto Scaling**: Escalabilidade.
 * [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html): Execução de procedimentos.
-* **EBS**: Coleção de arquivos em bloco do ambiente.
+* [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html): Coleção de arquivos em bloco do ambiente.
 * [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html): Coleção de objetos do ambiente.
 * **RDS**: BD com dados do ambiente.
 * Review
