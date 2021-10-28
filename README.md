@@ -42,7 +42,6 @@ Cada AZ é composta de N datacenters, sendo N >= 1 e N um número conhecido apen
 ## EC2 Image Builder Overview
 
 EC2 Image Builder é um processo de criação de instâncias EC2 que cria AMIs de maneira automatizada, com esse processo, você cria instâncias EC2, cria AMI e testa de forma automatizada.
-
 ## EC2 Instance Store
 
 Comparando a performance de armazenamento do drive da instância EC2 com o [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html):
