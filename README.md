@@ -22,7 +22,7 @@ Para facilitar o cruzamento de dados e informações ao longo da leitura, cada n
 * Infrastructure as a Service (IaaS) - Serviços que fornecem conexão de rede, SOs, armazenamento, alta flexibilidade de utilização. Costumam ser genéricos, podem ser utilizados para vários fins. Ex: [EC2](https://aws.amazon.com/pt/ec2/).
 * Platform as a Service (PaaS) - Serviços que fornecem uma plataforma para deployment, restauração, manutenção de dados, mas não te dão acesso ao SO diretamente, Ex: **Elastic BeanStalk**, [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html).
 * Software as a Service (SaaS) - Serviços que atuam como uma aplicação na nuvem gerenciada pela AWS que você chama da sua aplicação para algum fim, Ex: **Rekognition**, **Polly**, **Translate**.
-* Code as a Service (Caas) ou Function as a Service (FaaS) - Serviços orientados a evento que executam uma função simples na núvem em um ambiente serverless, Ex: [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
+* Code as a Service (Caas) ou Function as a Service (FaaS) - Serviços orientados a evento que executam uma função simples na nuvem em um ambiente serverless, Ex: [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
 
 ## AWS Cloud Overview
 
@@ -84,12 +84,12 @@ Você
 * Administração e monitoramento de Usuários [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html), Grupos, Roles e Policies.
 * Gerenciamento de MFA nas contas.
 * Manter um rotacionamento de chaves constante.
-* Usar as ferramentos [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) para aplicar as permissões apropriadas.
+* Usar as ferramentas [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) para aplicar as permissões apropriadas.
 * Analisar padrões de acesso e revisar permissões.
 
 ## EC2 Instance Types Basics
 
-O tipo da instância [EC2](https://aws.amazon.com/pt/ec2/) representa as características dela. Dado o formato classegeração.porte sendo o porte representando o tamanho de memória RAM que ela possa possuir ou a capacidade de processamento.Exemplo: t2.nano, m5.2xlarge
+O tipo da instância [EC2](https://aws.amazon.com/pt/ec2/) representa as características dela. Dado o formato classe.geração.porte sendo o porte representando o tamanho de memória RAM que ela possa possuir ou a capacidade de processamento.Exemplo: t2.nano, m5.2xlarge
 Na seguinte página é possível obter o portfólio de instâncias [EC2](https://aws.amazon.com/pt/ec2/) da AWS <https://aws.amazon.com/pt/ec2/instance-types/>
 
 ## EC2 Instance Launch Types
@@ -124,7 +124,7 @@ Snapshots podem ser utilizadas também para copiar volumes [EBS](https://docs.aw
 
 ## AMI Overview
 
-**AMI** são imagens customizadas de instâncias [EC2](https://aws.amazon.com/pt/ec2/), estas imagens podem possuis softwares pré configurados.**AMIs** podem ser construidas para regiões específicas e copiadas de uma região para outra.**AMIs** são disponibizadas de 3 formas:
+**AMI** são imagens customizadas de instâncias [EC2](https://aws.amazon.com/pt/ec2/), estas imagens podem possuir softwares pré configurados.**AMIs** podem ser construídas para regiões específicas e copiadas de uma região para outra.**AMIs** são disponibilizadas de 3 formas:
 
 * Públicas gratuitas - disponibilizadas pela AWS e pela comunidade
 * Privadas - criadas por usuários e de uso privado
@@ -153,7 +153,7 @@ O ideal é usar o drive da instância como buffer/cache e após determinado temp
 
 ## EFS Overview
 
-EFS é um tipo de armazenamento de arquivo no qual instâncias diferentes podem acessar o mesmo volume de arquivos, mesmo que estas instâncias estejam em AZs diferentes. Diferente do [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) em que para levar dados de uma AZ para outra, é necessário criar uma snapshot do volume, no EFS, as instâncias de AZs dinstintas acessam os mesmos arquivos.Em termos de custo o EFS é bem mais caro que outras modalidades de armazenamento de arquivo, contudo, neste caso, você paga apenas pela quantidade de dados que usou, não pela que contratou.
+EFS é um tipo de armazenamento de arquivo no qual instâncias diferentes podem acessar o mesmo volume de arquivos, mesmo que estas instâncias estejam em AZs diferentes. Diferente do [EBS](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html) em que para levar dados de uma AZ para outra, é necessário criar uma snapshot do volume, no EFS, as instâncias de AZs distintas acessam os mesmos arquivos.Em termos de custo o EFS é bem mais caro que outras modalidades de armazenamento de arquivo, contudo, neste caso, você paga apenas pela quantidade de dados que usou, não pela que contratou.
 
 EFS-IA(Infrequent Access): se ativado, move arquivos pouco utilizados de um lugar para o outro afim de economizar espaço, isso pode criar uma economia de até 92% se comparado ao EFS padrão.Esse processo é totalmente transparente para as aplicações.
 
@@ -287,7 +287,7 @@ S3 pode ser bem útil para fazer websites.
 
 ## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Versioning Overview
 
-Versionamento de arquivos no [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) é possível e muito recomendado. Isso é feito a nível de objeto, criando um hash para cada versão do objeto.É recomendado versionar os buckets pois desta forma você protege o conteúdo já existe de exclusões desnecessárias. Isso também torna mais fácil um eventual roll back.Caso um arquivo não esteja versionado, ele ficará sob a versão ull\. Dar rollback ou suspender uma versão não apaga ela, uma vez que uma versão é criada, ela ficará lá para sempre.
+Versionamento de arquivos no [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) é possível e muito recomendado. Isso é feito a nível de objeto, criando um hash para cada versão do objeto.É recomendado versionar os buckets pois desta forma você protege o conteúdo já existe de exclusões desnecessárias. Isso também torna mais fácil um eventual roll back.Caso um arquivo não esteja versionado, ele ficará sob a versão null\. Dar rollback ou suspender uma versão não apaga ela, uma vez que uma versão é criada, ela ficará lá para sempre.
 
 ## [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) Server Access Logging
 
@@ -350,7 +350,7 @@ S3 Intelligent-Tiering
 
 * Disponibilidade de 99,9%
 * Mesma baixa latência e alta performance de taxa de transferência do [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) standard.
-* Otimizado para custar menos pois automaticamente move objetos entre as outras 2 classes [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)(acesso frequênte/infrequênte) baseado em padrões de acesso.
+* Otimizado para custar menos pois automaticamente move objetos entre as outras 2 classes [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html)(acesso frequente/infrequente) baseado em padrões de acesso.
 
 Usado para: Resiliência de eventos que impactem diretamente a AZ. Sistemas que exijam comprovantes, como compras que são muito acessados nas primeiras semanas após serem gerados e cada vez menos ao longo do tempo.
 
@@ -473,7 +473,7 @@ Base de dados NoSQL podem oferecer uma performance melhor na AWS pelos seguintes
 * Flexibilidade: São fáceis de se desenvolver a partir de um modelo de dados.
 * Escalabilidade: São desenhados para escalar horizontalmente(scale-out) com facilidade usando clusters distribuidos.
 * Alta performance: otimizado para um modelo de dados específico.
-* Altamento funcional: tipagem otimizada para o modelo de dados.
+* Altamente funcional: tipagem otimizada para o modelo de dados.
 Exemplo: Key-value, documentos, gráficos, in-memory, search databases.
 
 A AWS oferece gerenciadores para vários tipos de bancos de dados, os benefícios de se utilizar esses gerenciadores incluem:
@@ -488,7 +488,7 @@ Contudo, várias tecnologias de bases de dados podem ser rodadas em instâncias 
 
 **RDS**, ou **Relational Database Service** é o serviço de banco de dados relacional da AWS, utiliza SQL como linguagem de query, pode ser usado como plataforma para os seguintes SGBD:
 
-* Postgree
+* Postgres
 * MySQL
 * MariaDB
 * Oracle
@@ -596,7 +596,7 @@ Caso de uso: Queries feitas no [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/l
 
 ## Neptune Overview
 
-**Amazon Neptune** é um banco de dados gráfico.Adota Alta disponibilidade através de 3 AZs com até 15 réplicas de leituras, contrúa e rode aplicações funcionando e altamente conectadas, otimizadas para rodar queries complexas.basicamente, no exame, sempre que pensar em um banco de dados que lidam com os dados de forma gráfica, como os verbetes da Wikipedia, ou a relação de perfis de uma rede social, pense no **Amazon Neptune**.
+**Amazon Neptune** é um banco de dados gráfico.Adota Alta disponibilidade através de 3 AZs com até 15 réplicas de leituras, construa e rode aplicações funcionando e altamente conectadas, otimizadas para rodar queries complexas.basicamente, no exame, sempre que pensar em um banco de dados que lidam com os dados de forma gráfica, como os verbetes da Wikipedia, ou a relação de perfis de uma rede social, pense no **Amazon Neptune**.
 
 ## QLDB Overview
 
@@ -638,7 +638,7 @@ Resumo:
 * QuickSight: Dashboards dos dados(serverless).
 * DocumentDB: \Aurora para MongoDB\ Banco de dados NOSQL.
 * Amazon QLDB: Banco de dados Imutável Ledger da Amazon.
-* Amazon Managed Blockchain: Gerenciamento de Hyperledger Fabri e Ethereum blockchain.
+* Amazon Managed Blockchain: Gerenciamento de Hyperledger Fabric e Ethereum blockchain.
 * Glue: ELT(Extract Transform Load) e serviço de catálogo de dados.
 * DMS: Serviço de migração de BD
 * Neptune: Banco de dados gráfico
@@ -693,8 +693,8 @@ Devido ao preço baixo, é bem comum se utilizar bastante AWS [Lambda](https://d
 
 * Os API Gateways permitem facilmente criar, publicar, gerenciar, monitorar e assegurar APIs.
 * O serviço é totalmente Serverless.
-* Da suporte para APIs RESTful e APIs com WebSocket
-* Da suporte para serviços de autenticação, API Throttling, API key, monitoring, etc...
+* Dá suporte para APIs RESTful e APIs com WebSocket
+* Dá suporte para serviços de autenticação, API Throttling, API key, monitoring, etc...
 
 ## Batch Overview
 
@@ -738,7 +738,7 @@ Caso de uso: Aplicações web simples(alguns templates para LAMP, Nginx, MEAN, N
 
 Resumo Other Compute Parte 1:
 
-* **Docker**: Tenologia para rodar aplicações em containers.
+* **Docker**: Tecnologia para rodar aplicações em containers.
 * **ECS**: Serviço para rodar containers Docker em instâncias [EC2](https://aws.amazon.com/pt/ec2/).
 * **Fargate**: Roda containers Docker de forma serverless, sem usar instâncias [EC2](https://aws.amazon.com/pt/ec2/).
 * **ECR**: Repositório privado de imagens Docker.
@@ -782,8 +782,8 @@ AWS **CDK**(**Cloud Development Kit**) é uma forma de substituir a linguagem pa
 Serviços gerenciados pelo **Beanstalk**:
 
 * Instâncias [EC2](https://aws.amazon.com/pt/ec2/), incluindo SO.
-* Estratégia de deploy é configurável, mas é executava pelo Elastic **Beanstalk**.
-* Provicionamento de capacity.
+* Estratégia de deploy é configurável, mas é executada pelo Elastic **Beanstalk**.
+* Provisionamento de capacity.
 * Load Balancing e auto-scaling.
 * monitoramento da aplicação.
 Você ficaria responsável apenas pelo código da aplicação.
@@ -1075,7 +1075,7 @@ Esses logs são coletados e permites monitoramento em tempo real, a retenção d
 
 ## CloudTrail Overview
 
-AWS **CloudTrail** é um serviço que registra todos os eventos executados em todos os serviços da AWS para fins de governança, compliance, segurança ou auditoria. Você consegue obter um histórico de eventos, chamadas de APIs feitos na conta da AWS, como consoles, SDKs, CLI, serviços da AWS e você você colocar logs da **CloutTrail** na **CloudWatch** Logs ou [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html). Os Trails podem ser aplicados em todas as regions(default) ou em uma única region.Então se algo der errado na AWS, se algo de suspeito acontecer na conta, se algum recursos for excluído inesperadamente, o primeiro lugar a ser investiado e o **CloudTrail**.**CloudTrail** vem habilitado por padrão na sua conta.
+AWS **CloudTrail** é um serviço que registra todos os eventos executados em todos os serviços da AWS para fins de governança, compliance, segurança ou auditoria. Você consegue obter um histórico de eventos, chamadas de APIs feitos na conta da AWS, como consoles, SDKs, CLI, serviços da AWS e você pode colocar logs da **CloudTrail** na **CloudWatch** Logs ou [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html). Os Trails podem ser aplicados em todas as regions(default) ou em uma única region.Então se algo der errado na AWS, se algo de suspeito acontecer na conta, se algum recursos for excluído inesperadamente, o primeiro lugar a ser investigado é o **CloudTrail**.**CloudTrail** vem habilitado por padrão na sua conta.
 
 Tipos de eventos do **CloudTrail**:Management Events:Eventos de relacionados a manutenção de recursos da conta da AWS, ex:
 
@@ -1088,7 +1088,7 @@ Por padrão esse tipo de log vem ativado.Você pode separar esses logs em leitur
 * Funções [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html): Execuções da função(invoke)
 Também podem ser separados em leitura e escrita.continua...
 
-**CloudTrail** Insights:Este tipo de serviço tem por objetivo tentar buscar por atividade suspeita na conta como: provisionamento suspeito de recursos, limite de recursos constantemente atingidos, supostas tentativas de fraldes dentro do contexto [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html).Para que o Insight funcione, ele precisa analisar os logs regulares para ter uma ideia do que seria um comportamento normal da conta, e então passará a analisar continuamente. Qualquer anomalia encontrada aparecerá no console do **CloudTrail** e eventos serão enviados para o Amazon [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), também poderão ser gerados eventos no **EventBridge**.
+**CloudTrail** Insights:Este tipo de serviço tem por objetivo tentar buscar por atividade suspeita na conta como: provisionamento suspeito de recursos, limite de recursos constantemente atingidos, supostas tentativas de fraudes dentro do contexto [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html).Para que o Insight funcione, ele precisa analisar os logs regulares para ter uma ideia do que seria um comportamento normal da conta, e então passará a analisar continuamente. Qualquer anomalia encontrada aparecerá no console do **CloudTrail** e eventos serão enviados para o Amazon [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), também poderão ser gerados eventos no **EventBridge**.
 
 **CloudTrail** armazena dados por até 90 dias, para armazenar dados por mais tempo, você pode replicar esses dados dentro de buckets [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) e acessa-los usando **Athena**.
 
@@ -1136,7 +1136,7 @@ Resumo Monitoramento pt 2:
 
 Conteúdo relacionado a **VPC** e networking pedido no exame de Practitioner:
 
-* **VCP**, Subnets, Internet Gateways e NAT Gateways.
+* **VPC**, Subnets, Internet Gateways e NAT Gateways.
 * **Security Groups**, Network ACL(NACL), **VPC** Flow Logs.
 * **VPC** Peering, **VPC** Endpoints.
 * Site to Site VPN e Direct Connect
@@ -1174,13 +1174,13 @@ Mais diferenças entre **NACL** e **Security Groups**, as comparações estão d
 
 ## VPC Endpoints - Interface & Gateway (S3 & DynamoDB)
 
-**VPC Endpoints** é um serviço que permitem que você se conecte com serviços da AWS usando uma rede privada, invés de uma rede pública. Isso melhora a segurança da conexão e diminui a latência.**VCP Endpoint Gateway** é usado para acessar o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) e o **DynamoDB**.**VPC Endpoint Interface** é usado para o restante dos serviços.
+**VPC Endpoints** é um serviço que permitem que você se conecte com serviços da AWS usando uma rede privada, invés de uma rede pública. Isso melhora a segurança da conexão e diminui a latência.**VPC Endpoint Gateway** é usado para acessar o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) e o **DynamoDB**.**VPC Endpoint Interface** é usado para o restante dos serviços.
 
 ## Direct Connect & Site-to-Site VPN
 
 **Site to Site VPN** é o serviço de VPN da AWS que permite conexão de datacenter on-premisse com a AWS pela internet via VPN.**Direct Connect (DX)** é um serviço que permite conexão do datacenter on-premisse com a AWS por meio de uma conexão física, direta e privada, é muito mais seguro, caro e leva no mínimo 1 mês para ser feito.
 
-Para utilizar **site-to-site VPN** o cliente deve um **Customer Gateway (CGW)** no servidor on-premisse, a VPN fará a conexão na internet e a porta de entrada na AWS será um **Virtual Private Gateway(VGW)**
+Para utilizar **site-to-site VPN** o cliente deve ter um **Customer Gateway (CGW)** no servidor on-premisse, a VPN fará a conexão na internet e a porta de entrada na AWS será um **Virtual Private Gateway(VGW)**
 
 ## Transit Gateway Overview
 
@@ -1260,7 +1260,7 @@ Mais detalhes do **AWS Shield**:**AWS Shield Standard**:
 **AWS Shield Advanced**:
 * Serviço de mitigação de dDoS opcional.
 * Custa $3000 por mês por organização.
-* Protege contra atques mais sofisticados na Amazon [EC2](https://aws.amazon.com/pt/ec2/), **ELB**, **CloudFront**, **Global Accelerator** e **Route 53**.
+* Protege contra ataques mais sofisticados na Amazon [EC2](https://aws.amazon.com/pt/ec2/), **ELB**, **CloudFront**, **Global Accelerator** e **Route 53**.
 * Acesso 24/7 ao **AWS dDoS response team (DRP)**.
 * Proteção contra eventuais custos superiores de uso de recursos devido a ataques dDoS.
 
@@ -1383,14 +1383,14 @@ Para funcionar é necessário que se habilite o serviço **AWS Config**.
 
 ## Amazon Detective Overview
 
-**Amazon Detective** é um serviço usado para achar a causa raiz de uma eventual falha de segurança na sua conta, utiliza os relatórios do **GuardDuty**, **Macie** e **Security Hub** + Dados do **VPC Flow Logs**, **CloudTrail**, **GuardDuty** + Machine Learning e Gráficos para identificar a causa raiz de uma eventual fralde, então produz uma visão unificada de tudo.
+**Amazon Detective** é um serviço usado para achar a causa raiz de uma eventual falha de segurança na sua conta, utiliza os relatórios do **GuardDuty**, **Macie** e **Security Hub** + Dados do **VPC Flow Logs**, **CloudTrail**, **GuardDuty** + Machine Learning e Gráficos para identificar a causa raiz de uma eventual fraude, então produz uma visão unificada de tudo.
 
 ## AWS Abuse
 
 **AWS Abuse** é o canal de comunicação da AWS para denúncia de uso indevido dos serviços da AWS. É proibido utilizar os serviços da AWS para:
 
 * Spam - enviar e-mails, posts, SMSs de forma automatizada e com fins indesejados
-* Port Scanning - Enviar pacotes para suas portas para descobrir enventuais inseguranças.
+* Port Scanning - Enviar pacotes para suas portas para descobrir eventuais inseguranças.
 * Dos ou DDoS - Ataque massivo de dados local ou distribuído a fim de derrubar um serviço.
 * Intrusion attemps - Tentativa de invasão aos seus recursos.
 * Hosting objectionable or copyrighted content - armazenar conteúdo ilegal ou sob copyright sem consentimento.
@@ -1401,7 +1401,7 @@ Para denunciar esse tipo de prática, preencha este formulário: <https://suppor
 
 A conta root, por ter acesso total, não deve ser utilizada para atividades diárias, ainda que sejam administrativas, e devido a sua importância, sua senha e meios de proteção devem ser protegidos ao máximo, contudo, algumas ações só podem ser realizadas pela conta root, são elas:
 
-* Mudança das configurações da conta(ex: nome da conta, email central, senha do root, root user acess keys)
+* Mudança das configurações da conta(ex: nome da conta, email central, senha do root, root user access keys)
 * Ver certas taxas.
 * Encerrar a conta AWS.
 * Restaurar as permissões [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html).
@@ -1447,7 +1447,7 @@ Resumo Security e Compliance pt 2:
 * Dar nome as coisas(labeling)
 * Moderação de conteúdo.
 * Detecção de texto.
-* Detecção de rostos e análise(géneros, idade, emoções)
+* Detecção de rostos e análise(gêneros, idade, emoções)
 * Busca de rostos e verificação.
 * Reconhecimento de celebridades.
 * Pathing(para análise de jogos esportivos)
@@ -1511,7 +1511,7 @@ Resumo Machine Learning:
 * **Polly**: Transformação de texto para áudio.
 * **Translate**: Tradução.
 * **Lex**: Constrói conversações com chatbots.
-* **Connect**: Contact center na núvem.
+* **Connect**: Contact center na nuvem.
 * **Comprehend**: Processamento de linguagem natural.
 * **SageMaker**: ML para criação de modelos para cientistas de dados e devs.
 * **Forecast**: Usa ML para predições.
@@ -1543,7 +1543,7 @@ Existem APIs disponíveis para automatizar a criação de contas.Existe um siste
 **Service Control Policies (SCP)** é o serviço que faz parte da **Organization** que restringe acesso das contas filhas aplicando whitelist e blacklist em ações [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html). Pode ser aplicado em **OUs** e contas mas não podem ser aplicados na master. **SCP** é aplicado a todos os usuários e roles de todas as contas [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) e root das **OUs** e contas filhas.**SCP** não afeta service-linked roles(roles que permitem que serviços AWS integrem com Organization e não podem ser restritos por **SCPs**).**SCP** devem ter um PERMITIR explícito para permitir qualquer coisa, ou seja, não permitem nada por padrão.Cada **OU** e conta herda as políticas **SCP** da **OU**/master mãe dentro da **organization**.Casos de uso:
 
 * Restringir acesso a alguns serviços, ex: não pode usar **EMR**.
-* Restringir certos servirços obedecendo compliance.
+* Restringir certos serviços obedecendo compliance.
 
 ## AWS Control Tower Overview
 
@@ -1638,7 +1638,7 @@ Supondo que você queira fazer uma comunicação entre as instâncias 1 e 2(R1AZ
 
 ## Savings Plan Overview
 
-Savings Plan é uma forma de se obter desconto pela utilização de instâncias de computação na AWS. Com esse formato, ao invés de fazer reserva de instâncias, você determina que irá gastar uma certa quantidade de $ por hora pelos próximos 1 OU 3 anos. É um a forma mais fácil de ter uma infra de longo prazo na AWS. Existem 2 tipos de saving plan:
+Savings Plan é uma forma de se obter desconto pela utilização de instâncias de computação na AWS. Com esse formato, ao invés de fazer reserva de instâncias, você determina que irá gastar uma certa quantidade de $ por hora pelos próximos 1 OU 3 anos. É uma forma mais fácil de ter uma infra de longo prazo na AWS. Existem 2 tipos de saving plan:
 
 * EC2 Savings Plan
 * Até 72% de desconto, se comparada com on-demand.
@@ -1675,7 +1675,7 @@ Ferramentas de custos de billing:
 
 ## Estimating Costs in the Cloud - TCO Calculator & Pricing Calculator
 
-**Simple Monthly Calculator** é um serviço em que você diz qual serviço da AWS você pretende usar e como você pretende usar e ele diz o quanto que isso irá te custar nos próximos 12 meses.Essa calculadora foi depreciada em 30 de Junho de 2020 e foi substituida pelo **AWS Pricing Calculator** que pode ser acessado em <https://calculator.aws/>
+**Simple Monthly Calculator** é um serviço em que você diz qual serviço da AWS você pretende usar e como você pretende usar e ele diz o quanto que isso irá te custar nos próximos 12 meses.Essa calculadora foi depreciada em 30 de Junho de 2020 e foi substituída pelo **AWS Pricing Calculator** que pode ser acessado em <https://calculator.aws/>
 
 **AWS Total Cost of Ownership (TCO) Calculators** é usada para ajudar a reduzir custos fazendo cálculos no modelo pay-as-you-go.O **TCO Calculators** te permite estimar a economia de custos quando usando a AWS e provendo relatórios detalhados que podem ser usados em apresentações executivas.Compare custos de suas aplicações no formato on-premisse ou hosting tradicionais com AWS: Server, Storage, Network, etc..Para mais detalhes, acesse: <https://awstcocalculator.com/> OBS: o **TCO Calculator** já foi depreciado, contudo ainda pode ser cobrado no exame.
 
@@ -1683,7 +1683,7 @@ Ferramentas de custos de billing:
 
 Na visão do **Billing Dashboard** é possível ver os gastos no mês atual, você pode ver o gasto geral ou os gastos por produto.Também é possível, taggeando cada serviço(ex: instância, imagem, bucket, etc..) dividir os custos de cada produto pelo valor da tag, ex: colocar tags de centros de custos em instâncias permite que você veja quanto que cada centro de custo está gerando de gasto.Você pode editar essas tags usando o Tag Editor.
 
-**AWS Cost and Usage Reports** é usado para relatórios detalhados. Contém o conjunto mais detalhado de custos e uso de dados incluindo metadados de serviços, pricins e reservas (Ex: [EC2](https://aws.amazon.com/pt/ec2/) reserved instances).**AWS Cost and Usage Report** consegue detalhar por dadods por categoria de serviços, por conta e por usuário [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) por hora e dia, da mesma forma que por tags que você tenha criado.Este relatório pode ser integrado e analisado por **Athena**, **Redshift** ou **QuickSight**.
+**AWS Cost and Usage Reports** é usado para relatórios detalhados. Contém o conjunto mais detalhado de custos e uso de dados incluindo metadados de serviços, pricing e reservas (Ex: [EC2](https://aws.amazon.com/pt/ec2/) reserved instances).**AWS Cost and Usage Report** consegue detalhar por dados por categoria de serviços, por conta e por usuário [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) por hora e dia, da mesma forma que por tags que você tenha criado.Este relatório pode ser integrado e analisado por **Athena**, **Redshift** ou **QuickSight**.
 
 **Cost Explorer** é um serviço que ajuda a visualizar, entender e gerenciar os custos da AWS ao longo do tempo. Cria relatórios personalizados para analisar custos e uso de dados, pode ser usado para fazer uma análise de custo total e através de todas as contas. Possui uma granularidade mensal e de hora. Você pode usar para escolher um Savings Plan melhor para diminuir seus custos.Pode também prever os custos nos próximos 12 meses baseado nos últimos usos.Também pode ter seus dados exportados para buckets [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html).
 
@@ -1760,7 +1760,7 @@ Resumo Boas práticas para conta pt 1:
 Resumo Boas práticas para conta pt 2:
 
 * **IAM Guideline**: Usar MFA, princípio do least-privilege, política e rotação de senha.
-* **Config**: Para gravar todas as alterações de configurações e compliance ao longo do tiempo.
+* **Config**: Para gravar todas as alterações de configurações e compliance ao longo do tempo.
 * **CloudFormation**: Para deployar stacks ao longo de contas e regions de forma automatizada.
 * **Trusted Advisor**: Obter insights, e Suport Plans baseados na sua necessidade. Para isso envie logs para o [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html) e **CloudWatch**.
 * **CloudTrail**: API que grava logs de alterações feitas na conta.
@@ -1845,7 +1845,7 @@ Resumo Advanced Identity:
 
 ## Device Farm Overview
 
-**AWS Device Farm** é um serviço de device farm da AWS, nele você pode testar sua aplicação web ou mobile em devices REAIS(não emuladores) controlados pela AWS, esses devices ficam em locais remotods, os testes ocorrem em múltiplos devices e a execução é automatizada. Você pode interagir com os devices, eles geram relatórios, logs e screenshots dos testes feitos. Além disso é possível configurar features como GPS, idioma, wi-fi, bluetooth, etc...
+**AWS Device Farm** é um serviço de device farm da AWS, nele você pode testar sua aplicação web ou mobile em devices REAIS(não emuladores) controlados pela AWS, esses devices ficam em locais remotos, os testes ocorrem em múltiplos devices e a execução é automatizada. Você pode interagir com os devices, eles geram relatórios, logs e screenshots dos testes feitos. Além disso é possível configurar features como GPS, idioma, wi-fi, bluetooth, etc...
 
 ## AWS Backup Overview
 
@@ -1870,11 +1870,11 @@ Boas práticas de design na AWS:
 
 * Escalabilidade - Usar escalabilidade vertical e horizontal.
 * Recursos descartáveis: servidores devem ser descartáveis e facilmente configuráveis.
-* Automação: Usar serviços servers, IaaS e Auto Scaling(elasticidade).
+* Automação: Usar serviços serverless, IaaS e Auto Scaling(elasticidade).
 * Desacoplamento: Fugir de aplicações monolíticas pois são difíceis de manter e tendem a ser mais instáveis. Quebrar em aplicações menores faz com que erros se propagem menos.
 * Pensar em SERVIÇOS, não em SERVIDORES: Não use apenas [EC2](https://aws.amazon.com/pt/ec2/), teoricamente quase tudo poderia ser resolvido em instâncias [EC2](https://aws.amazon.com/pt/ec2/), mas existem outros serviços que podem resolver a maior parte dos problemas de forma mais fácil, segura e barata, pense em usar: **RDS**, [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), **EKS**, **ECS**, [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html), **DynamoDb**, **ElastiCache**, etc...
 
-5 pilares do Well Achitected Framework:
+5 pilares do Well Architected Framework:
 
 1. Excelência Operacional
 2. Segurança
@@ -1886,16 +1886,16 @@ Esses pilares não são concorrentes e nem precisam ser balanceados, mas sim, tr
 
 ### 1º pilar: Operational Excellence
 
-Pilares do Well Achitected Framework:1 - Excelência OperacionalA habilidade de rodar e monitorar sistemas para entregar valor de negócio e fazer melhoria continua em processos e procedimentos envolvidos.Princípios de Design:
+Pilares do Well Architected Framework:1 - Excelência OperacionalA habilidade de rodar e monitorar sistemas para entregar valor de negócio e fazer melhoria continua em processos e procedimentos envolvidos.Princípios de Design:
 
-* Peformar operações com código: Infrastructure as Code (IaC) - **CloudFormation**, Terraform são exemplo.
+* Performar operações com código: Infrastructure as Code (IaC) - **CloudFormation**, Terraform são exemplo.
 * Documentar: Automatizar a criação de documentos de cada construção.
 * Fazer mudanças frequentes, pequenas e reversíveis: Em caso de falha, você poderá voltar ao estado anterior.
 * Refinar procedimentos frequentemente: Fazer processo de PDCA em seus processo frequentemente e adequar equipe a isso.
 * Antecipar falhas.
 * Aprender com as falhas.
 
-Pilares do Well Achitected F:1 - Excelência OperacionalOnde cada serviço se encaixa neste pilar? não cai no exam
+Pilares do Well Architected F:1 - Excelência OperacionalOnde cada serviço se encaixa neste pilar? não cai no exam
 
 * Preparação
 * **AWS CloudFormation** - Criação de ambiente
@@ -1915,20 +1915,20 @@ Pilares do Well Achitected F:1 - Excelência OperacionalOnde cada serviço se en
 
 ### 2º pilar: Security
 
-Pilares do Well Achitected Framework:2- Segurança pt 1A habilidade de proteger informações, sistemas e assets enquanto entrega valor ao negócios, faz isso através de estratégias de mitigação e gerenciamento de riscos.Princípios de design:
+Pilares do Well Architected Framework:2- Segurança pt 1A habilidade de proteger informações, sistemas e assets enquanto entrega valor ao negócios, faz isso através de estratégias de mitigação e gerenciamento de riscos.Princípios de design:
 
 * Implementar um sistema de identidade forte: Centralizar o gerenciamento de privilégios e reduzir(ou mesmo eliminar) a existência de credenciais de longo prazo, seguindo princípio de least priviliege.
 * Habilitar rastreabilidade: Integrar logs e métricas com sistemas que respondem automaticamente e realizam ações.
 * Aplicar segurança em todas as camadas: Aplicar princípios de seguranças na rede, VPC, subnet, Load Balancer, instâncias, SOs e aplicações.
 
-Pilares do Well Achitected Framework:2- Segurança pt 2
+Pilares do Well Architected Framework:2- Segurança pt 2
 
 * Automatizar as boas práticas de segurança.
 * Proteger dados em trânsito e em armazenamento: Utilizar criptografia, tokenização e controle de acesso.
 * Manter pessoas longe dos dados: Reduzir ou eliminar a necessidade de contato direto ou manual com o processamento de dados.
 * Se preparar para eventos de segurança: Realizar simulações de eventos de segurança com ferramentas que melhores a detecção de falhas, investigações e recuperação.
 
-Pilares do Well Achitected Framewo:2- Segurança pt 1Onde cada serviço se encaixa neste pilar? não cai no exam
+Pilares do Well Architected Framewo:2- Segurança pt 1Onde cada serviço se encaixa neste pilar? não cai no exam
 
 * Gerenciamento de Acessos e identidades
 * [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) - Gerenciamento de usuários
@@ -1946,7 +1946,7 @@ Pilares do Well Achitected Framewo:2- Segurança pt 1Onde cada serviço se encai
 * AWS WAF - Filtrando e protegendo aplicações
 * Amazon Inspector - Buscando vulnerabilidades
 
-Pilares do Well Achitected Framework:2- Segurança pt 2Onde cada serviço se encaixa neste pilar? não cai no exam
+Pilares do Well Architected Framework:2- Segurança pt 2Onde cada serviço se encaixa neste pilar? não cai no exam
 
 * Data Protection
 * **KMS** - Gerenciamento de chaves
@@ -1957,19 +1957,19 @@ Pilares do Well Achitected Framework:2- Segurança pt 2Onde cada serviço se enc
 * Resposta a incidentes
 * [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) - Rotacionando credenciais
 * **CloudFormation** - reformando ambiente
-* **CloudWatch Events** - analisando causa rai
+* **CloudWatch Events** - analisando causa raiz
 
 ### 3º pilar: Reliability
 
-Pilares do Well Achitected Framework:3- ConfiabilidadeHabilidade de um sistema se recuperar de uma interrupção na infra ou serviços, adquirir recursos computacionais para se adequar a demanda e as suas variações e mitigar problemas como falhas de configurações ou issues transientes na rede.Princípios de design:
+Pilares do Well Architected Framework:3- ConfiabilidadeHabilidade de um sistema se recuperar de uma interrupção na infra ou serviços, adquirir recursos computacionais para se adequar a demanda e as suas variações e mitigar problemas como falhas de configurações ou issues transientes na rede.Princípios de design:
 
 * Testes para simular recuperações: Use simulações de diferentes falhas para recriar cenários de falhas que aconteceram antes.
 * Se recupera automaticamente de uma falha: Antecipe e remedie falhas antes que elas ocorram.
-* Escale horizontalmente e aumente a disponibilidade do ambiente: Aumente a quantida de recursos que seu sistema possui para que, caso haja uma falha, esta impacte pontos menores.
+* Escale horizontalmente e aumente a disponibilidade do ambiente: Aumente a quantidade de recursos que seu sistema possui para que, caso haja uma falha, esta impacte pontos menores.
 * Pare de tentar adivinhar sua capacidade: tenha um nível ótimo de uso da infra, sem sobrecarrega-la nem subutiliza-la. Use AutoScaling.
 * Gerencie mudanças com automações: Use automações para fazer mudanças na infra.
 
-Pilares do Well Achitected Fra:3- ConfiabilidadeOnde cada serviço se encaixa neste pilar? não cai no exam
+Pilares do Well Architected Fra:3- ConfiabilidadeOnde cada serviço se encaixa neste pilar? não cai no exam
 
 * Fundações
 * [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) - Controle de acessos de usuários
@@ -1990,7 +1990,7 @@ Pilares do Well Achitected Fra:3- ConfiabilidadeOnde cada serviço se encaixa ne
 
 ### 4º pilar: Performance Efficiency
 
-Pilares do Well Achitected Framework:4- Eficiência de PerformanceA habilidade de usar recursos computacionais de forma eficiente para atingir os requisitos de sistema, e manter essa eficiência a medida em que mudanças ocorram e a tecnologia evolua.Princípios de design:
+Pilares do Well Architected Framework:4- Eficiência de PerformanceA habilidade de usar recursos computacionais de forma eficiente para atingir os requisitos de sistema, e manter essa eficiência a medida em que mudanças ocorram e a tecnologia evolua.Princípios de design:
 
 * Democratizar tecnologias complicadas: Permitir que todas as pessoas possam ter conhecimento de tecnologias complexas como AWS.
 * Estar disponível globalmente em minutos: Deploys fáceis em várias regions.
@@ -1998,7 +1998,7 @@ Pilares do Well Achitected Framework:4- Eficiência de PerformanceA habilidade d
 * Experimentar coisas mais frequentemente: Testar e comparar coisas de forma mais fácil.
 * Simpatia mecânica: Estar familiarizado com todos os serviços da AWS.
 
-Pilares do Well Achitected Framework:4- Eficiência de PerformanceOnde cada serviço se encaixa neste pilar? não cai no exam
+Pilares do Well Architected Framework:4- Eficiência de PerformanceOnde cada serviço se encaixa neste pilar? não cai no exam
 
 * Seleção
 * **Auto Scaling**: Escalabilidade.
@@ -2019,27 +2019,27 @@ Pilares do Well Achitected Framework:4- Eficiência de PerformanceOnde cada serv
 
 ### 5º pilar: Cost Optimization
 
-Pilares do Well Achitected Framework:5- Otimização de CustoPrincípios de design
+Pilares do Well Architected Framework:5- Otimização de CustoPrincípios de design
 
 * Adotar um modo de consumo: Pagar somente pelo que você usar.
 * Medir a eficiência geral: Use **CloudWatch**
 * Pare de gastar dinheiro em operações com data centers: AWS cuida da infra e te permite focar em projetos.
-* Analise e atribua despesas: Faça uma identifica acurada do uso e custos de cada sistemas para que isso te ajude a medir o Return on Investiment (ROI), Para isso, use Tags
+* Analise e atribua despesas: Faça uma identificação acurada do uso e custos de cada sistema para que isso te ajude a medir o Return on Investiment (ROI), Para isso, use Tags
 * Use serviços a níveis de aplicação e gerenciados afim de reduzir custos de propriedade: Desta forma você pode operar na nuvem com um custo menor por transação e mantendo a escalabilidade.
 
-Pilares do Well Achitected Framework:5- Otimização de Custo pt 1Onde cada serviço se encaixa neste pilar? não cai no exam
+Pilares do Well Architected Framework:5- Otimização de Custo pt 1Onde cada serviço se encaixa neste pilar? não cai no exam
 
 * Conhecimento de gastos
 * **Budgets** - Tenha conhecimento de como você está usandoseuorçamento.
 * **Cost and Usage Reports** - Tenha relatórios detalhados dosgastos.
 * **Cost Explorer** - Tenha relatórios de histórico de gastos
 * **Reserved Instance Reporting** - Saiba se suas instânciasreservadas estão mesmo sendo usadas.
-* Recustos com custo-beneficio
+* Recursos com custo-beneficio
 * **Spot Instance** - Use instâncias spot se possível
 * **Reserved Instance** - Use instâncias reservadas, se possível
 * **S3 Glacier** - faça o ciclo de arquivamento de dados noglacier
 
-Pilares do Well Achitected Framework:5- Otimização de Custo pt 2Onde cada serviço se encaixa neste pilar? não cai no exam
+Pilares do Well Architected Framework:5- Otimização de Custo pt 2Onde cada serviço se encaixa neste pilar? não cai no exam
 
 * Pareando oferta e demanda
 * **Auto scaling** - saiba escalar e desescalar de forma elásticacomASG
@@ -2051,7 +2051,7 @@ Pilares do Well Achitected Framework:5- Otimização de Custo pt 2Onde cada serv
 
 ## AWS Well-Architected Tool
 
-**AWS Well-Architected Tool** é uma ferramenta da AWS que te auxili a verificar se sua conta está alinhada com os 5 pilares do Well-Architected Framework.
+**AWS Well-Architected Tool** é uma ferramenta da AWS que te auxilia a verificar se sua conta está alinhada com os 5 pilares do Well-Architected Framework.
 
 1. Você seleciona o workload, responde as perguntas
 2. Revê suas respostas em torno dos 5 pilares
