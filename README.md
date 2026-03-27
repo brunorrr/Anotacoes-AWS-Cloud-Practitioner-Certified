@@ -1,8 +1,19 @@
 # AWS Cloud Practitioner
 
-Este repositório é uma compilação das anotações que eu fiz enquanto fazia um curso da Udemy para a prova de certificação **CLF-C01 Cloud Practitioner**.
+Este repositório é uma compilação das anotações que eu fiz enquanto fazia um curso da Udemy para a prova de certificação **CLF-C02 Cloud Practitioner**.
 Nele estão contempladas informações relacionadas a serviços, políticas e processos da AWS que provavelmente cairão na prova de certificação.
-O objetivo deste repositório não é funcionar como um curso ou tutorial sobre AWS, mas apenas como guia adicional para quem estiver buscando obter uma certificação CLF-C01, utilize-o para buscar uma definição mais simples e rápida de termos que você já tenha aprendido e que esteja com dificuldades para lembrar.
+O objetivo deste repositório não é funcionar como um curso ou tutorial sobre AWS, mas apenas como guia adicional para quem estiver buscando obter uma certificação CLF-C02, utilize-o para buscar uma definição mais simples e rápida de termos que você já tenha aprendido e que esteja com dificuldades para lembrar.
+
+> **Nota sobre versões do exame:** O exame CLF-C01 foi **aposentado em 18 de setembro de 2023**. O exame ativo atualmente é o **CLF-C02**, lançado em 19 de setembro de 2023. O CLF-C02 possui 4 domínios (vs. 6 do CLF-C01), com maior peso em Segurança (30%) e menor peso em Billing (12%). Os tópicos de **estratégias de migração** e o **AWS Cloud Adoption Framework (CAF)** passaram a ser explicitamente cobrados. Design detalhado de arquiteturas e programação estão fora do escopo.
+>
+> **Domínios do CLF-C02:**
+
+| Domínio | Peso |
+| --- | --- |
+| 1. Cloud Concepts | 24% |
+| 2. Security and Compliance | 30% |
+| 3. Cloud Technology and Services | 34% |
+| 4. Billing, Pricing, and Support | 12% |
 
 O curso que eu fiz para criar estas anotações foi o [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/) criado pelo **Stephane Maarek**.
 
@@ -1649,6 +1660,9 @@ Savings Plan é uma forma de se obter desconto pela utilização de instâncias 
 * Até 66% de desconto comparado com on-demand.
 * Não pode escolher Família, Region, tamanho, SO, arrendamento, ou opções decomputação.
 * Tipos de computação: EC2, Fargate e Lambda.
+* Machine Learning Savings Plan
+* Cobre workloads de ML no **SageMaker**.
+* Até 64% de desconto comparado com on-demand.
 
 Você pode configurar todas as questões de custo no AWS Cost Explorer console.Mais em: <https://aws.amazon.com/savingsplans/pricing/>
 
@@ -1855,6 +1869,30 @@ Resumo Advanced Identity:
 
 **Amazon CloudEndure** é um serviço de recuperação de desastre da AWS. Neste serviço os servidores on-premisse irão fazer replicações constantes e automáticas de dados(Oracle, MySQL, SQL Server, etc...) para a AWS em instâncias de baixo custo. Em um eventual desastre, o serviço será acionado e instâncias de alta performance da AWS serão acionadas no formato de failover assumindo o papel de produção em alguns minutos, ficando assim até que o ambiente on-premisse seja reestabelecido.
 
+## AWS DataSync Overview
+
+**AWS DataSync** é um serviço de transferência de dados online que move grandes volumes de dados entre armazenamento on-premises e a AWS (ou entre serviços AWS) de forma automática e segura.Suporta: [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), EFS, FSx for Windows File Server, e outros.Funciona via agente instalado on-premises que se conecta à AWS.Casos de uso: migração de dados, replicação para DR, arquivamento de dados.Transferências são criptografadas em trânsito e validadas por checksums.
+
+## AWS App Runner Overview
+
+**AWS App Runner** é um serviço totalmente gerenciado que facilita o deploy de aplicações web e APIs em containers diretamente de código-fonte ou de imagens de container, sem necessidade de gerenciar infraestrutura.Escala automaticamente conforme o tráfego.É ideal para desenvolvedores que querem focar no código, não na operação de servidores ou clusters.Diferença chave: mais simples que [ECS](https://aws.amazon.com/ecs/)/EKS, sem necessidade de configurar clusters ou tarefas.
+
+## AWS Audit Manager Overview
+
+**AWS Audit Manager** automatiza a coleta contínua de evidências de conformidade na AWS.Mapeia controles de auditoria para os recursos da AWS.Gera relatórios prontos para auditores com base em frameworks conhecidos (PCI DSS, HIPAA, SOC 2, GDPR, etc.).Reduce o trabalho manual de coleta de evidências para auditorias de conformidade.
+
+## Service Quotas Overview
+
+**AWS Service Quotas** (antigo AWS Service Limits) é o serviço centralizado para visualizar e gerenciar cotas (limites) de uso de serviços AWS.Permite visualizar os limites atuais de todos os serviços em um único lugar.Permite solicitar aumentos de cota diretamente pelo console.Pode ser integrado com **CloudWatch** para alertas quando o uso se aproximar do limite.
+
+## AWS Migration Hub Overview
+
+**AWS Migration Hub** é o painel central de rastreamento de migrações para a AWS.Ele consolida o progresso de migrações de servidores e bancos de dados em um único lugar, independentemente das ferramentas de migração utilizadas.Integra-se com: **AWS Application Migration Service (MGN)**, **AWS DMS**, **AWS Server Migration Service (SMS)**.Oferece visibilidade em tempo real do status de cada workload sendo migrado.
+
+## AWS Application Migration Service (MGN) Overview
+
+**AWS Application Migration Service (MGN)** é o serviço primário de migração lift-and-shift recomendado pela AWS, sendo o sucessor do CloudEndure Migration e do AWS Server Migration Service (SMS).Replíca servidores on-premises ou de outras nuvens para a AWS com replicação contínua de dados de bloco.Minimiza o tempo de inatividade durante a migração (cutover em minutos).Suporta: servidores físicos, VMs (VMware, Hyper-V) e instâncias em outras nuvens.
+
 ## AWS WhitePapers Well-Architected Framework
 
 Well Architected Framework General Guiding PrinciplesPrincípios que são pontos chave para a importância da utilização de infra na nuvem.
@@ -1874,13 +1912,14 @@ Boas práticas de design na AWS:
 * Desacoplamento: Fugir de aplicações monolíticas pois são difíceis de manter e tendem a ser mais instáveis. Quebrar em aplicações menores faz com que erros se propagem menos.
 * Pensar em SERVIÇOS, não em SERVIDORES: Não use apenas [EC2](https://aws.amazon.com/pt/ec2/), teoricamente quase tudo poderia ser resolvido em instâncias [EC2](https://aws.amazon.com/pt/ec2/), mas existem outros serviços que podem resolver a maior parte dos problemas de forma mais fácil, segura e barata, pense em usar: **RDS**, [S3](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/Welcome.html), **EKS**, **ECS**, [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html), **DynamoDb**, **ElastiCache**, etc...
 
-5 pilares do Well Architected Framework:
+6 pilares do Well Architected Framework:
 
 1. Excelência Operacional
 2. Segurança
 3. Confiabilidade
 4. Eficiência de performance
 5. Otimização de custo
+6. Sustentabilidade *(adicionado em dezembro de 2021)*
 
 Esses pilares não são concorrentes e nem precisam ser balanceados, mas sim, trabalham em sinergia.
 
@@ -2049,12 +2088,23 @@ Pilares do Well Architected Framework:5- Otimização de Custo pt 2Onde cada ser
 * **Cost and Usage Report** - Use os relatórios detalhados natomadade decisão
 * **AWS News Blog** - Leia o blog da AWS para receberdicasde economia com a infra.
 
+### 6º pilar: Sustainability
+
+A habilidade de minimizar continuamente o impacto ambiental de workloads na nuvem.Princípios de design:
+
+* Entender o seu impacto: Estabeleça métricas de desempenho e avalie o impacto de cada carga de trabalho.
+* Estabelecer metas de sustentabilidade: Defina metas de longo prazo para cada workload e modele o retorno sobre o investimento.
+* Maximizar utilização: Dimensione corretamente cada workload para maximizar o uso de energia dos recursos implantados.
+* Antecipar e adotar novas ofertas de hardware e software mais eficientes: Dê suporte aos programas de sustentabilidade da AWS adotando novos hardwares e softwares eficientes.
+* Usar serviços gerenciados: Compartilhe serviços entre vários usuários e use serviços gerenciados para minimizar a infraestrutura necessária.
+* Reduzir o impacto downstream de suas cargas de trabalho na nuvem: Reduza a quantidade de energia ou recursos necessários para usar seus serviços, crie APIs e interfaces eficientes.
+
 ## AWS Well-Architected Tool
 
-**AWS Well-Architected Tool** é uma ferramenta da AWS que te auxilia a verificar se sua conta está alinhada com os 5 pilares do Well-Architected Framework.
+**AWS Well-Architected Tool** é uma ferramenta da AWS que te auxilia a verificar se sua conta está alinhada com os 6 pilares do Well-Architected Framework.
 
 1. Você seleciona o workload, responde as perguntas
-2. Revê suas respostas em torno dos 5 pilares
+2. Revê suas respostas em torno dos 6 pilares
 3. Obtém dicas, vídeos, documentações, relatórios e vê os resultados em um dashboard
 Para mais informações acesse: <https://console.aws.amazon.com/wellarchitected>
 
@@ -2086,6 +2136,40 @@ Dos treinamentos OFICIAIS da AWS:**AWS Training**
 * **Training e Certification para empresas**
 * **AWS Academy** - Treinamento em universidades
 Fora isso existem treinamentos não oficiais como os da Udemy(Stephane <3)
+
+## AWS Cloud Adoption Framework (CAF) Overview
+
+O **AWS Cloud Adoption Framework (CAF)** é um guia que ajuda organizações a planejar e executar a jornada de adoção da nuvem AWS de forma estruturada.O CAF organiza orientações em **6 perspectivas** que cobrem as áreas mais importantes de transformação digital:
+
+* **Business**: Garante que os investimentos em nuvem acelerem as ambições de transformação digital e os resultados de negócio.
+* **People**: Serve como uma ponte entre tecnologia e negócio, ajudando a evoluir a cultura organizacional e a liderança necessárias para a transformação na nuvem.
+* **Governance**: Ajuda a orquestrar as iniciativas de nuvem enquanto maximiza os benefícios organizacionais e minimiza os riscos.
+* **Platform**: Ajuda a construir a plataforma de nuvem escalável, moderna e empresarial, além de modernizar as cargas de trabalho existentes.
+* **Security**: Ajuda a alcançar a confidencialidade, integridade e disponibilidade de dados e workloads na nuvem.
+* **Operations**: Ajuda a garantir que os serviços de nuvem sejam entregues em um nível que atenda às necessidades do negócio.
+
+As 4 fases de adoção do CAF são: **Envision** (visão) → **Align** (alinhamento) → **Launch** (lançamento) → **Scale** (escala).
+
+Os benefícios da transformação usando o CAF são agrupados em: redução de risco, melhoria de ESG (ambiental, social e governança), crescimento de receita e eficiência operacional.
+
+## Estratégias de Migração Overview
+
+As estratégias de migração para a nuvem são conhecidas como **os 7 Rs**. Cada workload pode ser migrado usando uma estratégia diferente:
+
+* **Retire** (Aposentar): Descomissionar sistemas que não são mais necessários. Identifique aplicações que podem ser simplesmente desligadas.
+* **Retain** (Manter): Manter sistemas on-premises que ainda não estão prontos para migrar (problemas de compliance, dependências, etc...).
+* **Rehost** (Lift-and-Shift): Mover a aplicação para a nuvem sem mudanças. É a migração mais rápida, usando ferramentas como **AWS MGN (Application Migration Service)**.
+* **Relocate**: Mover infraestrutura para a nuvem sem alterar a aplicação, o SO ou o hardware. Diferente do Rehost por operar em nível de hypervisor (ex: migrar VMware on-premises para VMware Cloud on AWS).
+* **Repurchase** (Drop-and-Shop): Substituir a aplicação atual por um produto diferente, geralmente SaaS (ex: trocar CRM proprietário por Salesforce, ou trocar e-mail local por Microsoft 365).
+* **Replatform** (Lift-Tinker-and-Shift): Fazer algumas otimizações para a nuvem sem mudar a arquitetura core (ex: migrar banco de dados on-premises para **RDS**, ou mover aplicação para **Elastic Beanstalk**).
+* **Refactor / Re-architect**: Reimaginar a aplicação usando recursos nativos de nuvem (ex: converter para arquitetura de microserviços com [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html), **ECS**, **DynamoDB**). É a estratégia mais cara e complexa, mas gera os maiores benefícios de longo prazo.
+
+Serviços de suporte à migração:
+
+* **AWS Migration Hub**: Painel central de rastreamento de todas as migrações.
+* **AWS Application Discovery Service**: Coleta informações sobre servidores on-premises (uso de CPU, memória, disco, dependências de rede) para planejar a migração.
+* **AWS Application Migration Service (MGN)**: Migração lift-and-shift com replicação contínua.
+* **AWS DMS (Database Migration Service)**: Migração de bancos de dados.
 
 ## State of Learning Checkpoint - AWS Certified Cloud Practitioner
 
